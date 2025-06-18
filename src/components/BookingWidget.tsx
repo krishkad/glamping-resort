@@ -128,7 +128,7 @@ const BookingWidget = () => {
             <CardContent className="w-full p-8">
               <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-4 mb-6">
                 {/* Check-in Date */}
-                <div className="">
+                <div className="w-full">
                   <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
                     Check-in
                   </label>
@@ -158,7 +158,7 @@ const BookingWidget = () => {
                 </div>
 
                 {/* Check-out Date */}
-                <div>
+                <div className="w-full">
                   <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
                     Check-out
                   </label>
