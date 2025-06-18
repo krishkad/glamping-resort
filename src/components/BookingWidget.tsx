@@ -126,9 +126,9 @@ const BookingWidget = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="p-8">
-              <div className="grid grid-cols-2 gap-4 mb-6">
+              <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-4 mb-6">
                 {/* Check-in Date */}
-                <div>
+                <div className="">
                   <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
                     Check-in
                   </label>
