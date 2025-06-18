@@ -74,7 +74,7 @@ const BookingWidget = () => {
             {packages.map((pkg, index) => (
               <Card
                 key={index}
-                className={`w-full cursor-pointer transition-all duration-300 rounded-3xl border-2 hover:shadow-xl ${
+                className={`w-full cursor-pointer transition-all duration-300 rounded-3xl border-2 hover:shadow-xl p-0 ${
                   selectedPackage.name === pkg.name
                     ? "border-moss bg-[#4caf50]/5 shadow-lg scale-105"
                     : "border-gray-200 hover:border-moss/50"
@@ -256,7 +256,7 @@ const BookingWidget = () => {
                     value={promoCode}
                     onChange={(e) => setPromoCode(e.target.value)}
                     placeholder="Enter code"
-                    className="flex-1 px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
                   />
                   <Button className="bg-coral hover:bg-coral/90 text-white px-6 rounded-2xl">
                     Apply
@@ -265,7 +265,7 @@ const BookingWidget = () => {
               </div>
 
               {/* Pricing Summary */}
-              <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl p-6 mb-6">
+              <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl py-6 mb-6">
                 <div className="flex justify-between items-center mb-3">
                   <span className="font-poppins">{selectedPackage.name}</span>
                   <span className="font-bold">{selectedPackage.price}</span>
