@@ -74,7 +74,7 @@ const BookingWidget = () => {
             {packages.map((pkg, index) => (
               <Card
                 key={index}
-                className={`cursor-pointer transition-all duration-300 rounded-3xl border-2 hover:shadow-xl ${
+                className={`w-full cursor-pointer transition-all duration-300 rounded-3xl border-2 hover:shadow-xl ${
                   selectedPackage.name === pkg.name
                     ? "border-moss bg-[#4caf50]/5 shadow-lg scale-105"
                     : "border-gray-200 hover:border-moss/50"
@@ -125,7 +125,7 @@ const BookingWidget = () => {
                 Reserve Your Escape
               </CardTitle>
             </CardHeader>
-            <CardContent className="p-8">
+            <CardContent className="w-full p-8">
               <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-4 mb-6">
                 {/* Check-in Date */}
                 <div className="">
