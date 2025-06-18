@@ -70,11 +70,10 @@ const Navbar = () => {
                 <div className="absolute top-4 right-4 z-50">
                   <Button
                     variant="ghost"
-                    size="icon"
                     onClick={() => setIsOpen(false)}
-                    className="text-stone hover:bg-gray-100 rounded-full"
+                    className="w-10 h-10 text-stone aspect-square hover:bg-gray-100 rounded-full"
                   >
-                    <X className="h-10 w-10 shrink-0" />
+                    <X className="h-6 w-6 shrink-0" />
                   </Button>
                 </div>
 

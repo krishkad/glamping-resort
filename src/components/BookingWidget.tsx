@@ -258,7 +258,7 @@ const BookingWidget = () => {
                     placeholder="Enter code"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
                   />
-                  <Button className="bg-coral hover:bg-coral/90 text-white px-6 rounded-2xl">
+                  <Button className="h-max bg-coral hover:bg-coral/90 text-white px-6 py-4 rounded-2xl">
                     Apply
                   </Button>
                 </div>
