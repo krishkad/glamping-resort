@@ -150,6 +150,7 @@ const BookingWidget = () => {
                         mode="single"
                         selected={checkIn}
                         onSelect={setCheckIn}
+                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         disabled={(date: any) => date < new Date()}
                       />
                     </PopoverContent>
@@ -179,6 +180,7 @@ const BookingWidget = () => {
                         mode="single"
                         selected={checkOut}
                         onSelect={setCheckOut}
+                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         disabled={(date: any) => date < new Date()}
                       />
                     </PopoverContent>
