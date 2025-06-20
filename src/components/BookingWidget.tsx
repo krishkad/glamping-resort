@@ -53,7 +53,7 @@ const BookingWidget = () => {
   const [promoCode, setPromoCode] = useState("");
 
   return (
-    <section className="py-20 px-6 lg:px-12 bg-secondary">
+    <section id="bookings" className="py-20 px-6 lg:px-12 bg-secondary">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 animate-slide-up">
           <h2 className="text-4xl md:text-6xl font-playfair font-bold text-stone mb-6">

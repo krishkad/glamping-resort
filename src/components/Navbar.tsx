@@ -9,12 +9,31 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  // const isMobile = useIsMobile();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
   const navItems = [
     { href: "#accommodations", label: "Stays" },
     { href: "#experiences", label: "Adventures" },
@@ -25,19 +44,39 @@ const Navbar = () => {
     <>
       {/* Navigation */}
 
-      <nav className="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 lg:px-12 py-4 sm:py-6">
+      <nav
+        className={cn(
+          "fixed top-0 w-full z-50 transition-all duration-300 px-4",
+          isScrolled
+            ? "bg-white/95 shadow-md backdrop-blur-sm py-4"
+            : "bg-transparent py-4"
+        )}
+      >
         <div className="flex items-center justify-between">
-          <div className="text-white font-playfair text-2xl sm:text-3xl font-bold">
+          <div
+            className={cn(
+              "font-playfair text-2xl sm:text-3xl font-bold",
+              isScrolled ? "text-navy" : "text-white"
+            )}
+          >
             CampHaven
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8 text-white font-medium">
+          <div
+            className={cn(
+              "hidden md:flex items-center space-x-6 lg:space-x-8 font-medium",
+              isScrolled ? "text-gray-800" : "text-white"
+            )}
+          >
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="hover:text-coral transition-colors text-sm lg:text-base"
+                className={cn(
+                  "hover:text-coral transition-colors text-sm lg:text-base",
+                  isScrolled ? "text-gray-800" : "text-white"
+                )}
               >
                 {item.label}
               </a>
@@ -51,7 +90,10 @@ const Navbar = () => {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/10"
+                  className={cn(
+                    " hover:bg-white/10",
+                    isScrolled ? "text-navy" : "text-white"
+                  )}
                 >
                   <Menu className="h-6 w-6" />
                 </Button>
@@ -96,7 +138,10 @@ const Navbar = () => {
 
                   <Button
                     className="bg-moss hover:bg-moss/90 text-white px-8 py-4 text-lg rounded-2xl font-semibold shadow-lg mt-8"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      setIsOpen(false);
+                      router.push("#bookings");
+                    }}
                   >
                     Book Your Escape
                   </Button>
@@ -106,7 +151,12 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Book Button */}
-          <Button className="hidden md:flex bg-moss hover:bg-moss/90 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-2xl font-semibold shadow-lg text-sm sm:text-base">
+          <Button
+            className="hidden md:flex bg-moss hover:bg-moss/90 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-2xl font-semibold shadow-lg text-sm sm:text-base"
+            onClick={() => {
+              router.push("#bookings");
+            }}
+          >
             Book Your Escape
           </Button>
         </div>

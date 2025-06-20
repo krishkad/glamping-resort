@@ -39,30 +39,30 @@ const Hero = () => {
           </div>
         </div>
 
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 leading-tight">
-          Escape Ordinary.
+        <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 leading-tight">
+          Camp Wild.
           <br />
-          <span className="text-yellow-300">Sleep Under Stars.</span>
+          <span className="text-yellow-300"> Sleep Comfy.</span>
           <br />
-          <span className="">Wake Up to Wilderness.</span>
+          {/* <span className="">Wake Up to Wilderness.</span> */}
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-white/90 mb-8 sm:mb-10 max-w-3xl mx-auto font-poppins">
-          Experience nature&apos;s luxury at our boutique glamping resort. Adventure
-          awaits, comfort embraces, memories unfold.
+          Experience nature&apos;s luxury at our boutique glamping resort.
+          Adventure awaits, comfort embraces, memories unfold.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <Button
             size="lg"
-            className="bg-moss hover:bg-moss/90 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl shadow-xl hover-lift font-semibold w-full sm:w-auto"
+            className="bg-moss h-max hover:bg-moss/90 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl shadow-xl hover-lift font-semibold w-full sm:w-auto"
           >
             Book Your Escape
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-2 border-white text-white hover:bg-white hover:text-stone bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl font-semibold w-full sm:w-auto"
+            className="border-2 h-max border-white text-white hover:bg-white hover:text-stone bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl font-semibold w-full sm:w-auto"
           >
             Virtual Tour
           </Button>

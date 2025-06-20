@@ -93,7 +93,7 @@ const FAQ = () => {
           ))}
         </Accordion>
 
-        <div className="text-center mt-12 sm:mt-16">
+        <div id="contact" className="text-center pt-24">
           <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
             <h3 className="text-xl sm:text-2xl font-playfair font-bold text-stone mb-3 sm:mb-4">
               Still have questions? We&apos;re here to help!
