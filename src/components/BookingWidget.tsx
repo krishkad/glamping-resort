@@ -15,6 +15,7 @@ const packages = [
   {
     name: "Weekend Escape Plan",
     price: "₹6,500",
+    amount: 6500,
     originalPrice: "₹8,000",
     savings: "₹1,500",
     includes: ["2 nights stay", "All meals", "Guided trek", "Campfire dinner"],
@@ -24,6 +25,7 @@ const packages = [
     price: "₹9,200",
     originalPrice: "₹12,000",
     savings: "₹2,800",
+    amount: 9200,
     includes: [
       "3 nights stay",
       "All experiences",
@@ -36,6 +38,7 @@ const packages = [
     price: "₹4,800",
     originalPrice: "₹6,200",
     savings: "₹1,400",
+    amount: 4800,
     includes: [
       "2 nights stay",
       "Spa session",
@@ -51,6 +54,9 @@ const BookingWidget = () => {
   const [guests, setGuests] = useState(2);
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [promoCode, setPromoCode] = useState("");
+
+  const calculatedAmount =
+    (selectedPackage.amount ? selectedPackage.amount : 6000) + 320;
 
   return (
     <section id="bookings" className="py-20 px-6 lg:px-12 bg-secondary">
@@ -150,7 +156,7 @@ const BookingWidget = () => {
                         mode="single"
                         selected={checkIn}
                         onSelect={setCheckIn}
-                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         disabled={(date: any) => date < new Date()}
                       />
                     </PopoverContent>
@@ -180,7 +186,7 @@ const BookingWidget = () => {
                         mode="single"
                         selected={checkOut}
                         onSelect={setCheckOut}
-                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         disabled={(date: any) => date < new Date()}
                       />
                     </PopoverContent>
@@ -276,7 +282,9 @@ const BookingWidget = () => {
                 </div>
                 <div className="border-t border-gray-300 pt-3 flex justify-between items-center">
                   <span className="font-bold text-lg font-poppins">Total</span>
-                  <span className="text-2xl font-bold text-moss">₹7,850</span>
+                  <span className="text-2xl font-bold text-moss">
+                    ₹{calculatedAmount}
+                  </span>
                 </div>
                 <div className="text-coral text-sm mt-2 font-poppins">
                   You saved {selectedPackage.savings} with this package!
@@ -285,7 +293,7 @@ const BookingWidget = () => {
 
               {/* Book Button */}
               <Button className="w-full h-max bg-moss hover:bg-moss/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold">
-                Book Your Adventure - ₹7,850
+                Book Your Adventure - ₹{calculatedAmount}
               </Button>
 
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">

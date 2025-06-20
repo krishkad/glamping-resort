@@ -30,7 +30,7 @@ const Accommodations = () => {
       id: 3,
       name: "Treetop Cabin",
       image:
-        "https://images.unsplash.com/photo-1486022566142-4d5c7c8b8c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       price: "₹5,200",
       capacity: "2 Adults",
       features: ["Elevated Views", "Luxury Bath", "Balcony"],
