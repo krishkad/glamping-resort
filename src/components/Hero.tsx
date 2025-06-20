@@ -62,7 +62,7 @@ const Hero = () => {
           <Button
             size="lg"
             variant="outline"
-            className="border-2 h-max border-white text-white hover:bg-white hover:text-stone bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl font-semibold w-full sm:w-auto"
+            className="border-2 h-max border-white text-white hoverbg-white hover:text-stone-800  bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl font-semibold w-full sm:w-auto"
           >
             Virtual Tour
           </Button>
