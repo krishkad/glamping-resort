@@ -137,7 +137,7 @@ const Navbar = () => {
                   ))}
 
                   <Button
-                    className="bg-moss hover:bg-moss/90 text-white px-8 py-4 text-lg rounded-2xl font-semibold shadow-lg mt-8"
+                    className="bg-moss h-max hover:bg-moss/90 text-white px-8 py-4 text-lg rounded-2xl font-semibold shadow-lg mt-8"
                     onClick={() => {
                       setIsOpen(false);
                       router.push("#bookings");
