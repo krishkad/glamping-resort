@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { MapPin, Users, Bed, Star } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const properties = [
   {
@@ -127,7 +127,7 @@ const PropertyShowcase = () => {
               className="group hover-lift border-0 shadow-lg overflow-hidden p-0"
             >
               <div className="relative overflow-hidden">
-                <Link to={`/property/${property.id}`}>
+                <Link href={`/property/${property.id}`}>
                   <Carousel className="w-full">
                     <CarouselContent>
                       {property.images.map((image, index) => (
@@ -154,7 +154,7 @@ const PropertyShowcase = () => {
                   <MapPin className="w-4 h-4" />
                   <span className="text-sm">{property.location}</span>
                 </div>
-                <Link to={`/property/${property.id}`}>
+                <Link href={`/property/${property.id}`}>
                   <h3 className="text-xl font-serif font-semibold text-[#1a365d] mb-3">
                     {property.title}
                   </h3>
@@ -186,7 +186,7 @@ const PropertyShowcase = () => {
                     asChild
                     className="bg-[#d69e2e] hover:bg-yellow-600 text-white"
                   >
-                    <Link to={`/property/${property.id}`}>View More</Link>
+                    <Link href={`/property/${property.id}`}>View More</Link>
                   </Button>
                 </div>
               </CardContent>
