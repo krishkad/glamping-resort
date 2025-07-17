@@ -29,15 +29,15 @@ const PropertyBookingForm = ({ property }: PropertyBookingFormProps) => {
 
   const calculatedAmount =
     (parseInt(property.price) ? parseInt(property.price) : 6000) + 320;
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    checkIn: "",
-    checkOut: "",
-    guests: "",
-    requests: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   checkIn: "",
+  //   checkOut: "",
+  //   guests: "",
+  //   requests: "",
+  // });
 
   // const handleSubmit = (e: React.FormEvent) => {
   //   e.preventDefault();

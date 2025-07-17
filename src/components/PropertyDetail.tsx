@@ -473,9 +473,6 @@ const PropertyDetail = ({ id }: { id: string }) => {
   // const { id } = useParams();
   const pathname = usePathname();
 
-  if (!id) {
-    return null;
-  }
   const [property, setProperty] = useState<Property | null>(null);
 
   useEffect(() => {
@@ -491,6 +488,8 @@ const PropertyDetail = ({ id }: { id: string }) => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [pathname]);
+
+
 
   if (!property) {
     return (
