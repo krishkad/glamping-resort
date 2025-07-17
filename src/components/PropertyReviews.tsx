@@ -5,8 +5,18 @@ interface PropertyReviewsProps {
   propertyId: number;
 }
 
+type Review = {
+  id: number;
+  name: string;
+  title: string;
+  rating: number;
+  review: string;
+  avatar: string;
+  verified: boolean;
+};
+
 // Sample reviews for different properties
-const propertyReviews = {
+const propertyReviews: { [key: number]: Review[] } = {
   1: [
     {
       id: 1,
