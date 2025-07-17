@@ -11,7 +11,7 @@ import Navbar from "@/components/Navbar";
 const Home = () => {
   return (
     <div className="relative min-h-screen bg-background">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <Accommodations />
       <DayTimeline />
@@ -19,7 +19,7 @@ const Home = () => {
       <BookingWidget />
       <Testimonials />
       <FAQ />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -292,7 +292,7 @@ const BookingWidget = () => {
               </div>
 
               {/* Book Button */}
-              <Button className="w-full h-max bg-moss hover:bg-moss/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold">
+              <Button className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold">
                 Book Your Adventure - ₹{calculatedAmount}
               </Button>
 

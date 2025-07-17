@@ -1,55 +1,60 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Users } from "lucide-react";
+import Link from "next/link";
 
 const Accommodations = () => {
+
   const accommodations = [
     {
       id: 1,
-      name: "Forest Dome",
+      name: "Triangle Camp Retreat",
       image:
-        "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "₹4,500",
-      capacity: "2 Adults",
-      features: ["Private Deck", "AC", "Mountain Views"],
-      rating: 4.9,
-      reviews: 42,
+        "https://images.unsplash.com/photo-1718330009358-95be06f49aac?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      price: "₹800",
+      capacity: "2-4 People",
+      features: ["Riverside", "Yoga Deck", "Campfire"],
+      rating: 4.7,
+      reviews: 35,
+      href: "/triangle-tent",
     },
     {
       id: 2,
-      name: "Riverside Tent",
+      name: "Tent Camp Haven",
       image:
-        "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "₹3,800",
-      capacity: "2-4 People",
-      features: ["River Access", "Fire Pit", "Outdoor Bath"],
-      rating: 4.8,
-      reviews: 38,
+        "https://plus.unsplash.com/premium_photo-1669047983409-5879cfb7831a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      price: "₹600",
+      capacity: "2-6 People",
+      features: ["Desert Camping", "Camel Safari", "Stargazing"],
+      rating: 4.6,
+      reviews: 40,
+      href: "/tent-camp",
     },
     {
       id: 3,
-      name: "Treetop Cabin",
+      name: "Bamboo Cottage Oasis",
       image:
-        "https://images.unsplash.com/photo-1532339142463-fd0a8979791a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "₹5,200",
-      capacity: "2 Adults",
-      features: ["Elevated Views", "Luxury Bath", "Balcony"],
-      rating: 4.9,
-      reviews: 55,
+        "https://images.unsplash.com/photo-1703299943350-2a4987ef30a8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      price: "₹900",
+      capacity: "2-4 People",
+      features: ["Eco-Friendly", "Plantation Tours", "Hill Views"],
+      rating: 4.8,
+      reviews: 45,
+      href: "/bamboo-camp",
     },
     {
       id: 4,
-      name: "Family Safari Lodge",
+      name: "Luxury Camp Paradise",
       image:
-        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      price: "₹6,800",
-      capacity: "4-6 People",
-      features: ["2 Bedrooms", "Living Area", "Kids Zone"],
-      rating: 4.7,
-      reviews: 29,
+        "https://images.unsplash.com/photo-1630012074456-c616d05f2e35?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      price: "₹1,500",
+      capacity: "2-6 People",
+      features: ["Luxury Glamping", "Gourmet Dining", "Mountain Views"],
+      rating: 4.9,
+      reviews: 50,
+      href: "/luxury-camp",
     },
   ];
-
   return (
     <section id="accommodations" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-[1444px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,31 +77,35 @@ const Accommodations = () => {
               className="group hover-lift bg-white border-beige/30 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden p-0"
             >
               {/* Image */}
-              <div className="relative overflow-hidden">
-                <img
-                  src={accommodation.image}
-                  alt={accommodation.name}
-                  className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                  <div className="flex items-center space-x-1">
-                    <Star className="w-4 h-4 fill-moss text-moss" />
-                    <span className="text-sm font-semibold text-stone">
-                      {accommodation.rating}
-                    </span>
+              <Link href={accommodation.href}>
+                <div className="relative overflow-hidden">
+                  <img
+                    src={accommodation.image}
+                    alt={accommodation.name}
+                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
+                    <div className="flex items-center space-x-1">
+                      <Star className="w-4 h-4 fill-moss text-moss" />
+                      <span className="text-sm font-semibold text-stone">
+                        {accommodation.rating}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 left-4 bg-coral text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    {accommodation.price}/night
                   </div>
                 </div>
-                <div className="absolute bottom-4 left-4 bg-coral text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  {accommodation.price}/night
-                </div>
-              </div>
+              </Link>
 
               <CardContent className="p-0 px-6 pb-6 bg-white">
                 {/* Title & Capacity */}
                 <div className="mb-4">
-                  <h3 className="text-xl font-playfair font-semibold text-stone mb-2">
-                    {accommodation.name}
-                  </h3>
+                  <Link href={accommodation.href}>
+                    <h3 className="text-xl font-playfair font-semibold text-stone mb-2">
+                      {accommodation.name}
+                    </h3>
+                  </Link>
                   <div className="flex items-center text-stone/70 text-sm">
                     <Users className="w-4 h-4 mr-2" />
                     {accommodation.capacity}
@@ -125,9 +134,11 @@ const Accommodations = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Button className="w-full bg-moss hover:bg-moss/90 text-white rounded-2xl font-semibold py-3">
-                  View Details
-                </Button>
+                <Link href={accommodation.href}>
+                  <Button className="w-full bg-moss hover:bg-moss/90 text-white rounded-2xl font-semibold py-3">
+                    View Details
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
