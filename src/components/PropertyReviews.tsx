@@ -132,7 +132,9 @@ const PropertyReviews = ({ propertyId }: PropertyReviewsProps) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {reviews.map((review: any, index: any) => (
+          {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            reviews.map((review: any, index: any) => (
               <Card
                 key={review.id}
                 className="border-0 shadow-lg hover-lift h-full glass-effect bg-white/80 backdrop-blur-sm animate-fade-in p-0"
@@ -150,7 +152,7 @@ const PropertyReviews = ({ propertyId }: PropertyReviewsProps) => {
                       ))}
                     </div>
                     <p className="text-gray-700 text-lg leading-relaxed italic mb-4">
-                      "{review.review}"
+                      &quot;{review.review}&quot;
                     </p>
                   </div>
 
@@ -179,7 +181,8 @@ const PropertyReviews = ({ propertyId }: PropertyReviewsProps) => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            ))
+          }
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 
+import { Award } from 'lucide-react';
 import { Badge } from './ui/badge';
-import { Award, Star } from 'lucide-react';
 
 interface PropertyCredentialsProps {
   featuredIn: string[];

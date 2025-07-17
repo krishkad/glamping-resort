@@ -1,18 +1,16 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
 // import Navigation from "../components/Navigation";
-import Footer from "../components/Footer";
+import { usePathname } from "next/navigation";
+import PropertyAmenities from "../components/PropertiesAmenities";
+import PropertyBookingForm from "../components/PropertyBookingForm";
+import PropertyContact from "../components/PropertyContact";
+import PropertyGallery from "../components/PropertyGallery";
 import PropertyImageCarousel from "../components/PropertyImageCarousel";
 import PropertyInfo from "../components/PropertyInfo";
-import PropertyBookingForm from "../components/PropertyBookingForm";
-import PropertyReviews from "../components/PropertyReviews";
 import PropertyLocation from "../components/PropertyLocation";
-import PropertyGallery from "../components/PropertyGallery";
-import PropertyAmenities from "../components/PropertiesAmenities";
-import PropertyCredentials from "../components/PropertyCredentials";
-import PropertyContact from "../components/PropertyContact";
-import { usePathname } from "next/navigation";
+import PropertyReviews from "../components/PropertyReviews";
 
 type Amenity = {
   icon: string;
@@ -205,8 +203,6 @@ type Property = {
 //   },
 // ];
 
-
-
 const properties: Property[] = [
   {
     id: 1,
@@ -220,12 +216,11 @@ const properties: Property[] = [
     guests: 4,
     tags: ["Riverside", "Eco-Friendly", "Yoga Retreat", "Adventure"],
     coordinates: { lat: 30.0869, lng: 78.2676 },
-   images: [
+    images: [
       "https://images.unsplash.com/photo-1614159038996-f35d39c21290?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Tent near river
       "https://images.unsplash.com/photo-1718330008715-25c9c046426d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Aerial forest river
       "https://images.unsplash.com/photo-1718330009677-49d0896ada3b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Yoga outdoor
       "https://images.unsplash.com/photo-1479244209311-71e35c910f59?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Bonfire
-    
     ],
     amenities: [
       {
@@ -270,7 +265,11 @@ const properties: Property[] = [
         "Ideal for solo travelers, couples, or small groups seeking a blend of relaxation, adventure, and spiritual rejuvenation in the heart of nature.",
     },
     badge: "Top Eco-Retreat 2025",
-    featuredIn: ["Yoga Journal", "Travel + Leisure India", "National Geographic Traveler"],
+    featuredIn: [
+      "Yoga Journal",
+      "Travel + Leisure India",
+      "National Geographic Traveler",
+    ],
   },
   {
     id: 2,
@@ -282,7 +281,12 @@ const properties: Property[] = [
     rating: 4.6,
     beds: 3,
     guests: 6,
-    tags: ["Desert Camping", "Cultural Experience", "Star Gazing", "Camel Safari"],
+    tags: [
+      "Desert Camping",
+      "Cultural Experience",
+      "Star Gazing",
+      "Camel Safari",
+    ],
     coordinates: { lat: 26.9157, lng: 70.9083 },
     images: [
       "https://images.unsplash.com/photo-1607672390383-aa666b4761ea?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -328,7 +332,11 @@ const properties: Property[] = [
         "Perfect for families, couples, or groups seeking an immersive cultural experience and a unique desert adventure.",
     },
     badge: "Best Desert Camp 2025",
-    featuredIn: ["Lonely Planet", "Conde Nast Traveller India", "Outlook Traveller"],
+    featuredIn: [
+      "Lonely Planet",
+      "Conde Nast Traveller India",
+      "Outlook Traveller",
+    ],
   },
   {
     id: 3,
@@ -341,7 +349,7 @@ const properties: Property[] = [
     beds: 2,
     guests: 4,
     tags: ["Eco-Friendly", "Hill Retreat", "Nature Views", "Plantation Stay"],
-    coordinates: { lat: 11.6854, lng: 76.1320 },
+    coordinates: { lat: 11.6854, lng: 76.132 },
     images: [
       "https://images.unsplash.com/photo-1618033824982-210197228404?q=80&w=844&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1560265902-0e00c463bede?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -385,7 +393,11 @@ const properties: Property[] = [
         "Ideal for couples, families, or solo travelers looking for an eco-friendly retreat surrounded by nature’s beauty.",
     },
     badge: "Eco-Luxe Stay 2025",
-    featuredIn: ["National Geographic Traveller", "Vogue India", "Wayanad Tourism"],
+    featuredIn: [
+      "National Geographic Traveller",
+      "Vogue India",
+      "Wayanad Tourism",
+    ],
   },
   {
     id: 4,
@@ -397,7 +409,12 @@ const properties: Property[] = [
     rating: 4.9,
     beds: 3,
     guests: 6,
-    tags: ["Luxury Glamping", "Coffee Estate", "Gourmet Dining", "Mountain Views"],
+    tags: [
+      "Luxury Glamping",
+      "Coffee Estate",
+      "Gourmet Dining",
+      "Mountain Views",
+    ],
     coordinates: { lat: 12.3375, lng: 75.8069 },
     images: [
       "https://images.unsplash.com/photo-1688362379260-7ab7a4cdb6c6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -463,7 +480,11 @@ const PropertyDetail = ({ id }: { id: string }) => {
 
   useEffect(() => {
     const foundProperty = properties.find((p) => p.id === parseInt(id));
-    setProperty(foundProperty ? foundProperty : null);
+    if (foundProperty) {
+      setProperty(foundProperty);
+    } else {
+      setProperty(null);
+    }
     window.scrollTo(0, 0);
   }, [id]);
 
@@ -479,7 +500,7 @@ const PropertyDetail = ({ id }: { id: string }) => {
             Property Not Found
           </h1>
           <p className="text-gray-600">
-            The property you're looking for doesn't exist.
+            The property you&apos;re looking for doesn&apos;t exist.
           </p>
         </div>
       </div>
@@ -511,7 +532,6 @@ const PropertyDetail = ({ id }: { id: string }) => {
 
         {/* Booking Form Section */}
         <PropertyBookingForm property={property} />
-        
 
         {/* Additional Gallery */}
         <PropertyGallery property={property} />
@@ -525,7 +545,6 @@ const PropertyDetail = ({ id }: { id: string }) => {
         {/* Contact Section */}
         <PropertyContact />
       </main>
-
     </div>
   );
 };

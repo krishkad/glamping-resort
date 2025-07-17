@@ -6,10 +6,10 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { format } from "date-fns";
-import { CalendarIcon, CalendarDays, Users } from "lucide-react";
+import { CalendarDays, Users } from "lucide-react";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Calendar } from "./ui/calendar";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Input } from "./ui/input";
 
 interface PropertyBookingFormProps {
@@ -25,7 +25,7 @@ const PropertyBookingForm = ({ property }: PropertyBookingFormProps) => {
   const [guests, setGuests] = useState(2);
   const [kids, setKids] = useState(0);
   //  const [selectedPackage, setSelectedPackage] = useState(packages[0]);
-  const [promoCode, setPromoCode] = useState("");
+  // const [promoCode, setPromoCode] = useState("");
 
   const calculatedAmount =
     (parseInt(property.price) ? parseInt(property.price) : 6000) + 320;
@@ -39,41 +39,41 @@ const PropertyBookingForm = ({ property }: PropertyBookingFormProps) => {
     requests: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.checkIn ||
-      !formData.checkOut
-    ) {
-      //   toast({
-      //     title: "Please fill in all required fields",
-      //     variant: "destructive"
-      //   });
-      return;
-    }
+  //   if (
+  //     !formData.name ||
+  //     !formData.email ||
+  //     !formData.checkIn ||
+  //     !formData.checkOut
+  //   ) {
+  //     //   toast({
+  //     //     title: "Please fill in all required fields",
+  //     //     variant: "destructive"
+  //     //   });
+  //     return;
+  //   }
 
-    // Redirect to payment page with booking data and property info
-    // router.push('/payment', {
-    //   state: {
-    //     bookingData: {
-    //       ...formData,
-    //       propertyTitle: property.title,
-    //       price: property.price,
-    //       property: property.title.toLowerCase().replace(/\s+/g, '-')
-    //     }
-    //   }
-    // });
-  };
+  //   // Redirect to payment page with booking data and property info
+  //   // router.push('/payment', {
+  //   //   state: {
+  //   //     bookingData: {
+  //   //       ...formData,
+  //   //       propertyTitle: property.title,
+  //   //       price: property.price,
+  //   //       property: property.title.toLowerCase().replace(/\s+/g, '-')
+  //   //     }
+  //   //   }
+  //   // });
+  // };
 
-  const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
-  };
+  // const handleInputChange = (field: string, value: string) => {
+  //   setFormData((prev) => ({
+  //     ...prev,
+  //     [field]: value,
+  //   }));
+  // };
 
   return (
     <section className="py-16 bg-white">

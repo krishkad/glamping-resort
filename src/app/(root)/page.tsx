@@ -1,12 +1,10 @@
-import Hero from "@/components/Hero";
 import Accommodations from "@/components/Accommodations";
+import BookingWidget from "@/components/BookingWidget";
 import DayTimeline from "@/components/DayTimeline";
 import Experiences from "@/components/Experiences";
-import BookingWidget from "@/components/BookingWidget";
-import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
   return (
