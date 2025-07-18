@@ -27,8 +27,8 @@ const PropertyBookingForm = ({ property }: PropertyBookingFormProps) => {
   //  const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   // const [promoCode, setPromoCode] = useState("");
 
-  const calculatedAmount =
-    (parseInt(property.price) ? parseInt(property.price) : 6000) + 320;
+  // const calculatedAmount =
+  //   (parseInt(property.price) ? parseInt(property.price) : 6000) + 320;
   // const [formData, setFormData] = useState({
   //   name: "",
   //   email: "",
