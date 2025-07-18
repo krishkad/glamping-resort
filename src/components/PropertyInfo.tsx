@@ -76,7 +76,7 @@ const PropertyInfo = ({ property }: PropertyInfoProps) => {
             <div className="space-y-8">
               <div>
                 <h2 className="text-2xl  font-semibold text-[#1a365d] mb-6">
-                  About This Property
+                  About This Camp
                 </h2>
                 <div className="space-y-6 text-gray-700 leading-relaxed">
                   <p className="text-lg font-medium text-[#1a365d]">

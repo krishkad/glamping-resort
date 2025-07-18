@@ -157,7 +157,11 @@ const BookingWidget = () => {
                         selected={checkIn}
                         onSelect={setCheckIn}
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        disabled={(date: any) => date < new Date()}
+                        disabled={(date: any) => {
+                          const today = new Date();
+                          today.setHours(0, 0, 0, 0); // set to start of today
+                          return date < today;
+                        }}
                       />
                     </PopoverContent>
                   </Popover>
@@ -187,7 +191,11 @@ const BookingWidget = () => {
                         selected={checkOut}
                         onSelect={setCheckOut}
                         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                        disabled={(date: any) => date < new Date()}
+                        disabled={(date: any) => {
+                          const today = new Date();
+                          today.setHours(0, 0, 0, 0); // set to start of today
+                          return date < today;
+                        }}
                       />
                     </PopoverContent>
                   </Popover>
