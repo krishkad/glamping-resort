@@ -18,18 +18,7 @@ const Accommodations = () => {
       reviews: 35,
       href: "/triangle-tent",
     },
-    {
-      id: 2,
-      name: "Tent Camp Haven",
-      image:
-        "https://plus.unsplash.com/premium_photo-1669047983409-5879cfb7831a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "₹600",
-      capacity: "2-6 People",
-      features: ["Desert Camping", "Camel Safari", "Stargazing"],
-      rating: 4.6,
-      reviews: 40,
-      href: "/tent-camp",
-    },
+   
     {
       id: 3,
       name: "Bamboo Cottage Oasis",
@@ -70,7 +59,7 @@ const Accommodations = () => {
         </div>
 
         {/* Accommodations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {accommodations.map((accommodation) => (
             <Card
               key={accommodation.id}
