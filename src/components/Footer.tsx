@@ -39,7 +39,7 @@ const Footer = () => {
               Join the CampHaven Adventure Club
             </h3>
             <p className="text-lg text-white/80 max-w-2xl mx-auto font-poppins">
-              Get exclusive access to our Nature Escape Guide, ₹500 off your
+              Get exclusive access to our Nature Escape Guide, $500 off your
               first booking, and insider tips from fellow adventurers
             </p>
           </div>
@@ -87,7 +87,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3 text-white/80 mb-4">
               <MapPin className="w-5 h-5 text-coral" />
               <span className="font-poppins">
-                Sahyadri Mountains, Maharashtra, India
+                Example, Example, State
               </span>
             </div>
 

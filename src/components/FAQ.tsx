@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "Are pets welcome at CampHaven?",
     answer:
-      "Yes! We welcome well-behaved pets in select pet-friendly accommodations with advance notice and a small additional fee of ₹500 per night. Please inform us during booking to ensure we assign you a suitable tent.",
+      "Yes! We welcome well-behaved pets in select pet-friendly accommodations with advance notice and a small additional fee of $500 per night. Please inform us during booking to ensure we assign you a suitable tent.",
     category: "Policies",
   },
   {
@@ -28,7 +28,7 @@ const faqs = [
   {
     question: "What are your check-in and check-out times?",
     answer:
-      "Check-in is from 2:00 PM and check-out is by 11:00 AM. Early check-in or late check-out may be available upon request and subject to availability for an additional fee of ₹500.",
+      "Check-in is from 2:00 PM and check-out is by 11:00 AM. Early check-in or late check-out may be available upon request and subject to availability for an additional fee of $500.",
     category: "Stay Details",
   },
   {
@@ -40,7 +40,7 @@ const faqs = [
   {
     question: "Do you provide transportation?",
     answer:
-      "We can arrange pickup from the nearest railway station (45 minutes away) for ₹800 per vehicle. Detailed driving directions, GPS coordinates, and public transport options are provided for self-drive guests.",
+      "We can arrange pickup from the nearest railway station (45 minutes away) for $800 per vehicle. Detailed driving directions, GPS coordinates, and public transport options are provided for self-drive guests.",
     category: "Travel",
   },
   {

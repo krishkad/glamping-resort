@@ -14,17 +14,17 @@ import { useState } from "react";
 const packages = [
   {
     name: "Weekend Escape Plan",
-    price: "₹6,500",
+    price: "$6,500",
     amount: 6500,
-    originalPrice: "₹8,000",
-    savings: "₹1,500",
+    originalPrice: "$8,000",
+    savings: "$1,500",
     includes: ["2 nights stay", "All meals", "Guided trek", "Campfire dinner"],
   },
   {
     name: "Nature Lovers Package",
-    price: "₹9,200",
-    originalPrice: "₹12,000",
-    savings: "₹2,800",
+    price: "$9,200",
+    originalPrice: "$12,000",
+    savings: "$2,800",
     amount: 9200,
     includes: [
       "3 nights stay",
@@ -35,9 +35,9 @@ const packages = [
   },
   {
     name: "Midweek Chill Deal",
-    price: "₹4,800",
-    originalPrice: "₹6,200",
-    savings: "₹1,400",
+    price: "$4,800",
+    originalPrice: "$6,200",
+    savings: "$1,400",
     amount: 4800,
     includes: [
       "2 nights stay",
@@ -286,12 +286,12 @@ const BookingWidget = () => {
                 </div>
                 <div className="flex justify-between items-center mb-3">
                   <span className="font-poppins">Service fee</span>
-                  <span>₹350</span>
+                  <span>$350</span>
                 </div>
                 <div className="border-t border-gray-300 pt-3 flex justify-between items-center">
                   <span className="font-bold text-lg font-poppins">Total</span>
                   <span className="text-2xl font-bold text-moss">
-                    ₹{calculatedAmount}
+                    ${calculatedAmount}
                   </span>
                 </div>
                 <div className="text-coral text-sm mt-2 font-poppins">
@@ -301,7 +301,7 @@ const BookingWidget = () => {
 
               {/* Book Button */}
               <Button className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold">
-                Book Your Adventure - ₹{calculatedAmount}
+                Book Your Adventure - ${calculatedAmount}
               </Button>
 
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">

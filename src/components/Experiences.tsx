@@ -21,7 +21,7 @@ const experiences = [
     icon: "🥾",
     duration: "3 hours",
     category: "Adventure",
-    price: "₹800",
+    price: "$800",
     color: "from-green-500 to-emerald-600",
   },
   {
@@ -31,7 +31,7 @@ const experiences = [
     icon: "🛶",
     duration: "2.5 hours",
     category: "Adventure",
-    price: "₹1200",
+    price: "$1200",
     color: "from-blue-400 to-cyan-500",
   },
   {
@@ -41,7 +41,7 @@ const experiences = [
     icon: "🌟",
     duration: "2 hours",
     category: "Family-Friendly",
-    price: "₹500",
+    price: "$500",
     color: "from-purple-500 to-indigo-600",
   },
   {
@@ -51,7 +51,7 @@ const experiences = [
     icon: "🔥",
     duration: "2.5 hours",
     category: "Family-Friendly",
-    price: "₹1000",
+    price: "$1000",
     color: "from-[#ff6b6b] to-pink-500",
   },
   {
@@ -61,7 +61,7 @@ const experiences = [
     icon: "🏺",
     duration: "2 hours",
     category: "Wellness",
-    price: "₹700",
+    price: "$700",
     color: "from-amber-500 to-orange-600",
   },
 ];

@@ -56,7 +56,7 @@ type Property = {
 //     location: "Santorini, Greece",
 //     description:
 //       "Stunning cliffside villa with panoramic Aegean Sea views and infinity pool. This architectural masterpiece combines traditional Cycladic design with modern luxury amenities. Wake up to breathtaking sunrises over the azure waters while enjoying the privacy and exclusivity of your own Mediterranean paradise.",
-//     price: "₹1,800",
+//     price: "$1,800",
 //     rating: 4.9,
 //     beds: 4,
 //     guests: 8,
@@ -140,7 +140,7 @@ type Property = {
 //     location: "Aspen, Colorado",
 //     description:
 //       "Luxury ski lodge with private hot tub and mountain views. Nestled in the heart of the Rocky Mountains, this exquisite lodge offers world-class skiing, cozy fireplaces, and unmatched mountain hospitality in an intimate alpine setting.",
-//     price: "₹1,200",
+//     price: "$1,200",
 //     rating: 4.8,
 //     beds: 6,
 //     guests: 12,
@@ -210,7 +210,7 @@ const properties: Property[] = [
     location: "Rishikesh, India",
     description:
       "Experience serene camping in geometric triangle tents nestled along the Ganges River. These eco-friendly camps offer a blend of adventure and tranquility, surrounded by lush forests and Himalayan foothills, perfect for yoga enthusiasts and nature lovers.",
-    price: "₹800",
+    price: "$800",
     rating: 4.7,
     beds: 0,
     guests: 4,
@@ -277,7 +277,7 @@ const properties: Property[] = [
     location: "Jaisalmer, India",
     description:
       "Traditional tent camps in the heart of the Thar Desert, offering an authentic Rajasthani experience. Enjoy starlit nights, camel safaris, and cultural performances in a setting that captures the essence of desert life.",
-    price: "₹600",
+    price: "$600",
     rating: 4.6,
     beds: 3,
     guests: 6,
@@ -344,7 +344,7 @@ const properties: Property[] = [
     location: "Wayanad, India",
     description:
       "Charming bamboo cottages nestled in the lush greenery of Wayanad. These eco-friendly retreats offer a rustic yet comfortable stay, surrounded by coffee plantations and misty hills, ideal for nature enthusiasts.",
-    price: "₹900",
+    price: "$900",
     rating: 4.8,
     beds: 2,
     guests: 4,
@@ -405,7 +405,7 @@ const properties: Property[] = [
     location: "Coorg, India",
     description:
       "Indulge in opulent camping in the heart of Coorg’s coffee estates. These luxury camps combine glamour with nature, offering plush accommodations, gourmet dining, and stunning views of the Western Ghats.",
-    price: "₹1,500",
+    price: "$1,500",
     rating: 4.9,
     beds: 3,
     guests: 6,

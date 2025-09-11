@@ -55,14 +55,14 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <Button
             size="lg"
-            className="bg-moss h-max hover:bg-moss/90 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl shadow-xl hover-lift font-semibold w-full sm:w-auto"
+            className="bg-moss h-max hover:bg-moss/90 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl hover-lift font-semibold w-full sm:w-auto"
           >
             Book Your Escape
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-2 h-max border-white text-white hoverbg-white hover:text-stone-800  bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-2xl font-semibold w-full sm:w-auto"
+            className="border-2 h-max border-white text-white hoverbg-white hover:text-stone-800  bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full font-semibold w-full sm:w-auto"
           >
             Virtual Tour
           </Button>

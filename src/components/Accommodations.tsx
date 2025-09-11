@@ -11,7 +11,7 @@ const Accommodations = () => {
       name: "Triangle Camp Retreat",
       image:
         "https://images.unsplash.com/photo-1718330009358-95be06f49aac?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "₹800",
+      price: "$80",
       capacity: "2-4 People",
       features: ["Riverside", "Yoga Deck", "Campfire"],
       rating: 4.7,
@@ -24,7 +24,7 @@ const Accommodations = () => {
       name: "Bamboo Cottage Oasis",
       image:
         "https://images.unsplash.com/photo-1703299943350-2a4987ef30a8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "₹900",
+      price: "$90",
       capacity: "2-4 People",
       features: ["Eco-Friendly", "Plantation Tours", "Hill Views"],
       rating: 4.8,
@@ -36,7 +36,7 @@ const Accommodations = () => {
       name: "Luxury Camp Paradise",
       image:
         "https://images.unsplash.com/photo-1630012074456-c616d05f2e35?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "₹1,500",
+      price: "$150",
       capacity: "2-6 People",
       features: ["Luxury Glamping", "Gourmet Dining", "Mountain Views"],
       rating: 4.9,
