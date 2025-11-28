@@ -18,7 +18,7 @@ const timelineEvents = [
       "Arrive at the campsite and begin your getaway with a smooth and effortless check-in. Settle into your accommodation and soak in the natural surroundings.",
     icon: Sun,
     image:
-      "/images/new_images/image-5.jpeg",
+      "/images/new_images/image-5.webp",
     color: "bg-gradient-to-r from-green-400 to-green-600",
   },
   {
@@ -37,7 +37,7 @@ const timelineEvents = [
     description:
       "Have fun with a variety of engaging activities like badminton, cricket, carrom, and more—perfect for families, friends, and adventure lovers.",
     icon: Drum,
-    image: "/images/new_images/image-18.jpeg",
+    image: "/images/new_images/image-18.webp",
     color: "bg-gradient-to-r from-orange-400 to-orange-600",
   },
   {
@@ -47,7 +47,7 @@ const timelineEvents = [
       "Relish freshly grilled barbecue snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
     icon: Flame,
     image:
-     "/images/new_images/image-16.jpeg",
+     "/images/new_images/image-16.webp",
     color: "bg-gradient-to-r from-red-500 to-red-700",
   },
   {

@@ -19,15 +19,15 @@ const Accommodations = () => {
       category: "dome",
       images: [
         {
-          url: "/images/accommodations/tent/tent-1.jpeg",
+          url: "/images/accommodations/tent/tent-1.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/accommodations/tent/tent-2.jpeg",
+          url: "/images/accommodations/tent/tent-2.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/accommodations/tent/tent-3.jpeg",
+          url: "/images/accommodations/tent/tent-3.webp",
           imageClassName: "object-center",
         },
         {
@@ -55,27 +55,27 @@ const Accommodations = () => {
       category: "cabin",
       images: [
         {
-          url: "/images/accommodations/triangle/triangle-1.jpeg",
+          url: "/images/accommodations/triangle/triangle-1.webp",
           imageClassName: "object-[68%_78%]",
         },
         {
-          url: "/images/accommodations/triangle/triangle-2.jpeg",
+          url: "/images/accommodations/triangle/triangle-2.webp",
           imageClassName: "object-[68%_78%]",
         },
         {
-          url: "/images/accommodations/triangle/triangle-3.jpeg",
+          url: "/images/accommodations/triangle/triangle-3.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/accommodations/triangle/triangle-4.jpeg",
+          url: "/images/accommodations/triangle/triangle-4.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/new_images/image-37.jpeg",
+          url: "/images/new_images/image-37.webp",
           imageClassName: "object-cover object-[55%_65%]",
         },
         {
-          url: "/images/new_images/image-40.jpeg",
+          url: "/images/new_images/image-40.webp",
           imageClassName: "object-cover object-center",
         },
       ],
@@ -93,39 +93,39 @@ const Accommodations = () => {
       category: "tent",
       images: [
         {
-          url: "/images/accommodations/delux/delux-1.jpeg",
+          url: "/images/accommodations/delux/delux-1.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/accommodations/delux/delux-bday.jpeg",
+          url: "/images/accommodations/delux/delux-bday.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/accommodations/delux/delux-bed.jpeg",
+          url: "/images/accommodations/delux/delux-bed.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/accommodations/delux/delux-2.jpeg",
+          url: "/images/accommodations/delux/delux-2.webp",
           imageClassName: "object-center object-contain",
         },
         {
-          url: "/images/accommodations/delux/delux-window.jpeg",
+          url: "/images/accommodations/delux/delux-window.webp",
           imageClassName: "object-center object-cover",
         },
         {
-          url: "/images/accommodations/delux/delux-3.jpeg",
+          url: "/images/accommodations/delux/delux-3.webp",
           imageClassName: "object-center",
         },
         {
-          url: "/images/accommodations/delux/delux-outside.jpeg",
+          url: "/images/accommodations/delux/delux-outside.webp",
           imageClassName: "object-[60%_70%]",
         },
         {
-          url: "/images/accommodations/delux/delux-4.jpeg",
+          url: "/images/accommodations/delux/delux-4.webp",
           imageClassName: "object-center object-contain",
         },
         {
-          url: "/images/accommodations/delux/delux-washroom.jpeg",
+          url: "/images/accommodations/delux/delux-washroom.webp",
           imageClassName: "object-center object-contain",
         },
       ],
