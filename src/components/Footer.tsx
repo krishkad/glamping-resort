@@ -14,16 +14,16 @@ const CALL_PHONE_NO = `${process.env.NEXT_PUBLIC_CALL_PHONE_NO}`;
 const EMAIL = process.env.NEXT_PUBLIC_EMAIL;
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const [showSuccess, setShowSuccess] = useState(false);
+  // const [email, setEmail] = useState("");
+  // const [showSuccess, setShowSuccess] = useState(false);
   const [render, setRender] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setShowSuccess(true);
-    setEmail("");
-    setTimeout(() => setShowSuccess(false), 3000);
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setShowSuccess(true);
+  //   setEmail("");
+  //   setTimeout(() => setShowSuccess(false), 3000);
+  // };
 
   useEffect(() => {
     if (!render) setRender(true);

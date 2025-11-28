@@ -10,7 +10,6 @@ import {
 import { format } from "date-fns";
 import { CalendarDays, Gift, Users } from "lucide-react";
 import { useState } from "react";
-import { Input } from "./ui/input";
 
 const packages = [
   {
@@ -66,7 +65,6 @@ const BookingWidget = () => {
   const [guests, setGuests] = useState(2);
   const [kids, setKids] = useState(0);
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
-  const [promoCode, setPromoCode] = useState("");
 
   const calculatedAmount = selectedPackage.amount
     ? selectedPackage.amount * guests
@@ -408,7 +406,7 @@ const BookingWidget = () => {
 
                 {/* Highlighted Savings Banner */}
                 <div className="bg-green-100 text-green-700 text-sm p-2 rounded-md font-poppins text-center font-semibold">
-                  🎉 You’re getting a steal! You saved ₹
+                  🎉 You&apos;re getting a steal! You saved ₹
                   {parseInt(selectedPackage.savings.split("₹")[1]) * guests}{" "}
                   on this package!
                 </div>

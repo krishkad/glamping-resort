@@ -1,8 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star, Users } from "lucide-react";
-import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Badge } from "./ui/badge";
 import {
   Carousel,
   CarouselContent,
@@ -10,8 +9,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-import { Badge } from "./ui/badge";
-import { cn } from "@/lib/utils";
 
 const Accommodations = () => {
   const accommodations = [
