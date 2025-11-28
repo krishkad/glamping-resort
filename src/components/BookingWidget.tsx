@@ -10,41 +10,53 @@ import {
 import { format } from "date-fns";
 import { CalendarDays, Gift, Users } from "lucide-react";
 import { useState } from "react";
+import { Input } from "./ui/input";
 
 const packages = [
   {
-    name: "Weekend Escape Plan",
-    price: "$6,500",
-    amount: 6500,
-    originalPrice: "$8,000",
-    savings: "$1,500",
-    includes: ["2 nights stay", "All meals", "Guided trek", "Campfire dinner"],
+    name: "Regular Tent Stay",
+    price: "₹999",
+    amount: 999,
+    originalPrice: "₹1200",
+    savings: "₹201",
+    includes: [
+      "Cozy dome-style tent stay",
+      "Panoramic lake & nature views",
+      "Suitable for 2 guests",
+      "Comfortable & scenic camping experience",
+    ],
+    description:
+      "Immersive dome-style tent offering panoramic views and a cozy, relaxed stay perfect for couples or small groups.",
   },
   {
-    name: "Nature Lovers Package",
-    price: "$9,200",
-    originalPrice: "$12,000",
-    savings: "$2,800",
-    amount: 9200,
+    name: "Triangle Tent Stay",
+    price: "₹1200",
+    amount: 1200,
+    originalPrice: "₹1600",
+    savings: "₹400",
     includes: [
-      "3 nights stay",
-      "All experiences",
-      "Photography guide",
-      "Sunrise yoga",
+      "Stylish triangle tent stay",
+      "Warm lighting & romantic interiors",
+      "Suitable for 4 guests",
+      "Perfect for couples seeking comfort",
     ],
+    description:
+      "A stylish and cozy triangle tent with a serene lakeside view, ideal for couples who want a comfortable and romantic nature escape.",
   },
   {
-    name: "Midweek Chill Deal",
-    price: "$4,800",
-    originalPrice: "$6,200",
-    savings: "$1,400",
-    amount: 4800,
+    name: "Deluxe Cottage Experience",
+    price: "₹2999",
+    amount: 2999,
+    originalPrice: "₹3600",
+    savings: "₹601",
     includes: [
-      "2 nights stay",
-      "Spa session",
-      "Organic meals",
-      "Late checkout",
+      "Luxurious cottage stay",
+      "Elegant interiors & private washroom",
+      "Modern amenities",
+      "Perfect for couples & families",
     ],
+    description:
+      "Premium lakeside cottages with modern interiors, private washrooms, and a cozy, relaxing atmosphere for couples & families.",
   },
 ];
 
@@ -52,11 +64,13 @@ const BookingWidget = () => {
   const [checkIn, setCheckIn] = useState<Date>();
   const [checkOut, setCheckOut] = useState<Date>();
   const [guests, setGuests] = useState(2);
+  const [kids, setKids] = useState(0);
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   const [promoCode, setPromoCode] = useState("");
 
-  const calculatedAmount =
-    (selectedPackage.amount ? selectedPackage.amount : 6000) + 320;
+  const calculatedAmount = selectedPackage.amount
+    ? selectedPackage.amount * guests
+    : 6000;
 
   return (
     <section id="bookings" className="py-20 px-6 lg:px-12 bg-secondary">
@@ -72,7 +86,6 @@ const BookingWidget = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Packages */}
           <div className="space-y-6">
             <h3 className="text-2xl font-playfair font-bold text-stone mb-6">
               Choose Your Package
@@ -96,20 +109,20 @@ const BookingWidget = () => {
                       <div className="flex items-center space-x-2 mt-2">
                         <Gift className="w-4 h-4 text-coral" />
                         <span className="text-coral font-semibold">
-                          Save {pkg.savings}
+                          Save {pkg.savings}/per
                         </span>
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="text-2xl font-bold text-moss">
-                        {pkg.price}
+                        {pkg.price}/per
                       </div>
                       <div className="text-sm text-stone/60 line-through">
-                        {pkg.originalPrice}
+                        {pkg.originalPrice}/per
                       </div>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 gap-2">
                     {pkg.includes.map((item, idx) => (
                       <div
                         key={idx}
@@ -124,15 +137,55 @@ const BookingWidget = () => {
             ))}
           </div>
 
-          {/* Booking Form */}
           <Card className="rounded-3xl shadow-2xl border-0 bg-white">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-2xl font-playfair text-stone">
                 Reserve Your Escape
               </CardTitle>
             </CardHeader>
-            <CardContent className="w-full p-8">
+            <CardContent className="w-full p-8 pt-0">
               <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-4 mb-6">
+                {/* Name */}
+                <div className="w-full">
+                  <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
+                    Name
+                  </label>
+                  <input
+                    placeholder="Name"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                  />
+                </div>
+                {/* Last Name */}
+                <div className="w-full">
+                  <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
+                    Last Name
+                  </label>
+                  <input
+                    placeholder="Last Name"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                  />
+                </div>
+                {/* E-Mail */}
+                <div className="w-full">
+                  <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
+                    E-mail
+                  </label>
+                  <input
+                    placeholder="example@gmail.com"
+                    type="email"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                  />
+                </div>
+                <div className="w-full">
+                  <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
+                    Phone No.
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="+91 1122334455"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                  />
+                </div>
                 {/* Check-in Date */}
                 <div className="w-full">
                   <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
@@ -212,7 +265,7 @@ const BookingWidget = () => {
                     variant="outline"
                     size="sm"
                     onClick={() => setGuests(Math.max(1, guests - 1))}
-                    className="rounded-full w-12 h-12 border-2 hover:border-moss"
+                    className="rounded-full w-12 h-12 border-2 hover:border-moss select-none"
                   >
                     -
                   </Button>
@@ -224,7 +277,7 @@ const BookingWidget = () => {
                     variant="outline"
                     size="sm"
                     onClick={() => setGuests(guests + 1)}
-                    className="rounded-full w-12 h-12 border-2 hover:border-moss"
+                    className="rounded-full w-12 h-12 border-2 hover:border-moss select-none"
                   >
                     +
                   </Button>
@@ -239,20 +292,20 @@ const BookingWidget = () => {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => setGuests(Math.max(1, guests - 1))}
-                    className="rounded-full w-12 h-12 border-2 hover:border-moss"
+                    onClick={() => setKids(Math.max(0, kids - 1))}
+                    className="rounded-full w-12 h-12 border-2 hover:border-moss select-none"
                   >
                     -
                   </Button>
                   <div className="flex-1 text-center font-semibold bg-gray-50 py-3 rounded-2xl border-2">
                     <Users className="inline mr-2 h-4 w-4 text-moss" />
-                    {guests} Kids
+                    {kids} Kids
                   </div>
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => setGuests(guests + 1)}
-                    className="rounded-full w-12 h-12 border-2 hover:border-moss"
+                    onClick={() => setKids(kids + 1)}
+                    className="rounded-full w-12 h-12 border-2 hover:border-moss select-none"
                   >
                     +
                   </Button>
@@ -260,7 +313,7 @@ const BookingWidget = () => {
               </div>
 
               {/* Promo Code */}
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
                   Promo Code
                 </label>
@@ -276,32 +329,94 @@ const BookingWidget = () => {
                     Apply
                   </Button>
                 </div>
-              </div>
+              </div> */}
 
               {/* Pricing Summary */}
-              <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl py-6 mb-6">
+              {/* <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl py-6 mb-6">
                 <div className="flex justify-between items-center mb-3">
-                  <span className="font-poppins">{selectedPackage.name}</span>
-                  <span className="font-bold">{selectedPackage.price}</span>
+                  <span className="font-poppins font-semibold">
+                    {selectedPackage.name}
+                  </span>
+                  <span className="font-bold">
+                    {selectedPackage.price}/person
+                  </span>
                 </div>
                 <div className="flex justify-between items-center mb-3">
-                  <span className="font-poppins">Service fee</span>
-                  <span>$350</span>
+                  <span className="font-poppins">Saving</span>
+                  <span>{selectedPackage.savings}/person</span>
                 </div>
                 <div className="border-t border-gray-300 pt-3 flex justify-between items-center">
+                  <span className="font-bold text-sm font-poppins">
+                    Total Savings
+                  </span>
+                  <span className="text-lg font-bold text-moss">
+                    ₹{parseInt(selectedPackage.savings.split("₹")[1]) * guests}
+                  </span>
+                </div>
+                <div className=" pt-3 flex justify-between items-center">
                   <span className="font-bold text-lg font-poppins">Total</span>
                   <span className="text-2xl font-bold text-moss">
-                    ${calculatedAmount}
+                    ₹{calculatedAmount}
                   </span>
                 </div>
                 <div className="text-coral text-sm mt-2 font-poppins">
-                  You saved {selectedPackage.savings} with this package!
+                  You saved ₹
+                  {parseInt(selectedPackage.savings.split("₹")[1]) * guests}{" "}
+                  with this package!
+                </div>
+              </div> */}
+              <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl py-6 space-y-4">
+                {/* Package Name + Price */}
+                <div className="flex justify-between items-center">
+                  <span className="font-poppins font-semibold  sm:text-lg">
+                    {selectedPackage.name}
+                  </span>
+                  <span className="font-bold sm:text-lg text-moss">
+                    {selectedPackage.price}/person
+                  </span>
+                </div>
+
+                {/* Per Person Savings */}
+                <div className="flex justify-between items-center">
+                  <span className="font-poppins text-sm text-gray-700">
+                    You Save (per person)
+                  </span>
+                  <span className="font-semibold text-green-600">
+                    {selectedPackage.savings}
+                  </span>
+                </div>
+
+                {/* Total Savings */}
+                <div className="border-t border-gray-300 pt-4 flex justify-between items-center">
+                  <span className="font-poppins font-semibold text-sm">
+                    Total Savings ({guests} guests)
+                  </span>
+                  <span className="text-xl font-extrabold text-green-700">
+                    ₹{parseInt(selectedPackage.savings.split("₹")[1]) * guests}
+                  </span>
+                </div>
+
+                {/* Total Amount */}
+                <div className="pt-1 flex justify-between items-center">
+                  <span className="font-poppins font-bold text-base">
+                    Your Total
+                  </span>
+                  <span className="text-3xl font-extrabold text-moss">
+                    ₹{calculatedAmount}
+                  </span>
+                </div>
+
+                {/* Highlighted Savings Banner */}
+                <div className="bg-green-100 text-green-700 text-sm p-2 rounded-md font-poppins text-center font-semibold">
+                  🎉 You’re getting a steal! You saved ₹
+                  {parseInt(selectedPackage.savings.split("₹")[1]) * guests}{" "}
+                  on this package!
                 </div>
               </div>
 
               {/* Book Button */}
               <Button className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold">
-                Book Your Adventure - ${calculatedAmount}
+                Book Your Adventure - ₹{calculatedAmount}
               </Button>
 
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">

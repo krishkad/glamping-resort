@@ -1,56 +1,153 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Users } from "lucide-react";
 import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
+import { Badge } from "./ui/badge";
+import { cn } from "@/lib/utils";
 
 const Accommodations = () => {
-
   const accommodations = [
     {
       id: 1,
-      name: "Triangle Camp Retreat",
-      image:
-        "https://images.unsplash.com/photo-1718330009358-95be06f49aac?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "$80",
-      capacity: "2-4 People",
-      features: ["Riverside", "Yoga Deck", "Campfire"],
-      rating: 4.7,
-      reviews: 35,
-      href: "/triangle-tent",
+      name: "Regular Tent",
+      category: "dome",
+      images: [
+        {
+          url: "/images/accommodations/tent/tent-1.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/tent/tent-2.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/tent/tent-3.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/tent/tent-4.webp",
+          imageClassName: "object-center",
+        },
+      ],
+      price: 999,
+      beforePrice: 1200,
+      guests: 1,
+      amenities: [
+        "Private Bathroom",
+        "AC/Heating",
+        "WiFi",
+        "Fireplace",
+        "Deck",
+      ],
+      description:
+        "Cozy dome-style tents offering an immersive stay with panoramic lake and nature views. Perfect for couples and groups seeking a comfortable, relaxed, and scenic camping experience.",
     },
-   
+
+    {
+      id: 2,
+      name: "Triangle Tent",
+      category: "cabin",
+      images: [
+        {
+          url: "/images/accommodations/triangle/triangle-1.jpeg",
+          imageClassName: "object-[68%_78%]",
+        },
+        {
+          url: "/images/accommodations/triangle/triangle-2.jpeg",
+          imageClassName: "object-[68%_78%]",
+        },
+        {
+          url: "/images/accommodations/triangle/triangle-3.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/triangle/triangle-4.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/new_images/image-37.jpeg",
+          imageClassName: "object-cover object-[55%_65%]",
+        },
+        {
+          url: "/images/new_images/image-40.jpeg",
+          imageClassName: "object-cover object-center",
+        },
+      ],
+      price: 1200,
+      beforePrice: 1500,
+      guests: 2,
+      amenities: ["Full Kitchen", "Fireplace", "Hot Tub", "WiFi", "BBQ Grill"],
+      description:
+        "Stylish triangle tents with a serene lake view, designed for couples who want added comfort and a cozy, romantic escape.",
+    },
+
     {
       id: 3,
-      name: "Bamboo Cottage Oasis",
-      image:
-        "https://images.unsplash.com/photo-1703299943350-2a4987ef30a8?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "$90",
-      capacity: "2-4 People",
-      features: ["Eco-Friendly", "Plantation Tours", "Hill Views"],
-      rating: 4.8,
-      reviews: 45,
-      href: "/bamboo-camp",
-    },
-    {
-      id: 4,
-      name: "Luxury Camp Paradise",
-      image:
-        "https://images.unsplash.com/photo-1630012074456-c616d05f2e35?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      price: "$150",
-      capacity: "2-6 People",
-      features: ["Luxury Glamping", "Gourmet Dining", "Mountain Views"],
-      rating: 4.9,
-      reviews: 50,
-      href: "/luxury-camp",
+      name: "Deluxe Cottages",
+      category: "tent",
+      images: [
+        {
+          url: "/images/accommodations/delux/delux-1.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/delux/delux-bday.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/delux/delux-bed.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/delux/delux-2.jpeg",
+          imageClassName: "object-center object-contain",
+        },
+        {
+          url: "/images/accommodations/delux/delux-window.jpeg",
+          imageClassName: "object-center object-cover",
+        },
+        {
+          url: "/images/accommodations/delux/delux-3.jpeg",
+          imageClassName: "object-center",
+        },
+        {
+          url: "/images/accommodations/delux/delux-outside.jpeg",
+          imageClassName: "object-[60%_70%]",
+        },
+        {
+          url: "/images/accommodations/delux/delux-4.jpeg",
+          imageClassName: "object-center object-contain",
+        },
+        {
+          url: "/images/accommodations/delux/delux-washroom.jpeg",
+          imageClassName: "object-center object-contain",
+        },
+      ],
+      price: 2999,
+      beforePrice: 3200,
+      guests: 4,
+      amenities: ["Private Bathroom", "River View", "Firepit", "WiFi"],
+      description:
+        "Luxurious lake-touch cottages designed for couples and families, offering a private getaway with elegant interiors and modern amenities.",
     },
   ];
+
   return (
     <section id="accommodations" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-[1444px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-stone mb-4 sm:mb-6">
-            Your Home in the <span className="text-moss">Wild</span>
+          <h2 className="text-4xl lg:text-6xl font-playfair font-bold text-stone mb-4 sm:mb-6">
+            Find Your Escape <br className="sm:hidden" />
+            <span className="text-moss">In Pawna</span>
           </h2>
           <p className="text-lg sm:text-xl text-stone/80 max-w-3xl mx-auto font-poppins">
             Choose from our handpicked collection of luxury accommodations, each
@@ -58,90 +155,156 @@ const Accommodations = () => {
           </p>
         </div>
 
-        {/* Accommodations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
-          {accommodations.map((accommodation) => (
-            <Card
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {accommodations.map((accommodation, index) => (
+            <div
               key={accommodation.id}
-              className="group hover-lift bg-white border-beige/30 shadow-lg hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden p-0"
+              className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-105 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image */}
-              <Link href={accommodation.href}>
-                <div className="relative overflow-hidden">
-                  <img
-                    src={accommodation.image}
-                    alt={accommodation.name}
-                    className="w-full h-48 sm:h-56 object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1">
-                    <div className="flex items-center space-x-1">
-                      <Star className="w-4 h-4 fill-moss text-moss" />
-                      <span className="text-sm font-semibold text-stone">
-                        {accommodation.rating}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 bg-coral text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {accommodation.price}/night
-                  </div>
-                </div>
-              </Link>
+              {/* Image Carousel */}
+              <div className="relative overflow-hidden h-64">
+                <Carousel
+                  className="w-full h-full"
+                  opts={{ align: "start", loop: true }}
+                >
+                  <CarouselContent className="h-full">
+                    {accommodation.images.map((image, imageIndex) => (
+                      <CarouselItem key={imageIndex} className="h-full">
+                        <div className="relative w-full h-full">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={image.url}
+                            alt={`${accommodation.name} - Image ${
+                              imageIndex + 1
+                            }`}
+                            className={cn(
+                              "w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-700",
+                              image.imageClassName
+                            )}
+                          />
 
-              <CardContent className="p-0 px-6 pb-6 bg-white">
-                {/* Title & Capacity */}
-                <div className="mb-4">
-                  <Link href={accommodation.href}>
-                    <h3 className="text-xl font-playfair font-semibold text-stone mb-2">
-                      {accommodation.name}
-                    </h3>
-                  </Link>
-                  <div className="flex items-center text-stone/70 text-sm">
-                    <Users className="w-4 h-4 mr-2" />
-                    {accommodation.capacity}
-                  </div>
-                </div>
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
 
-                {/* Features */}
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {accommodation.features.map((feature, index) => (
-                      <span
-                        key={index}
-                        className="bg-beige text-stone text-xs px-3 py-1 rounded-full font-medium"
-                      >
-                        {feature}
-                      </span>
+                  {/* Carousel Navigation */}
+                  <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30  transition-all duration-300 w-8 h-8" />
+                  <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-sm border-white/30 text-white hover:bg-white/30  transition-all duration-300 w-8 h-8" />
+
+                  {/* Dot Indicators */}
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-1  transition-opacity duration-300">
+                    {accommodation.images.map((_, dotIndex) => (
+                      <div
+                        key={dotIndex}
+                        className="w-2 h-2 rounded-full bg-white/60 backdrop-blur-sm"
+                      />
                     ))}
                   </div>
+                </Carousel>
+
+                {/* Price Badge */}
+                <div className="absolute top-4 right-4 z-10">
+                  <Badge className="bg-moss text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
+                    ₹{accommodation.price}/person{" "}
+                    <span className="text-xs text-gray-200 line-through">
+                      ₹{accommodation.beforePrice}/per
+                    </span>
+                  </Badge>
                 </div>
 
-                {/* Reviews */}
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-stone/60 text-sm">
-                    {accommodation.reviews} reviews
-                  </span>
+                {/* Guests Badge */}
+                <div className="absolute top-4 left-4 z-10">
+                  <Badge
+                    variant="outline"
+                    className="bg-white/90 text-[var(--forest-600)] border-[var(--forest-300)] backdrop-blur-sm"
+                  >
+                    {accommodation.guests} guests
+                  </Badge>
+                </div>
+
+                {(index === 0 ||
+                  index === 2) && (
+                    <Badge
+                      variant="outline"
+                      className={cn(
+                        "absolute bottom-4 right-4 z-10 bg-amber-50 text-amber-700 border-amber-300 backdrop-blur-sm font-medium"
+                      )}
+                    >
+                      ⚡ Few Left
+                    </Badge>
+                  )}
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="font-playfair text-2xl font-semibold text-[var(--forest-700)] mb-2">
+                  {accommodation.name}
+                </h3>
+                <p className="text-[var(--forest-600)] mb-4 text-sm">
+                  {accommodation.description}
+                </p>
+
+                {/* Amenities */}
+                <div className="mb-6">
+                  <div className="flex flex-wrap gap-2">
+                    {accommodation.amenities.slice(0, 3).map((amenity) => (
+                      <Badge
+                        key={amenity}
+                        variant="secondary"
+                        className="text-xs "
+                      >
+                        {amenity}
+                      </Badge>
+                    ))}
+                    {accommodation.amenities.length > 3 && (
+                      <Badge variant="secondary" className="text-xs ">
+                        +{accommodation.amenities.length - 3} more
+                      </Badge>
+                    )}
+                  </div>
                 </div>
 
                 {/* CTA Button */}
-                <Link href={accommodation.href}>
-                  <Button className="w-full bg-moss hover:bg-moss/90 text-white rounded-2xl font-semibold py-3">
-                    View Details
-                  </Button>
-                </Link>
-              </CardContent>
-            </Card>
+                <Button
+                  className="w-full bg-moss hover:bg-moss/80 text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg "
+                  onClick={() =>
+                    document
+                      .getElementById("booking")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                >
+                  Book This Experience
+                  <svg
+                    className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Button>
+              </div>
+            </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-12 sm:mt-16">
+        {/* <div className="text-center mt-12 sm:mt-16">
           <Button
             size="lg"
             className="bg-coral hover:bg-coral/90 text-white px-8 py-4 text-lg rounded-2xl font-semibold shadow-lg hover-lift"
           >
             See All Accommodations
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -36,8 +36,8 @@ const Navbar = () => {
   }, [pathname]);
   const navItems = [
     { href: "/#accommodations", label: "Stays" },
-    { href: "/#experiences", label: "Adventures" },
     { href: "/#timeline", label: "Your Day" },
+    { href: "/#experiences", label: "Adventures" },
     { href: "/#contact", label: "Contact" },
   ];
   return (

@@ -1,85 +1,93 @@
 "use client";
 import {
-  Sunrise,
   Coffee,
-  TreePine,
-  Utensils,
-  Waves,
-  Star,
-  Moon,
+  Drum,
+  Flame,
+  Sun,
+  Sunrise,
+  UtensilsCrossed,
 } from "lucide-react";
 import { useState } from "react";
 
 const timelineEvents = [
   {
-    time: "7:00 AM",
-    title: "Sunrise tea on your deck with forest views",
+    time: "4:00 PM",
+    title: "Check-in",
     description:
-      "Wake up naturally to golden sunlight filtering through trees. Enjoy fresh mountain tea on your private deck.",
-    icon: Sunrise,
+      "Arrive at the campsite and begin your getaway with a smooth and effortless check-in. Settle into your accommodation and soak in the natural surroundings.",
+    icon: Sun,
     image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    color: "bg-gradient-to-r from-orange-400 to-yellow-500",
+      "/images/new_images/image-5.jpeg",
+    color: "bg-gradient-to-r from-green-400 to-green-600",
   },
   {
-    time: "9:00 AM",
-    title: "Nature trail hike with local guide",
+    time: "5:00 PM",
+    title: "Tea & Pakora",
     description:
-      "Discover hidden waterfalls and exotic wildlife on guided forest trails with our expert naturalists.",
-    icon: TreePine,
-    image:
-      "https://images.unsplash.com/photo-1501854140801-50d01698950b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    color: "bg-gradient-to-r from-green-500 to-emerald-600",
-  },
-  {
-    time: "11:00 AM",
-    title: "Forest yoga & breathwork",
-    description:
-      "Connect with nature through mindful movement and breathing exercises in our forest yoga pavilion.",
+      "Enjoy freshly prepared tea and crispy pakoras as you unwind into the evening. A perfect warm-up for a relaxing lakeside experience.",
     icon: Coffee,
     image:
-      "https://images.unsplash.com/photo-1492648272180-61e45a8d98a7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    color: "bg-gradient-to-r from-blue-400 to-cyan-500",
+      "https://images.unsplash.com/photo-1604945516204-526aa4fd6425?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    color: "bg-gradient-to-r from-yellow-400 to-amber-500",
   },
   {
-    time: "1:00 PM",
-    title: "Organic lunch with local ingredients",
+    time: "5:30 PM",
+    title: "Outdoor Games & Activities",
     description:
-      "Feast on farm-to-table cuisine featuring organic vegetables and herbs grown in our garden.",
-    icon: Utensils,
-    image:
-      "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    color: "bg-gradient-to-r from-[#ff6b6b] to-pink-500",
+      "Have fun with a variety of engaging activities like badminton, cricket, carrom, and more—perfect for families, friends, and adventure lovers.",
+    icon: Drum,
+    image: "/images/new_images/image-18.jpeg",
+    color: "bg-gradient-to-r from-orange-400 to-orange-600",
   },
   {
-    time: "3:00 PM",
-    title: "Kayaking in the nearby lake",
+    time: "7:30 PM",
+    title: "Barbeque & DJ Music",
     description:
-      "Paddle through crystal-clear waters surrounded by pristine mountains and spot local wildlife.",
-    icon: Waves,
+      "Relish freshly grilled barbecue snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
+    icon: Flame,
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    color: "bg-gradient-to-r from-[#8ecdf6] to-blue-600",
+     "/images/new_images/image-16.jpeg",
+    color: "bg-gradient-to-r from-red-500 to-red-700",
   },
   {
-    time: "8:00 PM",
-    title: "Stargazing by the campfire with hot cocoa",
+    time: "9:30 PM",
+    title: "Dinner",
     description:
-      "Learn constellations while enjoying s'mores and warm cocoa around our central fire pit.",
-    icon: Star,
+      "Savor a wholesome dinner featuring local dishes prepared with authentic flavors. A comforting meal to end your adventure-filled evening.",
+    icon: UtensilsCrossed,
     image:
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    color: "bg-gradient-to-r from-purple-500 to-indigo-600",
+      "https://images.unsplash.com/photo-1742281257707-0c7f7e5ca9c6?q=80",
+    color: "bg-gradient-to-r from-blue-400 to-blue-600",
   },
   {
     time: "10:00 PM",
-    title: "Sleep under a million stars in your luxury tent",
+    title: "Campfire",
     description:
-      "Drift off in premium comfort with the gentle sounds of nature as your lullaby.",
-    icon: Moon,
+      "Relax around the warm campfire, listen to nature’s sounds, and enjoy meaningful conversations under the night sky.",
+    icon: Flame,
     image:
-      "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    color: "bg-gradient-to-r from-indigo-600 to-purple-800",
+      "https://images.unsplash.com/photo-1533243367503-0b7337004671?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    color: "bg-gradient-to-r from-orange-300 to-orange-600",
+  },
+  {
+    time: "8:30 AM",
+    title: "Breakfast",
+    description:
+      "Start your morning with a hearty breakfast featuring fresh and local flavors—fueling you for the day’s adventures.",
+    icon: Sunrise,
+    image:
+      "https://images.unsplash.com/photo-1673530598977-ee0eda88f0a2?q=80",
+    color: "bg-gradient-to-r from-yellow-300 to-amber-500",
+  },
+  {
+    time: "11:00 AM",
+    title: "Check-out",
+    description:
+      "Wrap up your stay with an easy check-out process and leave with unforgettable lakeside memories.",
+    icon: Sun,
+    image:
+      "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80",
+    color: "bg-gradient-to-r from-green-400 to-green-700",
   },
 ];
 

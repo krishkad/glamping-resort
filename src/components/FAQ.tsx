@@ -62,7 +62,7 @@ const FAQ = () => {
     <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-12 bg-secondary">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12 sm:mb-16 animate-slide-up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-stone mb-4 sm:mb-6">
+          <h2 className="text-4xl lg:text-6xl font-playfair font-bold text-stone mb-4 sm:mb-6">
             Everything You Need to Know
           </h2>
           <p className="text-lg sm:text-xl text-stone/80 font-poppins">
@@ -104,14 +104,14 @@ const FAQ = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
-                href="https://wa.me/919876543210"
+                href={`https://wa.me/${process.env.WHATSAPP_NO}`}
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-2xl hover:bg-green-700 transition-colors font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 <MessageCircle className="mr-2 sm:mr-3 h-4 sm:h-5 w-4 sm:w-5" />
                 WhatsApp Support
               </a>
               <a
-                href="tel:+919876543210"
+                href={`tel:+${process.env.CALL_PHONE_NO}`}
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-moss text-white rounded-2xl hover:bg-moss/90 transition-colors font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
               >
                 <Phone className="mr-2 sm:mr-3 h-4 sm:h-5 w-4 sm:w-5" />

@@ -4,69 +4,79 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const experiences = [
+  // From Activities Array
   {
-    title: "Sunrise Yoga",
+    title: "Bonfire Nights",
     description:
-      "Start your day with mindful meditation and yoga as the sun rises over the mountains",
-    icon: "🧘‍♀️",
-    duration: "1 hour",
-    category: "Wellness",
-    price: "Free",
-    color: "from-orange-400 to-[#ff6b6b]",
-  },
-  {
-    title: "Waterfall Trekking",
-    description:
-      "Discover hidden waterfalls and natural pools on guided hiking trails",
-    icon: "🥾",
-    duration: "3 hours",
-    category: "Adventure",
-    price: "$800",
-    color: "from-green-500 to-emerald-600",
-  },
-  {
-    title: "Kayaking Adventure",
-    description:
-      "Paddle through pristine waters and explore hidden coves with professional guides",
-    icon: "🛶",
-    duration: "2.5 hours",
-    category: "Adventure",
-    price: "$1200",
-    color: "from-blue-400 to-cyan-500",
-  },
-  {
-    title: "Star Gazing",
-    description:
-      "Learn constellations and enjoy telescope viewing in our dark sky location",
-    icon: "🌟",
-    duration: "2 hours",
-    category: "Family-Friendly",
-    price: "$500",
-    color: "from-purple-500 to-indigo-600",
-  },
-  {
-    title: "Fire Cooking Class",
-    description:
-      "Learn traditional outdoor cooking techniques using organic ingredients",
+      "Cozy evenings around the crackling fire with music, stories, and warm vibes",
     icon: "🔥",
-    duration: "2.5 hours",
-    category: "Family-Friendly",
-    price: "$1000",
-    color: "from-[#ff6b6b] to-pink-500",
+    duration: "Night Activity",
+    category: "Relaxation",
+    price: "Free",
+    color: "from-red-400 to-orange-500",
   },
   {
-    title: "Pottery Workshop",
+    title: "Lake Kayaking",
     description:
-      "Create beautiful ceramic pieces inspired by nature with local artisans",
-    icon: "🏺",
+      "Paddle through the serene waters and explore peaceful lake corners",
+    icon: "🚣‍♂️",
+    duration: "1.5 hours",
+    category: "Adventure",
+    price: "$600",
+    color: "from-blue-500 to-sky-500",
+  },
+
+  {
+    title: "Stargazing",
+    description: "Marvel at the brilliant night sky away from city lights",
+    icon: "✨",
     duration: "2 hours",
-    category: "Wellness",
-    price: "$700",
-    color: "from-amber-500 to-orange-600",
+    category: "Relaxation",
+    price: "Free",
+    color: "from-indigo-500 to-purple-600",
+  },
+
+  // Newly Added
+  {
+    title: "DJ Night",
+    description:
+      "High-energy music and dance vibes to make your night unforgettable",
+    icon: "🎧",
+    duration: "3 hours",
+    category: "Entertainment",
+    price: "$500",
+    color: "from-pink-500 to-purple-500",
+  },
+  {
+    title: "Outdoor Games",
+    description:
+      "Enjoy badminton, cricket, football, and fun team games at the campsite",
+    icon: "🎯",
+    duration: "Flexible",
+    category: "Fun",
+    price: "Free",
+    color: "from-yellow-400 to-orange-500",
+  },
+  {
+    title: "Photo Spots",
+    description:
+      "Capture stunning photos at our curated scenic viewpoints and creative setups",
+    icon: "📸",
+    duration: "Flexible",
+    category: "Leisure",
+    price: "Free",
+    color: "from-rose-400 to-red-500",
   },
 ];
 
-const categories = ["All", "Adventure", "Wellness", "Family-Friendly"];
+const categories = [
+  "All",
+  "Relaxation",
+  "Adventure",
+  "Entertainment",
+  "Fun",
+  "Leisure",
+];
 
 const Experiences = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -83,7 +93,7 @@ const Experiences = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 sm:mb-16 animate-slide-up">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-stone mb-4 sm:mb-6">
+          <h2 className="text-4xl  lg:text-6xl font-playfair font-bold text-stone mb-4 sm:mb-6">
             Adventures That Awaken Your Soul
           </h2>
           <p className="text-lg sm:text-xl text-stone/80 max-w-3xl mx-auto font-poppins">
@@ -171,28 +181,33 @@ const Experiences = () => {
             lakes, and adventure sports centers.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-8 text-center">
+            {/* Tiger Point */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6">
               <div className="text-2xl sm:text-3xl font-bold text-coral mb-2">
-                15 min
+                20 min
               </div>
               <div className="font-poppins text-sm sm:text-base">
-                Ancient Temple Complex
+                Tiger Point (Sunset View)
               </div>
             </div>
+
+            {/* Lohagad Fort */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6">
               <div className="text-2xl sm:text-3xl font-bold text-coral mb-2">
                 25 min
               </div>
               <div className="font-poppins text-sm sm:text-base">
-                Adventure Sports Center
+                Lohagad Fort Trek
               </div>
             </div>
+
+            {/* Bhushi Dam */}
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 sm:p-6">
               <div className="text-2xl sm:text-3xl font-bold text-coral mb-2">
                 30 min
               </div>
               <div className="font-poppins text-sm sm:text-base">
-                Sacred Lake & Boating
+                Bhushi Dam & Waterfalls
               </div>
             </div>
           </div>
