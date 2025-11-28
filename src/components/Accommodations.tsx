@@ -9,6 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import Image from "next/image";
 
 const Accommodations = () => {
   const accommodations = [
@@ -170,8 +171,12 @@ const Accommodations = () => {
                       <CarouselItem key={imageIndex} className="h-full">
                         <div className="relative w-full h-full">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                          <Image
                             src={image.url}
+                            width={0}
+                            height={0}
+                            unoptimized
+                            loading="lazy"
                             alt={`${accommodation.name} - Image ${
                               imageIndex + 1
                             }`}

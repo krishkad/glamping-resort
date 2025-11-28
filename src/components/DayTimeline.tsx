@@ -7,6 +7,7 @@ import {
   Sunrise,
   UtensilsCrossed,
 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 const timelineEvents = [
@@ -160,8 +161,12 @@ const DayTimeline = () => {
                 {/* Image */}
                 <div className="lg:w-5/12">
                   <div className="relative overflow-hidden rounded-3xl shadow-xl">
-                    <img
+                    <Image
                       src={event.image}
+                      width={0}
+                      height={0}
+                      unoptimized
+                      loading="lazy"
                       alt={event.title}
                       className={`w-full h-80 object-cover transition-all duration-500 ${
                         activeEvent === index ? "scale-110" : "scale-100"

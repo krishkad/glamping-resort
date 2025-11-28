@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Heart, Camera } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -179,8 +180,12 @@ const Testimonials = () => {
               key={index}
               className="relative overflow-hidden rounded-2xl sm:rounded-3xl aspect-square group cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
             >
-              <img
+              <Image
                 src={post.src}
+                width={0}
+                height={0}
+                unoptimized
+                loading="lazy"
                 alt={`Instagram post ${index + 1}`}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
