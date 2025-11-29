@@ -165,8 +165,8 @@ const Testimonials = () => {
 
         {/* Instagram Feed */}
         <div className="text-center mb-8 sm:mb-12">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-playfair font-bold text-stone mb-4 sm:mb-6">
-            #CampHavenMoments
+          <h3 className="text-xl sm:text-3xl md:text-4xl font-playfair font-bold text-stone mb-4 sm:mb-6">
+            #PawnaLakeCampingMoments
           </h3>
           <p className="text-base sm:text-lg text-stone/80 mb-6 sm:mb-8 font-poppins">
             Follow our journey and share your own magical moments with fellow

@@ -46,7 +46,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h4 className="text-3xl font-playfair font-bold mb-4">CampHaven</h4>
+            {/* <h4 className="text-3xl font-playfair font-bold mb-4">CampHaven</h4> */}
+            <div className="w-[160px] h-[80px] overflow-hidden">
+              <img
+                src="/images/pawna-logo.png"
+                alt="pawna-logo"
+                className="w-full h-full object-cover scale-[1.20] invert-100"
+              />
+            </div>
             <p className="text-white/80 mb-6 font-poppins leading-relaxed text-lg">
               Where adventure meets comfort, creating unforgettable experiences
               in nature&apos;s embrace. Escape ordinary, sleep under stars, wake

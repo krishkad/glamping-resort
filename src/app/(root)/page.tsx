@@ -3,6 +3,7 @@ import BookingWidget from "@/components/BookingWidget";
 import DayTimeline from "@/components/DayTimeline";
 import Experiences from "@/components/Experiences";
 import FAQ from "@/components/FAQ";
+import FloatingActions from "@/components/FloatingAction";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 
@@ -17,6 +18,7 @@ const Home = () => {
       <BookingWidget />
       <Testimonials />
       <FAQ />
+      <FloatingActions />
       {/* <Footer /> */}
     </div>
   );

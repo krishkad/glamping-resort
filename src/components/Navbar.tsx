@@ -48,8 +48,8 @@ const Navbar = () => {
         className={cn(
           "fixed top-0 w-full z-50 transition-all duration-300 px-4",
           isScrolled
-            ? "bg-white/95 shadow-md backdrop-blur-sm py-4"
-            : "bg-transparent py-4"
+            ? "bg-white/95 shadow-md backdrop-blur-sm py-2"
+            : "bg-transparent py-2"
         )}
       >
         <div className="flex items-center justify-between">
@@ -59,7 +59,13 @@ const Navbar = () => {
               isScrolled ? "text-navy" : "text-white"
             )}
           >
-            CampHaven
+            <div className="w-[130px] h-[60px] overflow-hidden">
+              <img
+                src="/images/pawna-logo.png"
+                alt="pawna-logo"
+                className="w-full h-full object-cover scale-[1.20] invert-100"
+              />
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -121,8 +127,14 @@ const Navbar = () => {
 
                 {/* Mobile Menu Content */}
                 <div className="flex flex-col h-full justify-center items-center space-y-8 px-8">
-                  <div className="text-stone font-playfair text-3xl font-bold mb-8">
-                    CampHaven
+                  <div className="text-stone font-playfair text-3xl font-bold mb-4">
+                    <div className="w-[200px] h-[100px] overflow-hidden">
+                      <img
+                        src="/images/pawna-logo.png"
+                        alt="pawna-logo"
+                        className="w-full h-full object-cover scale-[1.20] invert-100"
+                      />
+                    </div>
                   </div>
 
                   {navItems.map((item) => (

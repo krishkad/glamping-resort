@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   keywords: [
     "Pawna Lake Camping",
     "Lonavala Camping",
-    "Lakeside Tents",
+    "Couple Camping",
     "Couple Camping Pawna",
-    "Luxury Camping Maharashtra",
+    "Couple Camping Lonavla",
   ],
 
   openGraph: {
@@ -92,7 +92,7 @@ export default function RootLayout({
         <meta
           name="image"
           content={cn(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/images/accommodations/delux/delux-1.webp `
+            `${process.env.NEXT_PUBLIC_BASE_URL}/images/accommodations/delux/delux-1.webp`
           )}
         />
       </head>
