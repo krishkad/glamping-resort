@@ -144,8 +144,8 @@ const Accommodations = () => {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-4xl lg:text-6xl font-playfair font-bold text-stone mb-4 sm:mb-6">
-            Find Your Escape <br className="sm:hidden" />
-            <span className="text-moss">In Pawna</span>
+            Find Your Escape In <br className="sm:hidden" />
+            <span className="text-moss">Pawna</span>
           </h2>
           <p className="text-lg sm:text-xl text-stone/80 max-w-3xl mx-auto font-poppins">
             Choose from our handpicked collection of luxury accommodations, each

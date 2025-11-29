@@ -131,9 +131,7 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-moss" />
                 <div>
                   <p className="font-semibold font-poppins">Phone</p>
-                  <p className="font-poppins">
-                    +91 98765 43210 {CALL_PHONE_NO}{" "}
-                  </p>
+                  <p className="font-poppins">{CALL_PHONE_NO} </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
