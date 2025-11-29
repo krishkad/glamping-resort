@@ -177,7 +177,7 @@ const Experiences = () => {
             Explore Beyond the Camp
           </h3>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto font-poppins opacity-90">
-            CampHaven is perfectly positioned near ancient temples, pristine
+            Pawna Camps is perfectly positioned near ancient temples, pristine
             lakes, and adventure sports centers.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-8 text-center">

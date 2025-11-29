@@ -14,7 +14,7 @@ const faqs = [
     category: "Stay Details",
   },
   {
-    question: "Are pets welcome at CampHaven?",
+    question: "Are pets welcome at Pawna Camps?",
     answer:
       "Yes! We welcome well-behaved pets in select pet-friendly accommodations with advance notice and a small additional fee of $500 per night. Please inform us during booking to ensure we assign you a suitable tent.",
     category: "Policies",
@@ -44,9 +44,9 @@ const faqs = [
     category: "Travel",
   },
   {
-    question: "Is CampHaven suitable for children?",
+    question: "Is Pawna Camps suitable for children?",
     answer:
-      "Absolutely! CampHaven welcomes guests of all ages. Children under 5 stay free when sharing with parents. We have special safety guidelines, child-friendly activities, and can provide cribs and high chairs upon request.",
+      "Absolutely! Pawna Camps welcomes guests of all ages. Children under 5 stay free when sharing with parents. We have special safety guidelines, child-friendly activities, and can provide cribs and high chairs upon request.",
     category: "Family",
   },
   {

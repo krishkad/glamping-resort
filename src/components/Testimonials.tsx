@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Arjun & Priya",
     location: "Mumbai",
-    text: "CampHaven exceeded every expectation! The sunrise yoga, luxury tent comfort, and stargazing experience created the most romantic weekend of our lives. Can't wait to return!",
+    text: "Pawna Camps exceeded every expectation! The sunrise yoga, luxury tent comfort, and stargazing experience created the most romantic weekend of our lives. Can't wait to return!",
     rating: 5,
     image:
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
@@ -96,7 +96,7 @@ const Testimonials = () => {
           </h2>
           <p className="text-lg sm:text-xl text-stone/80 max-w-3xl mx-auto font-poppins">
             Real experiences from couples, families, and solo travelers who
-            found their perfect escape at CampHaven.
+            found their perfect escape at Pawna Camps.
           </p>
         </div>
 
@@ -203,10 +203,10 @@ const Testimonials = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-4">
             <span className="w-max bg-gradient-to-r from-[#4caf50] to-green-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
-              #CampHavenMoments
+              #Pawna CampsMoments
             </span>
             <span className="w-max bg-gradient-to-r from-[#ff6b6b] to-pink-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
-              @camphaven_official
+              @Pawna Camps_official
             </span>
           </div>
         </div>

@@ -46,7 +46,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            {/* <h4 className="text-3xl font-playfair font-bold mb-4">CampHaven</h4> */}
+            {/* <h4 className="text-3xl font-playfair font-bold mb-4">Pawna Camps</h4> */}
             <div className="w-[160px] h-[80px] overflow-hidden">
               <img
                 src="/images/pawna-logo.png"
@@ -176,7 +176,7 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm font-poppins">
-              © 2025 CampHaven Glamping Resort. All rights reserved. | Crafted
+              © 2025 Pawna Camps Glamping Resort. All rights reserved. | Crafted
               by Krrish
             </p>
             <div className="flex space-x-6 text-sm text-white/60">
