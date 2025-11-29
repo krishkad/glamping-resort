@@ -60,8 +60,12 @@ const Footer = () => {
               up to wilderness.
             </p>
             <div className="flex items-center space-x-3 text-white/80 mb-4">
-              <MapPin className="w-5 h-5 text-coral" />
-              <span className="font-poppins">Example, Example, State</span>
+              <MapPin className="w-5 h-5 text-coral self-start" />
+              <span className="font-poppins">
+                Thakursai Pavananagar Road Near Vaishnavi Hotel,
+                <br /> Swami Samarth Road Pawna Lake Camping, <br /> Maharashtra
+                Pune- 410 406
+              </span>
             </div>
 
             {/* Certifications */}
@@ -170,10 +174,6 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="text-center mt-16 pt-8 border-t border-white/20">
-          <Button className="bg-moss h-max hover:bg-moss/90 text-white px-10 py-4 rounded-2xl text-lg mb-8 font-bold shadow-xl hover:shadow-2xl transition-all duration-300 animate-float">
-            Plan My Adventure Now
-          </Button>
-
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm font-poppins">
               © 2025 Pawna Camps Glamping Resort. All rights reserved. | Crafted
