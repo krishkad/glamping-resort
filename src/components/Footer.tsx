@@ -1,13 +1,12 @@
 "use client";
 import {
-  MapPin,
-  Instagram,
-  MessageCircle,
-  Mail,
-  Phone,
   Award,
+  Instagram,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 const CALL_PHONE_NO = `${process.env.NEXT_PUBLIC_CALL_PHONE_NO}`;
