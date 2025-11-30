@@ -22,10 +22,9 @@ const experiences = [
     icon: "🚣‍♂️",
     duration: "1.5 hours",
     category: "Adventure",
-    price: "$600",
+    price: "Free",
     color: "from-blue-500 to-sky-500",
   },
-
   {
     title: "Stargazing",
     description: "Marvel at the brilliant night sky away from city lights",
@@ -35,7 +34,6 @@ const experiences = [
     price: "Free",
     color: "from-indigo-500 to-purple-600",
   },
-
   // Newly Added
   {
     title: "DJ Night",
@@ -44,7 +42,7 @@ const experiences = [
     icon: "🎧",
     duration: "3 hours",
     category: "Entertainment",
-    price: "$500",
+    price: "Free",
     color: "from-pink-500 to-purple-500",
   },
   {
@@ -177,8 +175,7 @@ const Experiences = () => {
             Explore Beyond the Camp
           </h3>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto font-poppins opacity-90">
-            Pawna Camps is perfectly positioned near ancient temples, pristine
-            lakes, and adventure sports centers.
+            Pawna Camps is perfectly surrounded by scenic hills, historic forts like Lohagad and Tikona, and close to nearby adventure and trekking hotspots.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-8 text-center">
             {/* Tiger Point */}
