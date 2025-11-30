@@ -75,11 +75,11 @@ const Hero = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-6 sm:-bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce-gentle hidden sm:block">
+        {/* <div className="absolute bottom-6 sm:-bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce-gentle hidden sm:block">
           <div className="w-6 sm:w-8 h-10 sm:h-12 border-2 border-white rounded-full flex justify-center">
             <div className="w-1 h-3 sm:h-4 bg-white rounded-full mt-2 sm:mt-3 animate-bounce"></div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
