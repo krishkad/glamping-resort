@@ -1,20 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Star, Shield, Award } from "lucide-react";
+import { Star, Shield, Award, ShieldIcon, UserIcon } from "lucide-react";
 
 const Hero = () => {
   return (
     <section className="relative min-h-svh flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-no-repeat bg-[65%_75%]"
         style={{
-          backgroundImage: `url('/images/hero.webp')`,
-          backgroundSize: "cover",
-          backgroundPosition: "65% 75%",
+          backgroundImage: "url('/images/hero.webp')",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 sm:via-transparent to-black/10 sm:to-black/50"></div>
       </div>
 
       {/* Hero Content */}
@@ -23,20 +21,18 @@ const Hero = () => {
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-6 sm:mb-8">
           <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white">
             <Star className="w-4 sm:w-5 h-4 sm:h-5 fill-yellow-500 text-yellow-600" />
+            <span className="font-medium text-xs sm:text-sm">4.8 Review</span>
+          </div>
+          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white">
+            <UserIcon className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300 fill-blue-400" />
             <span className="font-medium text-xs sm:text-sm">
-              4.8 TripAdvisor
+              5,000+ Happy Campers
             </span>
           </div>
           <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white">
-            <Shield className="w-4 sm:w-5 h-4 sm:h-5 text-green-400" />
+            <ShieldIcon className="w-4 sm:w-5 h-4 sm:h-5 text-green-300 fill-green-400" />
             <span className="font-medium text-xs sm:text-sm">
-              Eco-Certified
-            </span>
-          </div>
-          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white">
-            <Award className="w-4 sm:w-5 h-4 sm:h-5 text-coral" />
-            <span className="font-medium text-xs sm:text-sm">
-              Travel Awards 2024
+              Safe & Secure Campsite
             </span>
           </div>
         </div>
