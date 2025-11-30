@@ -78,8 +78,7 @@ const BookingWidget = () => {
             Your Adventure Awaits
           </h2>
           <p className="text-xl text-stone/80 font-poppins">
-            Book your perfect escape with our flexible packages and real-time
-            availability
+            Book your perfect escape, and we&apos;ll get in touch with you soon.
           </p>
         </div>
 
@@ -407,8 +406,8 @@ const BookingWidget = () => {
                 {/* Highlighted Savings Banner */}
                 <div className="bg-green-100 text-green-700 text-sm p-2 rounded-md font-poppins text-center font-semibold">
                   🎉 You&apos;re getting a steal! You saved ₹
-                  {parseInt(selectedPackage.savings.split("₹")[1]) * guests}{" "}
-                  on this package!
+                  {parseInt(selectedPackage.savings.split("₹")[1]) * guests} on
+                  this package!
                 </div>
               </div>
 
@@ -416,8 +415,11 @@ const BookingWidget = () => {
               <Button className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold">
                 Book Your Memories - ₹{calculatedAmount}
               </Button>
-
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">
+                We&apos;ll contact you within 15 mint
+              </p>
+
+              <p className="text-sm text-center text-stone/60 mt-0.5 font-poppins">
                 Free cancellation up to 48 hours before check-in
               </p>
             </CardContent>
