@@ -57,7 +57,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <Button
             size="lg"
-            className="bg-moss h-max hover:bg-moss/90 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl hover-lift font-semibold w-full sm:w-auto"
+            className="bg-moss h-max hover:bg-moss/80 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl font-semibold w-full sm:w-auto"
           >
             Book Your Escape
           </Button>

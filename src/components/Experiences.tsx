@@ -3,67 +3,128 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
+// const experiences = [
+//   // From Activities Array
+//   {
+//     title: "Bonfire Nights",
+//     description:
+//       "Cozy evenings around the crackling fire with music, stories, and warm vibes",
+//     icon: "🔥",
+//     duration: "Night Activity",
+//     category: "Relaxation",
+//     price: "Free",
+//     color: "from-red-400 to-orange-500",
+//   },
+//   {
+//     title: "Lake Kayaking",
+//     description:
+//       "Paddle through the serene waters and explore peaceful lake corners",
+//     icon: "🚣‍♂️",
+//     duration: "1.5 hours",
+//     category: "Adventure",
+//     price: "Free",
+//     color: "from-blue-500 to-sky-500",
+//   },
+//   {
+//     title: "Stargazing",
+//     description: "Marvel at the brilliant night sky away from city lights",
+//     icon: "✨",
+//     duration: "2 hours",
+//     category: "Relaxation",
+//     price: "Free",
+//     color: "from-indigo-500 to-purple-600",
+//   },
+//   // Newly Added
+//   {
+//     title: "DJ Night",
+//     description:
+//       "High-energy music and dance vibes to make your night unforgettable",
+//     icon: "🎧",
+//     duration: "3 hours",
+//     category: "Entertainment",
+//     price: "Free",
+//     color: "from-pink-500 to-purple-500",
+//   },
+//   {
+//     title: "Outdoor Games",
+//     description:
+//       "Enjoy badminton, cricket, football, and fun team games at the campsite",
+//     icon: "🎯",
+//     duration: "Flexible",
+//     category: "Fun",
+//     price: "Free",
+//     color: "from-yellow-400 to-orange-500",
+//   },
+//   {
+//     title: "Photo Spots",
+//     description:
+//       "Capture stunning photos at our curated scenic viewpoints and creative setups",
+//     icon: "📸",
+//     duration: "Flexible",
+//     category: "Leisure",
+//     price: "Free",
+//     color: "from-rose-400 to-red-500",
+//   },
+// ];
+
 const experiences = [
-  // From Activities Array
   {
     title: "Bonfire Nights",
-    description:
-      "Cozy evenings around the crackling fire with music, stories, and warm vibes",
+    description: "Relax around the campfire and share stories under the stars",
     icon: "🔥",
-    duration: "Night Activity",
+    duration: "Until 11:30 PM",
     category: "Relaxation",
-    price: "Free",
+    price: "Included",
     color: "from-red-400 to-orange-500",
   },
   {
     title: "Lake Kayaking",
     description:
-      "Paddle through the serene waters and explore peaceful lake corners",
+      "Paddle through the serene waters of Pawana Lake and explore hidden coves",
     icon: "🚣‍♂️",
-    duration: "1.5 hours",
+    duration: "Daytime Activity",
     category: "Adventure",
-    price: "Free",
+    price: "Included",
     color: "from-blue-500 to-sky-500",
   },
   {
     title: "Stargazing",
     description: "Marvel at the brilliant night sky away from city lights",
     icon: "✨",
-    duration: "2 hours",
+    duration: "Night Activity",
     category: "Relaxation",
-    price: "Free",
+    price: "Included",
     color: "from-indigo-500 to-purple-600",
   },
-  // Newly Added
   {
-    title: "DJ Night",
+    title: "Barbeque & DJ Music",
     description:
-      "High-energy music and dance vibes to make your night unforgettable",
-    icon: "🎧",
-    duration: "3 hours",
+      "Savor delicious barbeque while enjoying the sound system and lake views",
+    icon: "🍖",
+    duration: "Until 9:30 PM",
     category: "Entertainment",
-    price: "Free",
+    price: "Included",
     color: "from-pink-500 to-purple-500",
   },
   {
     title: "Outdoor Games",
     description:
-      "Enjoy badminton, cricket, football, and fun team games at the campsite",
+      "Enjoy badminton, carrom, cricket, and more fun activities at the campsite",
     icon: "🎯",
-    duration: "Flexible",
+    duration: "Afternoon Activity",
     category: "Fun",
-    price: "Free",
+    price: "Included",
     color: "from-yellow-400 to-orange-500",
   },
   {
-    title: "Photo Spots",
+    title: "Nature Hiking",
     description:
-      "Capture stunning photos at our curated scenic viewpoints and creative setups",
-    icon: "📸",
-    duration: "Flexible",
-    category: "Leisure",
-    price: "Free",
-    color: "from-rose-400 to-red-500",
+      "Discover scenic trails and breathtaking viewpoints around Pawana Lake",
+    icon: "🥾",
+    duration: "2-3 hours",
+    category: "Adventure",
+    price: "Included",
+    color: "from-green-500 to-emerald-600",
   },
 ];
 
@@ -175,7 +236,9 @@ const Experiences = () => {
             Explore Beyond the Camp
           </h3>
           <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto font-poppins opacity-90">
-            Pawna Camps is perfectly surrounded by scenic hills, historic forts like Lohagad and Tikona, and close to nearby adventure and trekking hotspots.
+            Pawna Camps is perfectly surrounded by scenic hills, historic forts
+            like Lohagad and Tikona, and close to nearby adventure and trekking
+            hotspots.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 sm:gap-8 text-center">
             {/* Tiger Point */}

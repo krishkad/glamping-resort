@@ -169,7 +169,7 @@ const Footer = () => {
               © 2025 Pawna Camps Glamping Resort. All rights reserved. | Crafted
               by Krrish
             </p>
-            <div className="flex space-x-6 text-sm text-white/60">
+            {/* <div className="flex space-x-6 text-sm text-white/60">
               <a
                 href="#"
                 className="hover:text-coral transition-colors font-poppins"
@@ -188,7 +188,7 @@ const Footer = () => {
               >
                 Safety Guidelines
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
