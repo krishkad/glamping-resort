@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Star, Shield, Award, ShieldIcon, UserIcon } from "lucide-react";
+import { ShieldIcon, Star, UserIcon } from "lucide-react";
 
 const Hero = () => {
   return (
