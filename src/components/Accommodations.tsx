@@ -274,7 +274,7 @@ const Accommodations = () => {
                   className="w-full bg-moss hover:bg-moss/80 text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg "
                   onClick={() =>
                     document
-                      .getElementById("booking")
+                      .getElementById("bookings")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                 >

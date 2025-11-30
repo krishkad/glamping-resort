@@ -42,9 +42,8 @@ const Hero = () => {
         </div>
 
         <h1 className="text-5xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-playfair font-bold text-white mb-4 sm:mb-6 leading-tight">
-          Camp Wild.
-          <br />
-          <span className="text-yellow-300"> Sleep Comfy.</span>
+          A Peaceful Escape for <br className="hidden" />
+          <span className="text-yellow-300">Couples</span>
           <br />
           {/* <span className="">Wake Up to Wilderness.</span> */}
         </h1>
@@ -58,6 +57,11 @@ const Hero = () => {
           <Button
             size="lg"
             className="bg-moss h-max hover:bg-moss/80 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl font-semibold w-full sm:w-auto"
+            onClick={() =>
+              document
+                .getElementById("bookings")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Book Your Escape
           </Button>

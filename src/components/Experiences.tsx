@@ -221,7 +221,14 @@ const Experiences = () => {
                   <p className="text-stone/80 font-poppins leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
                     {experience.description}
                   </p>
-                  <Button className="w-full bg-moss hover:bg-moss/90 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base py-2 sm:py-3">
+                  <Button
+                    className="w-full bg-moss hover:bg-moss/90 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base py-2 sm:py-3"
+                    onClick={() =>
+                      document
+                        .getElementById("bookings")
+                        ?.scrollIntoView({ behavior: "smooth" })
+                    }
+                  >
                     Book Experience
                   </Button>
                 </div>
