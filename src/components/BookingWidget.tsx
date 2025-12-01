@@ -60,6 +60,10 @@ const packages = [
 ];
 
 const BookingWidget = () => {
+  const [name, setName] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [checkIn, setCheckIn] = useState<Date>();
   const [checkOut, setCheckOut] = useState<Date>();
   const [guests, setGuests] = useState(2);
@@ -69,6 +73,46 @@ const BookingWidget = () => {
   const calculatedAmount = selectedPackage.amount
     ? selectedPackage.amount * guests
     : 6000;
+
+  const send_whatsapp = async () => {
+    try {
+      console.log({
+        data: {
+          email,
+          name,
+          lname,
+          phone,
+          checkIn,
+          checkOut,
+          guests,
+          kids,
+          selectedPackage,
+          calculatedAmount,
+        },
+      });
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        body: JSON.stringify({
+          email,
+          name,
+          lname,
+          phone,
+          checkIn,
+          checkOut,
+          guests,
+          kids,
+          selectedPackage,
+          calculatedAmount,
+        }),
+      });
+
+      const res = await response.json();
+
+      console.log({ res });
+    } catch (error) {
+      console.log("error while sending inquiry: ", `${error}`);
+    }
+  };
 
   return (
     <section id="bookings" className="py-20 px-6 lg:px-12 bg-secondary">
@@ -150,6 +194,7 @@ const BookingWidget = () => {
                   <input
                     placeholder="Name"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
                 {/* Last Name */}
@@ -160,6 +205,7 @@ const BookingWidget = () => {
                   <input
                     placeholder="Last Name"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                    onChange={(e) => setLname(e.target.value)}
                   />
                 </div>
                 {/* E-Mail */}
@@ -171,6 +217,7 @@ const BookingWidget = () => {
                     placeholder="example@gmail.com"
                     type="email"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 <div className="w-full">
@@ -181,6 +228,7 @@ const BookingWidget = () => {
                     type="tel"
                     placeholder="+91 1122334455"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 {/* Check-in Date */}
@@ -195,7 +243,7 @@ const BookingWidget = () => {
                         className="w-full justify-start text-left font-normal rounded-2xl h-12 border-2 hover:border-moss"
                       >
                         <CalendarDays className="mr-2 h-4 w-4 text-moss" />
-                        {checkIn ? format(checkIn, "MMM dd") : "Select date"}
+                        {checkIn ? format(checkIn, "MMM dd yyyy") : "Select date"}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent
@@ -229,7 +277,7 @@ const BookingWidget = () => {
                         className="w-full justify-start text-left font-normal rounded-2xl h-12 border-2 hover:border-moss"
                       >
                         <CalendarDays className="mr-2 h-4 w-4 text-moss" />
-                        {checkOut ? format(checkOut, "MMM dd") : "Select date"}
+                        {checkOut ? format(checkOut, "MMM dd yyyy") : "Select date"}
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent
@@ -412,7 +460,10 @@ const BookingWidget = () => {
               </div>
 
               {/* Book Button */}
-              <Button className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold">
+              <Button
+                className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold"
+                onClick={send_whatsapp}
+              >
                 Book Your Memories - ₹{calculatedAmount}
               </Button>
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">

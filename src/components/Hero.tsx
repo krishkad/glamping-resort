@@ -65,8 +65,13 @@ const Hero = () => {
             size="lg"
             variant="outline"
             className="border-2 h-max border-white text-white hoverbg-white hover:text-stone-800  bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full font-semibold w-full sm:w-auto"
+             onClick={() =>
+              document
+                .getElementById("accommodations")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
-            Virtual Tour
+            View Camps
           </Button>
         </div>
 
