@@ -53,7 +53,7 @@ Name: ${name} ${lname}
 Email: ${email}
 Phone: ${phone}
 
-Package: ${packageName || "Not specified"}
+Package: ${packageName || "Not specified"} (${selectedPackage.price}/person)
 Total Amount: ₹${calculatedAmount?.toLocaleString("en-IN") || "N/A"}
 
 Check-In: ${format(new Date(checkIn), "MMM dd yyyy")}
@@ -118,7 +118,7 @@ Please confirm availability.
       <tr><td class="label">Phone:</td><td><a href="tel:${phone}">${phone}</a></td></tr>
       <tr><td class="label">Package:</td><td>${
         packageName || "Not specified"
-      }</td></tr>
+      } (${selectedPackage.price}/person)</td></tr>
       <tr><td class="label">Amount:</td><td><strong>₹${
         calculatedAmount?.toLocaleString("en-IN") || "N/A"
       }</strong></td></tr>
