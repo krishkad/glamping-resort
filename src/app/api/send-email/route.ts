@@ -169,7 +169,7 @@ Please confirm availability.
       { success: true, message: "Booking email sent successfully" },
       { status: 200 }
     );
-  } catch (error: any) {
+  } catch (error) {
     console.error("Nodemailer error:", error);
 
     return NextResponse.json(
@@ -177,7 +177,7 @@ Please confirm availability.
         success: false,
         error:
           process.env.NODE_ENV === "development"
-            ? error.message
+            ? error
             : "Failed to send email",
       },
       { status: 500 }

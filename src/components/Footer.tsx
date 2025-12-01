@@ -1,13 +1,12 @@
 "use client";
 import {
-  Award,
   Instagram,
   Mail,
   MapPin,
   MessageCircle,
   Phone,
   ShieldIcon,
-  UserIcon,
+  UserIcon
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
