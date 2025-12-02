@@ -30,10 +30,10 @@ const packages = [
   },
   {
     name: "Triangle Tent Stay",
-    price: "₹1299",
-    amount: 1299,
+    price: "₹1199",
+    amount: 1199,
     originalPrice: "₹1600",
-    savings: "₹301",
+    savings: "₹401",
     includes: [
       "Stylish triangle tent stay",
       "Warm lighting & romantic interiors",
@@ -45,10 +45,10 @@ const packages = [
   },
   {
     name: "Deluxe Cottage Experience",
-    price: "₹2499",
-    amount: 2499,
+    price: "₹2999",
+    amount: 2999,
     originalPrice: "₹3600",
-    savings: "₹1101",
+    savings: "₹601",
     includes: [
       "Luxurious cottage stay",
       "Elegant interiors & private washroom",

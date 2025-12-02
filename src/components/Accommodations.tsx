@@ -108,7 +108,7 @@ const accommodations = [
         imageClassName: "object-cover object-center",
       },
     ],
-    price: 1299,
+    price: 1199,
     beforePrice: 1600,
     guests: 2,
 
@@ -652,7 +652,7 @@ const Accommodations = () => {
                   </Badge>
                 )}
 
-                {index === 2 && (
+                {index === 1 && (
                   <div className="absolute top-4 right-4 z-10 flex flex-col items-end space-y-1">
                     <Badge className="bg-yellow-600 text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
                       ₹{accommodation.price}/person{" "}

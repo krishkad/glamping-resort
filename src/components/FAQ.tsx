@@ -35,12 +35,12 @@ const faqs = [
       "Check-in is between 4:00 PM and 8:00 PM. Check-out is by 11:00 AM after breakfast. Please plan your arrival accordingly to enjoy the complete camping experience.",
     category: "Stay Details",
   },
-  {
-    question: "What's your cancellation policy?",
-    answer:
-      "We offer free cancellation up to 48 hours before your scheduled arrival date. Cancellations within 48 hours may be subject to charges. We recommend booking in advance to secure your preferred dates.",
-    category: "Policies",
-  },
+  // {
+  //   question: "What's your cancellation policy?",
+  //   answer:
+  //     "We offer free cancellation up to 48 hours before your scheduled arrival date. Cancellations within 48 hours may be subject to charges. We recommend booking in advance to secure your preferred dates.",
+  //   category: "Policies",
+  // },
   {
     question: "How do I reach Pawana Lake Camping?",
     answer:
