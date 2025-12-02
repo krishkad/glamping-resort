@@ -108,8 +108,8 @@ const accommodations = [
         imageClassName: "object-cover object-center",
       },
     ],
-    price: 1200,
-    beforePrice: 1500,
+    price: 1299,
+    beforePrice: 1600,
     guests: 2,
 
     amenitiesHtml: (
@@ -521,20 +521,34 @@ const Accommodations = () => {
   //       "Luxurious lake-touch cottages designed for couples and families, offering a private getaway with elegant interiors and modern amenities.",
   //   },
   // ];
-  const [timeLeft, setTimeLeft] = useState(172800);
-
+  const [timeLeft, setTimeLeft] = useState(0);
   useEffect(() => {
+    // Create today's 5 PM timestamp
+    const now = new Date();
+    const end = new Date();
+
+    end.setHours(21, 59, 0, 0);
+
+    // If it's already past 5 PM, offer expired
+    if (now > end) {
+      setTimeLeft(0);
+      return;
+    }
+
     const timer = setInterval(() => {
-      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+      const remaining = end.getTime() - Date.now();
+      setTimeLeft(remaining > 0 ? remaining : 0);
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
-  const formatTime = (secs: number) => {
-    const h = Math.floor(secs / 3600);
-    const m = Math.floor((secs % 3600) / 60);
-    const s = secs % 60;
+  const formatTime = (ms: number) => {
+    const sec = Math.floor(ms / 1000);
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = sec % 60;
+
     return `${h}h ${m}m ${s}s`;
   };
 
