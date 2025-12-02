@@ -509,9 +509,9 @@ const BookingWidget = () => {
                 We&apos;ll contact you within 15 mint
               </p>
 
-              <p className="text-sm text-center text-stone/60 mt-0.5 font-poppins">
+              {/* <p className="text-sm text-center text-stone/60 mt-0.5 font-poppins">
                 Free cancellation up to 48 hours before check-in
-              </p>
+              </p> */}
             </CardContent>
           </Card>
         </div>
