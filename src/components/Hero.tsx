@@ -52,7 +52,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <Button
             size="lg"
-            className="bg-moss h-max hover:bg-moss/80 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl font-semibold w-full sm:w-auto"
+            className="bg-moss h-max hover:bg-moss/80 text-white px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-xl font-semibold w-full sm:w-auto cursor-pointer"
             onClick={() =>
               document
                 .getElementById("bookings")
@@ -64,7 +64,7 @@ const Hero = () => {
           <Button
             size="lg"
             variant="outline"
-            className="border-2 h-max border-white text-white hoverbg-white hover:text-stone-800  bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full font-semibold w-full sm:w-auto"
+            className="border-2 h-max border-white text-white hoverbg-white hover:text-stone-800  bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full font-semibold w-full sm:w-auto cursor-pointer"
              onClick={() =>
               document
                 .getElementById("accommodations")

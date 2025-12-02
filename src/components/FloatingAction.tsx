@@ -21,7 +21,7 @@ const FloatingActions = () => {
 
   const handleWhatsApp = () => {
     const message =
-      "Hi! I'm interested in your luxury camper van rentals. Could you please help me with booking?";
+      "Hi! I'm interested in Pawna Lake Camping. Could you please help me with booking?";
     window.open(
       `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
       "_blank"
@@ -60,7 +60,7 @@ const FloatingActions = () => {
 
 export default FloatingActions;
 
-function WhatsAppIcon() {
+export function WhatsAppIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ function WhatsAppIcon() {
   );
 }
 
-function PhoneIcon() {
+export function PhoneIcon() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

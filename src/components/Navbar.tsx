@@ -149,7 +149,7 @@ const Navbar = () => {
                   ))}
 
                   <Button
-                    className="bg-moss h-max hover:bg-moss/90 text-white px-8 py-4 text-lg rounded-2xl font-semibold shadow-lg mt-8"
+                    className="bg-moss h-max hover:bg-moss/90 text-white px-8 py-4 text-lg rounded-2xl font-semibold shadow-lg mt-8 cursor-pointer"
                     onClick={() => {
                       setIsOpen(false);
                       router.push("#bookings");
@@ -164,7 +164,7 @@ const Navbar = () => {
 
           {/* Desktop Book Button */}
           <Button
-            className="hidden md:flex bg-moss hover:bg-moss/90 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-2xl font-semibold shadow-lg text-sm sm:text-base"
+            className="hidden md:flex bg-moss hover:bg-moss/90 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-2xl font-semibold shadow-lg text-sm sm:text-base cursor-pointer"
             onClick={() => {
               router.push("#bookings");
             }}

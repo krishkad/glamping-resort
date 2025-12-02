@@ -84,7 +84,7 @@ const experiences = [
     icon: "🚣‍♂️",
     duration: "Daytime Activity",
     category: "Adventure",
-    price: "Included",
+    price: "On-site pay",
     color: "from-blue-500 to-sky-500",
   },
   {
@@ -222,7 +222,7 @@ const Experiences = () => {
                     {experience.description}
                   </p>
                   <Button
-                    className="w-full bg-moss hover:bg-moss/90 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base py-2 sm:py-3"
+                    className="w-full bg-moss hover:bg-moss/90 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 text-sm sm:text-base py-2 sm:py-3 cursor-pointer"
                     onClick={() =>
                       document
                         .getElementById("bookings")

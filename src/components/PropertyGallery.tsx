@@ -1,6 +1,7 @@
-"use cilent"
-import { useState } from 'react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+"use client";
+import { useState } from "react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { images } from "./Testimonials";
 
 interface PropertyGalleryProps {
   property: {
@@ -9,16 +10,10 @@ interface PropertyGalleryProps {
   };
 }
 
-const PropertyGallery = ({ property }: PropertyGalleryProps) => {
+const PropertyGallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  
+
   // Additional lifestyle images (in a real app, these would be separate from main images)
-  const lifestyleImages = [
-    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-  ];
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -30,13 +25,15 @@ const PropertyGallery = ({ property }: PropertyGalleryProps) => {
 
   const nextImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage((selectedImage + 1) % lifestyleImages.length);
+      setSelectedImage((selectedImage + 1) % images.length);
     }
   };
 
   const prevImage = () => {
     if (selectedImage !== null) {
-      setSelectedImage(selectedImage === 0 ? lifestyleImages.length - 1 : selectedImage - 1);
+      setSelectedImage(
+        selectedImage === 0 ? images.length - 1 : selectedImage - 1
+      );
     }
   };
 
@@ -49,19 +46,19 @@ const PropertyGallery = ({ property }: PropertyGalleryProps) => {
               Experience Gallery
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover the lifestyle and unique experiences that await you at {property.title}
+              Discover the lifestyle and unique experiences that await you at
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {lifestyleImages.map((image, index) => (
-              <div 
+            {images.map((image, index) => (
+              <div
                 key={index}
                 className="relative aspect-square cursor-pointer group overflow-hidden rounded-lg"
                 onClick={() => openLightbox(index)}
               >
-                <img 
-                  src={image} 
+                <img
+                  src={image.src}
                   alt={`Experience ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
@@ -81,23 +78,23 @@ const PropertyGallery = ({ property }: PropertyGalleryProps) => {
           >
             <X className="w-8 h-8" />
           </button>
-          
+
           <button
             onClick={prevImage}
             className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-[#d69e2e] transition-colors"
           >
             <ChevronLeft className="w-8 h-8" />
           </button>
-          
+
           <button
             onClick={nextImage}
             className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-[#d69e2e] transition-colors"
           >
             <ChevronRight className="w-8 h-8" />
           </button>
-          
-          <img 
-            src={lifestyleImages[selectedImage]} 
+
+          <img
+            src={images[selectedImage].src}
             alt={`Experience ${selectedImage + 1}`}
             className="max-w-full max-h-full object-contain"
           />

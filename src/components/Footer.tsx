@@ -6,7 +6,7 @@ import {
   MessageCircle,
   Phone,
   ShieldIcon,
-  UserIcon
+  UserIcon,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -122,14 +122,6 @@ const Footer = () => {
                   className="hover:text-coral transition-colors font-poppins hover:underline"
                 >
                   Gallery
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#packages"
-                  className="hover:text-coral transition-colors font-poppins hover:underline"
-                >
-                  Packages
                 </a>
               </li>
             </ul>

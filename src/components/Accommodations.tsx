@@ -1,6 +1,8 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Badge } from "./ui/badge";
 import {
   Carousel,
@@ -9,19 +11,233 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-import Image from "next/image";
-import {
-  Car,
-  Droplets,
-  Flame,
-  Gamepad2,
-  Mountain,
-  Music2,
-  ShowerHead,
-  Utensils,
-  Waves,
-  Zap,
-} from "lucide-react";
+
+const accommodations = [
+  {
+    id: 1,
+    name: "Regular Tent",
+    category: "dome",
+    images: [
+      {
+        url: "/images/accommodations/tent/tent-1.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/tent/tent-2.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/tent/tent-3.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/tent/tent-4.webp",
+        imageClassName: "object-center",
+      },
+    ],
+    price: 999,
+    beforePrice: 1200,
+    guests: 1,
+
+    amenitiesHtml: (
+      <div className="mb-6 space-y-3">
+        <div className="bg-emerald-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🏕 Stay Includes
+          </h4>
+          <p className="text-xs text-slate-600">
+            Cozy Dome Tent • Foam Mattress • Blanket
+          </p>
+        </div>
+        <div className="bg-amber-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🍽 Food Menu
+          </h4>
+          <p className="text-xs text-slate-600">
+            Tea & Pakoda/Misal • BBQ (Paneer/Chicken) • Dinner (Veg/Non-Veg) •
+            Breakfast • Mineral Water
+          </p>
+        </div>
+        <div className="bg-blue-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🎉 Activities
+          </h4>
+          <p className="text-xs text-slate-600">
+            DJ Music • Indoor & Outdoor Games • Bonfire • Boating/Kayaking
+            (Extra) • Live Music (Sat) • Free Parking
+          </p>
+        </div>
+        <div className="text-xs text-slate-700 space-y-1 pl-1">
+          <p>✅ Tasty Homely Food</p>
+          <p>✅ Peaceful Lakeside Vibes</p>
+        </div>
+      </div>
+    ),
+
+    description:
+      "Cozy dome-style tents offering an immersive stay with panoramic lake and nature views. Perfect for couples and groups seeking a comfortable, relaxed, and scenic camping experience.",
+  },
+
+  {
+    id: 2,
+    name: "Triangle Tent",
+    category: "cabin",
+    images: [
+      {
+        url: "/images/accommodations/triangle/triangle-1.webp",
+        imageClassName: "object-[68%_78%]",
+      },
+      {
+        url: "/images/accommodations/triangle/triangle-2.webp",
+        imageClassName: "object-[68%_78%]",
+      },
+      {
+        url: "/images/accommodations/triangle/triangle-3.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/triangle/triangle-4.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/new_images/image-37.webp",
+        imageClassName: "object-cover object-[55%_65%]",
+      },
+      {
+        url: "/images/new_images/image-40.webp",
+        imageClassName: "object-cover object-center",
+      },
+    ],
+    price: 1200,
+    beforePrice: 1500,
+    guests: 2,
+
+    amenitiesHtml: (
+      <div className="mb-6 space-y-3">
+        <div className="bg-emerald-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🏕 Stay Includes
+          </h4>
+          <p className="text-xs text-slate-600">
+            Triangle Cottage • Mattress • Blanket • Pillow • Fan • Light •
+            Mobile Charging Point
+          </p>
+        </div>
+        <div className="bg-amber-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🍽 Food Menu
+          </h4>
+          <p className="text-xs text-slate-600">
+            Tea & Pakoda/Misal • BBQ (Paneer/Chicken) • Dinner (Veg/Non-Veg) •
+            Breakfast • Mineral Water
+          </p>
+        </div>
+        <div className="bg-blue-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🎉 Activities
+          </h4>
+          <p className="text-xs text-slate-600">
+            DJ Music • Indoor & Outdoor Games • Bonfire • Boating/Kayaking
+            (Extra) • Live Music (Sat) • Free Parking
+          </p>
+        </div>
+        <div className="text-xs text-slate-700 space-y-1 pl-1">
+          <p>✅ Tasty Homely Food</p>
+          <p>✅ Peaceful Lakeside Vibes</p>
+        </div>
+      </div>
+    ),
+
+    description:
+      "Stylish triangle tents with a serene lake view, designed for couples who want added comfort and a cozy, romantic escape.",
+  },
+
+  {
+    id: 3,
+    name: "Deluxe Cottages",
+    category: "tent",
+    images: [
+      {
+        url: "/images/accommodations/delux/delux-1.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/delux/delux-bday.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/delux/delux-bed.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/delux/delux-2.webp",
+        imageClassName: "object-center object-contain",
+      },
+      {
+        url: "/images/accommodations/delux/delux-window.webp",
+        imageClassName: "object-center object-cover",
+      },
+      {
+        url: "/images/accommodations/delux/delux-3.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/delux/delux-outside.webp",
+        imageClassName: "object-[60%_70%]",
+      },
+      {
+        url: "/images/accommodations/delux/delux-4.webp",
+        imageClassName: "object-center object-contain",
+      },
+      {
+        url: "/images/accommodations/delux/delux-washroom.webp",
+        imageClassName: "object-center object-contain",
+      },
+    ],
+    price: 2499,
+    beforePrice: 3600,
+    guests: 4,
+
+    amenitiesHtml: (
+      <div className="mb-6 space-y-3">
+        <div className="bg-emerald-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🏕 Stay Includes
+          </h4>
+          <p className="text-xs text-slate-600">
+            Deluxe Cottage Stay • Mattress • Blanket • Pillow • Fan • Light •
+            Mobile Charging Point
+          </p>
+        </div>
+        <div className="bg-amber-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🍽 Food Menu
+          </h4>
+          <p className="text-xs text-slate-600">
+            Tea & Pakoda/Misal • BBQ (Paneer/Chicken) • Dinner (Veg/Non-Veg) •
+            Breakfast • Mineral Water
+          </p>
+        </div>
+        <div className="bg-blue-50/60 p-3 rounded-xl">
+          <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+            🎉 Activities
+          </h4>
+          <p className="text-xs text-slate-600">
+            DJ Music • Indoor & Outdoor Games • Bonfire • Boating/Kayaking
+            (Extra) • Live Music (Sat) • Free Parking
+          </p>
+        </div>
+        <div className="text-xs text-slate-700 space-y-1 pl-1">
+          <p>✅ Tasty Homely Food</p>
+          <p>✅ Peaceful Lakeside Vibes</p>
+        </div>
+      </div>
+    ),
+
+    description:
+      "Luxurious lake-touch cottages designed for couples and families, offering a private getaway with elegant interiors and modern amenities.",
+  },
+];
 
 const Accommodations = () => {
   // const accommodations = [
@@ -150,161 +366,177 @@ const Accommodations = () => {
   //   },
   // ];
 
-  const accommodations = [
-    {
-      id: 1,
-      name: "Regular Tent",
-      category: "dome",
-      images: [
-        {
-          url: "/images/accommodations/tent/tent-1.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/tent/tent-2.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/tent/tent-3.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/tent/tent-4.webp",
-          imageClassName: "object-center",
-        },
-      ],
-      price: 999,
-      beforePrice: 1200,
-      guests: 1,
+  // const accommodations = [
+  //   {
+  //     id: 1,
+  //     name: "Regular Tent",
+  //     category: "dome",
+  //     images: [
+  //       {
+  //         url: "/images/accommodations/tent/tent-1.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/tent/tent-2.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/tent/tent-3.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/tent/tent-4.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //     ],
+  //     price: 999,
+  //     beforePrice: 1200,
+  //     guests: 1,
 
-      // ✅ REPLACED from campTypes[0].amenities
-      amenities: [
-        { icon: Utensils, label: "Meals Included" },
-        { icon: Flame, label: "Bonfire & Barbecue" },
-        { icon: Music2, label: "DJ Music" },
-        { icon: Gamepad2, label: "Outdoor & Indoor Games" },
-        { icon: Car, label: "Free Parking" },
-        { icon: ShowerHead, label: "Washrooms" },
-        { icon: Droplets, label: "Drinking Water" },
-      ],
+  //     // ✅ REPLACED from campTypes[0].amenities
+  //     amenities: [
+  //       { icon: Utensils, label: "Meals Included" },
+  //       { icon: Flame, label: "Bonfire & Barbecue" },
+  //       { icon: Music2, label: "DJ Music" },
+  //       { icon: Gamepad2, label: "Outdoor & Indoor Games" },
+  //       { icon: Car, label: "Free Parking" },
+  //       { icon: ShowerHead, label: "Washrooms" },
+  //       { icon: Droplets, label: "Drinking Water" },
+  //     ],
 
-      description:
-        "Cozy dome-style tents offering an immersive stay with panoramic lake and nature views. Perfect for couples and groups seeking a comfortable, relaxed, and scenic camping experience.",
-    },
+  //     description:
+  //       "Cozy dome-style tents offering an immersive stay with panoramic lake and nature views. Perfect for couples and groups seeking a comfortable, relaxed, and scenic camping experience.",
+  //   },
 
-    {
-      id: 2,
-      name: "Triangle Tent",
-      category: "cabin",
-      images: [
-        {
-          url: "/images/accommodations/triangle/triangle-1.webp",
-          imageClassName: "object-[68%_78%]",
-        },
-        {
-          url: "/images/accommodations/triangle/triangle-2.webp",
-          imageClassName: "object-[68%_78%]",
-        },
-        {
-          url: "/images/accommodations/triangle/triangle-3.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/triangle/triangle-4.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/new_images/image-37.webp",
-          imageClassName: "object-cover object-[55%_65%]",
-        },
-        {
-          url: "/images/new_images/image-40.webp",
-          imageClassName: "object-cover object-center",
-        },
-      ],
-      price: 1200,
-      beforePrice: 1500,
-      guests: 2,
+  //   {
+  //     id: 2,
+  //     name: "Triangle Tent",
+  //     category: "cabin",
+  //     images: [
+  //       {
+  //         url: "/images/accommodations/triangle/triangle-1.webp",
+  //         imageClassName: "object-[68%_78%]",
+  //       },
+  //       {
+  //         url: "/images/accommodations/triangle/triangle-2.webp",
+  //         imageClassName: "object-[68%_78%]",
+  //       },
+  //       {
+  //         url: "/images/accommodations/triangle/triangle-3.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/triangle/triangle-4.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/new_images/image-37.webp",
+  //         imageClassName: "object-cover object-[55%_65%]",
+  //       },
+  //       {
+  //         url: "/images/new_images/image-40.webp",
+  //         imageClassName: "object-cover object-center",
+  //       },
+  //     ],
+  //     price: 1200,
+  //     beforePrice: 1500,
+  //     guests: 2,
 
-      // ✅ REPLACED from campTypes[1].amenities
-      amenities: [
-        { icon: Waves, label: "Lake View" },
-        { icon: Utensils, label: "Meals Included" },
-        { icon: Flame, label: "Bonfire & Barbecue" },
-        { icon: Music2, label: "DJ Music" },
-        { icon: Gamepad2, label: "Outdoor & Indoor Games" },
-        { icon: Car, label: "Free Parking" },
-        { icon: ShowerHead, label: "Washrooms" },
-        { icon: Droplets, label: "Drinking Water" },
-      ],
+  //     // ✅ REPLACED from campTypes[1].amenities
+  //     amenities: [
+  //       { icon: Waves, label: "Lake View" },
+  //       { icon: Utensils, label: "Meals Included" },
+  //       { icon: Flame, label: "Bonfire & Barbecue" },
+  //       { icon: Music2, label: "DJ Music" },
+  //       { icon: Gamepad2, label: "Outdoor & Indoor Games" },
+  //       { icon: Car, label: "Free Parking" },
+  //       { icon: ShowerHead, label: "Washrooms" },
+  //       { icon: Droplets, label: "Drinking Water" },
+  //     ],
 
-      description:
-        "Stylish triangle tents with a serene lake view, designed for couples who want added comfort and a cozy, romantic escape.",
-    },
+  //     description:
+  //       "Stylish triangle tents with a serene lake view, designed for couples who want added comfort and a cozy, romantic escape.",
+  //   },
 
-    {
-      id: 3,
-      name: "Deluxe Cottages",
-      category: "tent",
-      images: [
-        {
-          url: "/images/accommodations/delux/delux-1.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/delux/delux-bday.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/delux/delux-bed.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/delux/delux-2.webp",
-          imageClassName: "object-center object-contain",
-        },
-        {
-          url: "/images/accommodations/delux/delux-window.webp",
-          imageClassName: "object-center object-cover",
-        },
-        {
-          url: "/images/accommodations/delux/delux-3.webp",
-          imageClassName: "object-center",
-        },
-        {
-          url: "/images/accommodations/delux/delux-outside.webp",
-          imageClassName: "object-[60%_70%]",
-        },
-        {
-          url: "/images/accommodations/delux/delux-4.webp",
-          imageClassName: "object-center object-contain",
-        },
-        {
-          url: "/images/accommodations/delux/delux-washroom.webp",
-          imageClassName: "object-center object-contain",
-        },
-      ],
-      price: 2999,
-      beforePrice: 3200,
-      guests: 4,
+  //   {
+  //     id: 3,
+  //     name: "Deluxe Cottages",
+  //     category: "tent",
+  //     images: [
+  //       {
+  //         url: "/images/accommodations/delux/delux-1.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-bday.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-bed.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-2.webp",
+  //         imageClassName: "object-center object-contain",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-window.webp",
+  //         imageClassName: "object-center object-cover",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-3.webp",
+  //         imageClassName: "object-center",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-outside.webp",
+  //         imageClassName: "object-[60%_70%]",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-4.webp",
+  //         imageClassName: "object-center object-contain",
+  //       },
+  //       {
+  //         url: "/images/accommodations/delux/delux-washroom.webp",
+  //         imageClassName: "object-center object-contain",
+  //       },
+  //     ],
+  //     price: 2999,
+  //     beforePrice: 3200,
+  //     guests: 4,
 
-      // ✅ REPLACED from campTypes[2].amenities
-      amenities: [
-        { icon: Mountain, label: "Tree View" },
-        { icon: Zap, label: "Electricity" },
-        { icon: Utensils, label: "Meals Included" },
-        { icon: Flame, label: "Bonfire & Barbecue" },
-        { icon: Music2, label: "DJ Music" },
-        { icon: Gamepad2, label: "Outdoor & Indoor Games" },
-        { icon: Car, label: "Free Parking" },
-        { icon: ShowerHead, label: "Private Washroom" },
-        { icon: Droplets, label: "Drinking Water" },
-      ],
+  //     // ✅ REPLACED from campTypes[2].amenities
+  //     amenities: [
+  //       { icon: Mountain, label: "Tree View" },
+  //       { icon: Zap, label: "Electricity" },
+  //       { icon: Utensils, label: "Meals Included" },
+  //       { icon: Flame, label: "Bonfire & Barbecue" },
+  //       { icon: Music2, label: "DJ Music" },
+  //       { icon: Gamepad2, label: "Outdoor & Indoor Games" },
+  //       { icon: Car, label: "Free Parking" },
+  //       { icon: ShowerHead, label: "Private Washroom" },
+  //       { icon: Droplets, label: "Drinking Water" },
+  //     ],
 
-      description:
-        "Luxurious lake-touch cottages designed for couples and families, offering a private getaway with elegant interiors and modern amenities.",
-    },
-  ];
+  //     description:
+  //       "Luxurious lake-touch cottages designed for couples and families, offering a private getaway with elegant interiors and modern amenities.",
+  //   },
+  // ];
+  const [timeLeft, setTimeLeft] = useState(172800);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatTime = (secs: number) => {
+    const h = Math.floor(secs / 3600);
+    const m = Math.floor((secs % 3600) / 60);
+    const s = secs % 60;
+    return `${h}h ${m}m ${s}s`;
+  };
 
   return (
     <section id="accommodations" className="py-16 sm:py-20 lg:py-24 bg-white">
@@ -395,15 +627,30 @@ const Accommodations = () => {
                   </Badge>
                 </div>
 
-                {(index === 0 || index === 2) && (
+                {(index === 0 || index === 1) && (
                   <Badge
                     variant="outline"
                     className={cn(
                       "absolute bottom-4 right-4 z-10 bg-amber-50 text-amber-700 border-amber-300 backdrop-blur-sm font-medium"
                     )}
                   >
-                    ⚡ Few Left
+                    ⚡ {index === 1 ? "6" : "Few"} Left
                   </Badge>
+                )}
+
+                {index === 2 && (
+                  <div className="absolute top-4 right-4 z-10 flex flex-col items-end space-y-1">
+                    <Badge className="bg-yellow-600 text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
+                      ₹{accommodation.price}/person{" "}
+                      <span className="text-sm text-gray-200 line-through ml-1">
+                        ₹{accommodation.beforePrice}/per
+                      </span>
+                    </Badge>
+
+                    <div className="bg-red-600 text-white text-[11px] px-2 py-0.5 rounded-md font-semibold animate-pulse shadow">
+                      ⏳ Limited Time Discount — {formatTime(timeLeft)}
+                    </div>
+                  </div>
                 )}
               </div>
 
@@ -435,7 +682,7 @@ const Accommodations = () => {
                     )}
                   </div>
                 </div> */}
-                <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                {/* <div className="grid sm:grid-cols-2 gap-3 mb-6">
                   {accommodation.amenities.map((amenity, idx) => (
                     <div
                       key={idx}
@@ -445,11 +692,49 @@ const Accommodations = () => {
                       <span>{amenity.label}</span>
                     </div>
                   ))}
-                </div>
+                </div> */}
+
+                {/* <div className="mb-6 space-y-3">
+                  <div className="bg-emerald-50/60 p-3 rounded-xl">
+                    <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+                      🏕 Stay Includes
+                    </h4>
+                    <p className="text-xs text-slate-600">
+                      Cozy Dome Tent • Foam Mattress • Blanket
+                    </p>
+                  </div>
+
+                  <div className="bg-amber-50/60 p-3 rounded-xl">
+                    <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+                      🍽 Food Menu
+                    </h4>
+                    <p className="text-xs text-slate-600">
+                      Tea & Pakoda/Misal • BBQ (Paneer/Chicken) • Dinner
+                      (Veg/Non-Veg) • Breakfast • Mineral Water
+                    </p>
+                  </div>
+
+                  <div className="bg-blue-50/60 p-3 rounded-xl">
+                    <h4 className="font-semibold text-forest-700 mb-1 text-sm">
+                      🎉 Activities
+                    </h4>
+                    <p className="text-xs text-slate-600">
+                      DJ Music • Indoor & Outdoor Games • Bonfire •
+                      Boating/Kayaking (Extra) • Live Music (Sat) • Free Parking
+                    </p>
+                  </div>
+
+                  <div className="text-xs text-slate-700 space-y-1 pl-1">
+                    <p>✅ Tasty Homely Food</p>
+                    <p>✅ Peaceful Lakeside Vibes</p>
+                  </div>
+                </div> */}
+
+                <>{accommodation.amenitiesHtml}</>
 
                 {/* CTA Button */}
                 <Button
-                  className="w-full bg-moss hover:bg-moss/80 text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg "
+                  className="w-full bg-moss hover:bg-moss/80 text-white py-3 rounded-xl transition-all duration-300 hover:shadow-lg cursor-pointer"
                   onClick={() =>
                     document
                       .getElementById("bookings")

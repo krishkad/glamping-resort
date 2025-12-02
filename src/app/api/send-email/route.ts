@@ -41,6 +41,34 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const user_info = {
+      name,
+      lname,
+      email,
+      phone,
+      checkIn,
+      checkOut,
+      guests,
+      kids,
+      selectedPackage,
+      calculatedAmount,
+    };
+
+    const fixDate = (d: Date | string) => {
+      const date = new Date(d);
+      date.setDate(date.getDate() + 1); // force local date without timezone shift
+      console.log({ date });
+      return date;
+    };
+    const checkInDate = new Date(checkIn);
+    const checkOutDate = new Date(checkOut);
+
+    const fixedCheckIn = new Date(checkInDate.toDateString());
+    const fixedCheckOut = new Date(checkOutDate.toDateString());
+
+    const formattedCheckIn = format(fixedCheckIn, "MMM dd yyyy");
+    const formattedCheckOut = format(fixedCheckOut, "MMM dd yyyy");
+
     const packageName =
       typeof selectedPackage === "object"
         ? selectedPackage?.name
@@ -56,8 +84,8 @@ Phone: ${phone}
 Package: ${packageName || "Not specified"} (${selectedPackage.price}/person)
 Total Amount: ₹${calculatedAmount?.toLocaleString("en-IN") || "N/A"}
 
-Check-In: ${format(new Date(checkIn), "MMM dd yyyy")}
-Check-Out: ${format(new Date(checkOut), "MMM dd yyyy")}
+Check-In: ${formattedCheckIn}
+Check-Out: ${formattedCheckOut}
 
 Adults: ${guests}
 Kids: ${kids}
@@ -122,14 +150,8 @@ Please confirm availability.
       <tr><td class="label">Amount:</td><td><strong>₹${
         calculatedAmount?.toLocaleString("en-IN") || "N/A"
       }</strong></td></tr>
-      <tr><td class="label">Check-In:</td><td>${format(
-        new Date(checkIn),
-        "MMM dd yyyy"
-      )}</td></tr>
-      <tr><td class="label">Check-Out:</td><td>${format(
-        new Date(checkOut),
-        "MMM dd yyyy"
-      )}</td></tr>
+      <tr><td class="label">Check-In:</td><td>${formattedCheckIn}</td></tr>
+      <tr><td class="label">Check-Out:</td><td>${formattedCheckOut}</td></tr>
       <tr><td class="label">Adults:</td><td>${guests}</td></tr>
       <tr><td class="label">Kids:</td><td>${kids}</td></tr>
     </table>
@@ -166,7 +188,7 @@ Please confirm availability.
     });
 
     return NextResponse.json(
-      { success: true, message: "Booking email sent successfully" },
+      { success: true, message: "Booking email sent successfully", user_info },
       { status: 200 }
     );
   } catch (error) {

@@ -10,7 +10,6 @@ import Testimonials from "@/components/Testimonials";
 const Home = () => {
   return (
     <div className="relative min-h-screen bg-background">
-      {/* <Navbar /> */}
       <Hero />
       <Accommodations />
       <DayTimeline />
@@ -19,7 +18,6 @@ const Home = () => {
       <Testimonials />
       <FAQ />
       <FloatingActions />
-      {/* <Footer /> */}
     </div>
   );
 };
