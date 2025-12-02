@@ -70,6 +70,7 @@ const BookingWidget = () => {
   const [guests, setGuests] = useState(2);
   const [kids, setKids] = useState(0);
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [bookingExists, setBookingExists] = useState("" as any);
   const [sending, setSending] = useState(false);
 

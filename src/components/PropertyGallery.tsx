@@ -3,12 +3,6 @@ import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { images } from "./Testimonials";
 
-interface PropertyGalleryProps {
-  property: {
-    title: string;
-    images: string[];
-  };
-}
 
 const PropertyGallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);

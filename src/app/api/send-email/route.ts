@@ -54,12 +54,12 @@ export async function POST(req: NextRequest) {
       calculatedAmount,
     };
 
-    const fixDate = (d: Date | string) => {
-      const date = new Date(d);
-      date.setDate(date.getDate() + 1); // force local date without timezone shift
-      console.log({ date });
-      return date;
-    };
+    // const fixDate = (d: Date | string) => {
+    //   const date = new Date(d);
+    //   date.setDate(date.getDate() + 1); // force local date without timezone shift
+    //   console.log({ date });
+    //   return date;
+    // };
     const checkInDate = new Date(checkIn);
     const checkOutDate = new Date(checkOut);
 
