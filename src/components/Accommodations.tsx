@@ -641,14 +641,27 @@ const Accommodations = () => {
                   </Badge>
                 </div>
 
-               {accommodation.newYear &&  <Badge
-                  variant="outline"
-                  className={cn(
-                    "absolute bottom-4 right-4 z-10 bg-green-50 text-green-700 border-green-300 backdrop-blur-sm px-3 py-1 text-sm font-medium rounded-lg"
-                  )}
-                >
-                  🎉 {accommodation.newYear}/per on 31 — book early for discount
-                </Badge>}
+                {accommodation.newYear && (
+                  <Badge
+                    variant="outline"
+                    className={cn(
+                      "absolute bottom-4 right-4 z-10 bg-green-50 text-green-700 border-green-300 backdrop-blur-sm px-3 py-1 text-sm font-medium rounded-lg"
+                    )}
+                  >
+                    🎉 {accommodation.newYear}/per on 31 — book early for
+                    discount
+                  </Badge>
+                )}
+                {accommodation.newYear && (
+                  <Badge
+                    variant="outline"
+                    className={cn(
+                      "absolute bottom-13 right-4 z-10 bg-transparent text-white border-green-300 backdrop-blur-sm px-3 py-1 text-xs font-medium rounded-lg"
+                    )}
+                  >
+                    Price Double on 31 - all-over pawna
+                  </Badge>
+                )}
 
                 {index === 1 && (
                   <div className="absolute top-4 right-4 z-10 flex flex-col items-end space-y-1">
