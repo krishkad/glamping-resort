@@ -187,6 +187,8 @@ Please confirm availability.
       text: whatsappReadyText, // plain text fallback (also perfect for WhatsApp)
     });
 
+    
+
     return NextResponse.json(
       { success: true, message: "Booking email sent successfully", user_info },
       { status: 200 }

@@ -38,6 +38,7 @@ const accommodations = [
     price: 999,
     beforePrice: 1200,
     guests: 1,
+    newYear: 2499,
 
     amenitiesHtml: (
       <div className="mb-6 space-y-3">
@@ -111,7 +112,7 @@ const accommodations = [
     price: 1199,
     beforePrice: 1600,
     guests: 2,
-
+    newYear: 2899,
     amenitiesHtml: (
       <div className="mb-6 space-y-3">
         <div className="bg-emerald-50/60 p-3 rounded-xl">
@@ -197,7 +198,6 @@ const accommodations = [
     price: 2499,
     beforePrice: 3600,
     guests: 4,
-
     amenitiesHtml: (
       <div className="mb-6 space-y-3">
         <div className="bg-emerald-50/60 p-3 rounded-xl">
@@ -641,16 +641,14 @@ const Accommodations = () => {
                   </Badge>
                 </div>
 
-                {(index === 0 || index === 1) && (
-                  <Badge
-                    variant="outline"
-                    className={cn(
-                      "absolute bottom-4 right-4 z-10 bg-amber-50 text-amber-700 border-amber-300 backdrop-blur-sm font-medium"
-                    )}
-                  >
-                    ⚡ {index === 1 ? "6" : "Few"} Left
-                  </Badge>
-                )}
+               {accommodation.newYear &&  <Badge
+                  variant="outline"
+                  className={cn(
+                    "absolute bottom-4 right-4 z-10 bg-green-50 text-green-700 border-green-300 backdrop-blur-sm px-3 py-1 text-sm font-medium rounded-lg"
+                  )}
+                >
+                  🎉 {accommodation.newYear}/per on 31 — book early for discount
+                </Badge>}
 
                 {index === 1 && (
                   <div className="absolute top-4 right-4 z-10 flex flex-col items-end space-y-1">
