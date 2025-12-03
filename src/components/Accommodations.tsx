@@ -195,7 +195,7 @@ const accommodations = [
         imageClassName: "object-center object-contain",
       },
     ],
-    price: 2499,
+    price: 2999,
     beforePrice: 3600,
     guests: 4,
     amenitiesHtml: (
@@ -645,10 +645,10 @@ const Accommodations = () => {
                   <Badge
                     variant="outline"
                     className={cn(
-                      "absolute bottom-4 right-4 z-10 bg-green-50 text-green-700 border-green-300 backdrop-blur-sm px-3 py-1 text-sm font-medium rounded-lg"
+                      "absolute bottom-4 right-4 z-10 bg-green-50 text-green-700 border-green-300 backdrop-blur-sm px-3 py-1 text-xs font-medium rounded-lg"
                     )}
                   >
-                    🎉 {accommodation.newYear}/per on 31 — book early for
+                    🎉 {accommodation.newYear}/per for 31 — book early for
                     discount
                   </Badge>
                 )}
@@ -656,10 +656,10 @@ const Accommodations = () => {
                   <Badge
                     variant="outline"
                     className={cn(
-                      "absolute bottom-13 right-4 z-10 bg-transparent text-white border-green-300 backdrop-blur-sm px-3 py-1 text-xs font-medium rounded-lg"
+                      "absolute bottom-12 right-4 z-10 bg-transparent text-white border-green-300 backdrop-blur-sm px-3 py-1 text-xs font-medium rounded-lg"
                     )}
                   >
-                    Price Double on 31 - all-over pawna
+                    Price Double ⬆️ for 31 - all-over pawna
                   </Badge>
                 )}
 
