@@ -54,20 +54,26 @@ export async function POST(req: NextRequest) {
       calculatedAmount,
     };
 
-    // const fixDate = (d: Date | string) => {
-    //   const date = new Date(d);
-    //   date.setDate(date.getDate() + 1); // force local date without timezone shift
-    //   console.log({ date });
-    //   return date;
-    // };
+    const fixDate = (d: Date | string) => {
+      const date = new Date(d);
+      date.setDate(date.getDate() + 1); // force local date without timezone shift
+      console.log({ date });
+      return date;
+    };
     const checkInDate = new Date(checkIn);
     const checkOutDate = new Date(checkOut);
 
     const fixedCheckIn = new Date(checkInDate.toDateString());
     const fixedCheckOut = new Date(checkOutDate.toDateString());
 
-    const formattedCheckIn = format(fixedCheckIn, "MMM dd yyyy - EEEE");
-    const formattedCheckOut = format(fixedCheckOut, "MMM dd yyyy - EEEE");
+    const formattedCheckIn = format(
+      fixDate(fixedCheckIn),
+      "MMM dd yyyy - EEEE"
+    );
+    const formattedCheckOut = format(
+      fixDate(fixedCheckOut),
+      "MMM dd yyyy - EEEE"
+    );
 
     const packageName =
       typeof selectedPackage === "object"
@@ -186,8 +192,6 @@ Please confirm availability.
       html: mailBody,
       text: whatsappReadyText, // plain text fallback (also perfect for WhatsApp)
     });
-
-    
 
     return NextResponse.json(
       { success: true, message: "Booking email sent successfully", user_info },
