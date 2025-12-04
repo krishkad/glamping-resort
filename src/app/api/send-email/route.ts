@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
       calculatedAmount,
     };
 
-    const fixDate = (d: Date | string) => {
+    const fixDate = (d: Date) => {
       const date = new Date(d);
       date.setDate(date.getDate() + 1); // force local date without timezone shift
       console.log({ date });
@@ -74,6 +74,8 @@ export async function POST(req: NextRequest) {
       fixDate(fixedCheckOut),
       "MMM dd yyyy - EEEE"
     );
+
+    console.log({ formattedCheckIn, formattedCheckOut });
 
     const packageName =
       typeof selectedPackage === "object"
@@ -185,10 +187,7 @@ Please confirm availability.
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: process.env.SMTP_USER,
-      subject: `New Booking – ${name} ${lname} For (${format(
-        formattedCheckIn,
-        "MMM dd yyyy - EEEE"
-      )})`,
+      subject: `New Booking – ${name} ${lname} For (${formattedCheckIn})`,
       html: mailBody,
       text: whatsappReadyText, // plain text fallback (also perfect for WhatsApp)
     });

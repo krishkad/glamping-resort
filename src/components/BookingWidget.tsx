@@ -122,6 +122,16 @@ const BookingWidget = () => {
       setBookingExists(res.user_info);
 
       console.log({ res });
+      setSending(false);
+      setName("");
+      setLname("");
+      setEmail("");
+      setPhone("");
+      setCheckIn(new Date());
+      setCheckOut(undefined);
+      setGuests(2);
+      setKids(0);
+      setSelectedPackage(packages[0]);
     } catch (error) {
       console.log("error while sending inquiry: ", `${error}`);
     } finally {
