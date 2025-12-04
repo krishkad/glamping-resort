@@ -66,8 +66,8 @@ export async function POST(req: NextRequest) {
     const fixedCheckIn = new Date(checkInDate.toDateString());
     const fixedCheckOut = new Date(checkOutDate.toDateString());
 
-    const formattedCheckIn = format(fixedCheckIn, "MMM dd yyyy");
-    const formattedCheckOut = format(fixedCheckOut, "MMM dd yyyy");
+    const formattedCheckIn = format(fixedCheckIn, "MMM dd yyyy - EEEE");
+    const formattedCheckOut = format(fixedCheckOut, "MMM dd yyyy - EEEE");
 
     const packageName =
       typeof selectedPackage === "object"
@@ -179,9 +179,9 @@ Please confirm availability.
     await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: process.env.SMTP_USER,
-      subject: `New Booking – ${name} ${lname} (${format(
+      subject: `New Booking – ${name} ${lname} For (${format(
         checkIn,
-        "MMM dd yyyy"
+        "MMM dd yyyy - EEEE"
       )})`,
       html: mailBody,
       text: whatsappReadyText, // plain text fallback (also perfect for WhatsApp)
