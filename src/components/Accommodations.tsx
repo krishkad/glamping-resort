@@ -522,16 +522,25 @@ const Accommodations = () => {
   //   },
   // ];
   const [timeLeft, setTimeLeft] = useState(0);
+  const [regularTimeLeft, setRegularTimeLeft] = useState(0);
   useEffect(() => {
     // Create today's 5 PM timestamp
     const now = new Date();
     const end = new Date();
+    const regularEnd = new Date();
 
-    end.setHours(21, 59, 0, 0);
+    end.setHours(16, 59, 0, 0);
+    regularEnd.setHours(21, 59, 0, 0);
 
     // If it's already past 5 PM, offer expired
+
     if (now > end) {
       setTimeLeft(0);
+      return;
+    }
+
+    if (now > regularEnd) {
+      setRegularTimeLeft(0);
       return;
     }
 
@@ -540,7 +549,15 @@ const Accommodations = () => {
       setTimeLeft(remaining > 0 ? remaining : 0);
     }, 1000);
 
-    return () => clearInterval(timer);
+    const regulartimer = setInterval(() => {
+      const remaining = regularEnd.getTime() - Date.now();
+      setRegularTimeLeft(remaining > 0 ? remaining : 0);
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+      clearInterval(regulartimer);
+    };
   }, []);
 
   const formatTime = (ms: number) => {
@@ -663,7 +680,7 @@ const Accommodations = () => {
                   </Badge>
                 )}
 
-                {index === 1 && (
+                {(index === 1 || index === 0) && (
                   <div className="absolute top-4 right-4 z-10 flex flex-col items-end space-y-1">
                     <Badge className="bg-yellow-600 text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
                       ₹{accommodation.price}/person{" "}
@@ -673,7 +690,10 @@ const Accommodations = () => {
                     </Badge>
 
                     <div className="bg-red-600 text-white text-[11px] px-2 py-0.5 rounded-md font-semibold animate-pulse shadow">
-                      ⏳ Limited Time Discount — {formatTime(timeLeft)}
+                      ⏳ Limited Time Discount —{" "}
+                      {index === 0
+                        ? formatTime(regularTimeLeft)
+                        : formatTime(timeLeft)}
                     </div>
                   </div>
                 )}
