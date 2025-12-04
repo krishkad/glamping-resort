@@ -186,7 +186,7 @@ Please confirm availability.
       from: process.env.SMTP_USER,
       to: process.env.SMTP_USER,
       subject: `New Booking – ${name} ${lname} For (${format(
-        checkIn,
+        formattedCheckIn,
         "MMM dd yyyy - EEEE"
       )})`,
       html: mailBody,
