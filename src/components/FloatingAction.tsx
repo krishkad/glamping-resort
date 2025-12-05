@@ -35,7 +35,7 @@ const FloatingActions = () => {
       <div className="backdrop-blur-xl bg-white/80 border border-white/20 shadow-xl rounded-full px-4 py-2 flex items-center space-x-3">
         {/* Tagline */}
         <span className="text-xs font-medium text-gray-700 block">
-          Call our friendly team
+          Call our friendly team 24/7
         </span>
 
         {/* WhatsApp */}
