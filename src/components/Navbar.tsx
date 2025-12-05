@@ -12,6 +12,7 @@ import {
 import { cn } from "@/lib/utils";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -60,11 +61,13 @@ const Navbar = () => {
             )}
           >
             <div className="w-[130px] h-[60px] overflow-hidden">
-              <img
-                src="/images/pawna-logo.png"
-                alt="pawna-logo"
-                className="w-full h-full object-cover scale-[1.20] invert-100"
-              />
+              <Link href={"#hero"}>
+                <img
+                  src="/images/pawna-logo.png"
+                  alt="pawna-logo"
+                  className="w-full h-full object-cover scale-[1.20] invert-100"
+                />
+              </Link>
             </div>
           </div>
 
@@ -132,6 +135,10 @@ const Navbar = () => {
                       <img
                         src="/images/pawna-logo.png"
                         alt="pawna-logo"
+                        onClick={() => {
+                          router.push("#hero");
+                          setIsOpen(false);
+                        }}
                         className="w-full h-full object-cover scale-[1.20] invert-100"
                       />
                     </div>

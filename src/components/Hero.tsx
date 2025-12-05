@@ -4,7 +4,7 @@ import { ShieldIcon, Star, UserIcon } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-svh flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-svh flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-[65%_75%]"
@@ -19,7 +19,7 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
         {/* Trust Indicators */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-6 sm:mb-8">
-          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white">
+          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white"> 
             <Star className="w-4 sm:w-5 h-4 sm:h-5 fill-yellow-500 text-yellow-600" />
             <span className="font-medium text-xs sm:text-sm">4.8 Review</span>
           </div>

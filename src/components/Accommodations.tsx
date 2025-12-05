@@ -117,7 +117,7 @@ const accommodations = [
         imageClassName: "object-cover object-center",
       },
     ],
-    price: 1199,
+    price: 1299,
     beforePrice: 1600,
     guests: 2,
     newYear: 2899,

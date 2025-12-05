@@ -6,6 +6,8 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
+const base = process.env.NEXT_PUBLIC_BASE_URL as string;
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -23,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
+  metadataBase: new URL(base),
 
   title: {
     default: "Pawna Lake Camping | Luxury Tents & Lakeside Experience",
@@ -43,25 +45,25 @@ export const metadata: Metadata = {
 
   openGraph: {
     type: "website",
-    url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+    url: base,
     siteName: "Pawna Camps",
     title: "Pawna Lake Camping",
     description:
       "Premium Pawna Lake camping with BBQ, boating and luxury tents.",
     images: [
       {
-        url: "/images/accommodations/delux/delux-1.webp",
+        url: `${base}/images/accommodations/delux/delux-1.webp`,
         width: 1600,
         height: 900,
         alt: "Pawna Lake Luxury Camping",
       },
       {
-        url: "/images/accommodations/delux/delux-2.webp",
+        url: `${base}/images/accommodations/delux/delux-2.webp`,
         width: 1600,
         height: 900,
       },
       {
-        url: "/images/accommodations/triangle/triangle-1.webp",
+        url: `${base}/images/accommodations/triangle/triangle-1.webp`,
         width: 1600,
         height: 900,
       },
@@ -70,17 +72,17 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    images: ["/images/accommodations/delux/delux-1.webp"],
+    images: [`${base}/images/accommodations/delux/delux-1.webp`],
   },
 
   alternates: {
-    canonical: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+    canonical: base,
   },
 
   robots: {
     index: true,
     follow: true,
-    "max-image-preview": "large", // ❤️ SUPER IMPORTANT FOR BIG GOOGLE IMAGES
+    "max-image-preview": "large",
   },
 };
 

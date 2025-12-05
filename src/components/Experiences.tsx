@@ -3,69 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-// const experiences = [
-//   // From Activities Array
-//   {
-//     title: "Bonfire Nights",
-//     description:
-//       "Cozy evenings around the crackling fire with music, stories, and warm vibes",
-//     icon: "🔥",
-//     duration: "Night Activity",
-//     category: "Relaxation",
-//     price: "Free",
-//     color: "from-red-400 to-orange-500",
-//   },
-//   {
-//     title: "Lake Kayaking",
-//     description:
-//       "Paddle through the serene waters and explore peaceful lake corners",
-//     icon: "🚣‍♂️",
-//     duration: "1.5 hours",
-//     category: "Adventure",
-//     price: "Free",
-//     color: "from-blue-500 to-sky-500",
-//   },
-//   {
-//     title: "Stargazing",
-//     description: "Marvel at the brilliant night sky away from city lights",
-//     icon: "✨",
-//     duration: "2 hours",
-//     category: "Relaxation",
-//     price: "Free",
-//     color: "from-indigo-500 to-purple-600",
-//   },
-//   // Newly Added
-//   {
-//     title: "DJ Night",
-//     description:
-//       "High-energy music and dance vibes to make your night unforgettable",
-//     icon: "🎧",
-//     duration: "3 hours",
-//     category: "Entertainment",
-//     price: "Free",
-//     color: "from-pink-500 to-purple-500",
-//   },
-//   {
-//     title: "Outdoor Games",
-//     description:
-//       "Enjoy badminton, cricket, football, and fun team games at the campsite",
-//     icon: "🎯",
-//     duration: "Flexible",
-//     category: "Fun",
-//     price: "Free",
-//     color: "from-yellow-400 to-orange-500",
-//   },
-//   {
-//     title: "Photo Spots",
-//     description:
-//       "Capture stunning photos at our curated scenic viewpoints and creative setups",
-//     icon: "📸",
-//     duration: "Flexible",
-//     category: "Leisure",
-//     price: "Free",
-//     color: "from-rose-400 to-red-500",
-//   },
-// ];
 
 const experiences = [
   {

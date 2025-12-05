@@ -17,8 +17,7 @@ const timelineEvents = [
     description:
       "Arrive at the campsite and begin your getaway with a smooth and effortless check-in. Settle into your accommodation and soak in the natural surroundings.",
     icon: Sun,
-    image:
-      "/images/new_images/image-5.webp",
+    image: "/images/new_images/image-5.webp",
     color: "bg-gradient-to-r from-green-400 to-green-600",
   },
   {
@@ -46,8 +45,7 @@ const timelineEvents = [
     description:
       "Relish freshly grilled barbecue snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
     icon: Flame,
-    image:
-     "/images/new_images/image-16.webp",
+    image: "/images/new_images/image-16.webp",
     color: "bg-gradient-to-r from-red-500 to-red-700",
   },
   {
@@ -56,8 +54,7 @@ const timelineEvents = [
     description:
       "Savor a wholesome dinner featuring local dishes prepared with authentic flavors. A comforting meal to end your adventure-filled evening.",
     icon: UtensilsCrossed,
-    image:
-      "https://images.unsplash.com/photo-1742281257707-0c7f7e5ca9c6?q=80",
+    image: "https://images.unsplash.com/photo-1742281257707-0c7f7e5ca9c6?q=80",
     color: "bg-gradient-to-r from-blue-400 to-blue-600",
   },
   {
@@ -76,8 +73,7 @@ const timelineEvents = [
     description:
       "Start your morning with a hearty breakfast featuring fresh and local flavors—fueling you for the day’s adventures.",
     icon: Sunrise,
-    image:
-      "https://images.unsplash.com/photo-1673530598977-ee0eda88f0a2?q=80",
+    image: "https://images.unsplash.com/photo-1673530598977-ee0eda88f0a2?q=80",
     color: "bg-gradient-to-r from-yellow-300 to-amber-500",
   },
   {
@@ -86,8 +82,7 @@ const timelineEvents = [
     description:
       "Wrap up your stay with an easy check-out process and leave with unforgettable lakeside memories.",
     icon: Sun,
-    image:
-      "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80",
+    image: "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80",
     color: "bg-gradient-to-r from-green-400 to-green-700",
   },
 ];
