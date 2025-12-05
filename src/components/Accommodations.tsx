@@ -19,6 +19,14 @@ const accommodations = [
     category: "dome",
     images: [
       {
+        url: "/images/accommodations/tent/camp-2.webp",
+        imageClassName: "object-center",
+      },
+      {
+        url: "/images/accommodations/tent/camp-3.webp",
+        imageClassName: "object-center",
+      },
+      {
         url: "/images/accommodations/tent/tent-1.webp",
         imageClassName: "object-center",
       },
