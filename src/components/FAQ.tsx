@@ -131,11 +131,11 @@ const FAQ = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <a
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-2xl hover:bg-green-700 transition-colors font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base cursor-pointer"
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white rounded-2xl hover:bg-green-700 transition-colors font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base cursor-pointer gap-2 sm:gap-3"
                 onClick={handleWhatsApp}
               >
                 {/* <MessageCircle className="mr-2 sm:mr-3 h-4 sm:h-5 w-4 sm:w-5" /> */}
-                <WhatsAppIcon />
+                <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                 WhatsApp Support
               </a>
               <a
