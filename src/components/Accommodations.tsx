@@ -248,54 +248,6 @@ const accommodations = [
 ];
 
 const Accommodations = () => {
-  const [timeLeft, setTimeLeft] = useState(0);
-  const [regularTimeLeft, setRegularTimeLeft] = useState(0);
-  useEffect(() => {
-    // Create today's 5 PM timestamp
-    const now = new Date();
-    const end = new Date();
-    const regularEnd = new Date();
-
-    end.setHours(16, 59, 0, 0);
-    regularEnd.setHours(21, 59, 0, 0);
-
-    // If it's already past 5 PM, offer expired
-
-    if (now > end) {
-      setTimeLeft(0);
-      return;
-    }
-
-    if (now > regularEnd) {
-      setRegularTimeLeft(0);
-      return;
-    }
-
-    const timer = setInterval(() => {
-      const remaining = end.getTime() - Date.now();
-      setTimeLeft(remaining > 0 ? remaining : 0);
-    }, 1000);
-
-    const regulartimer = setInterval(() => {
-      const remaining = regularEnd.getTime() - Date.now();
-      setRegularTimeLeft(remaining > 0 ? remaining : 0);
-    }, 1000);
-
-    return () => {
-      clearInterval(timer);
-      clearInterval(regulartimer);
-    };
-  }, []);
-
-  const formatTime = (ms: number) => {
-    const sec = Math.floor(ms / 1000);
-    const h = Math.floor(sec / 3600);
-    const m = Math.floor((sec % 3600) / 60);
-    const s = sec % 60;
-
-    return `${h}h ${m}m ${s}s`;
-  };
-
   return (
     <section id="accommodations" className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-[1444px] mx-auto px-4 sm:px-6 lg:px-8">
