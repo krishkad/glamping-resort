@@ -43,8 +43,8 @@ const accommodations = [
         imageClassName: "object-center",
       },
     ],
-    price: 999,
-    beforePrice: 1200,
+    price: 1299,
+    beforePrice: 1400,
     guests: 1,
     newYear: 2499,
 
@@ -205,7 +205,7 @@ const accommodations = [
     ],
     price: 2999,
     beforePrice: 3600,
-    guests: 4,
+    guests: 2,
     amenitiesHtml: (
       <div className="mb-6 space-y-3">
         <div className="bg-emerald-50/60 p-3 rounded-xl">
@@ -248,287 +248,6 @@ const accommodations = [
 ];
 
 const Accommodations = () => {
-  // const accommodations = [
-  //   {
-  //     id: 1,
-  //     name: "Regular Tent",
-  //     category: "dome",
-  //     images: [
-  //       {
-  //         url: "/images/accommodations/tent/tent-1.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/tent/tent-2.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/tent/tent-3.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/tent/tent-4.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //     ],
-  //     price: 999,
-  //     beforePrice: 1200,
-  //     guests: 1,
-  //     amenities: [
-  //       "Private Bathroom",
-  //       "AC/Heating",
-  //       "WiFi",
-  //       "Fireplace",
-  //       "Deck",
-  //     ],
-  //     description:
-  //       "Cozy dome-style tents offering an immersive stay with panoramic lake and nature views. Perfect for couples and groups seeking a comfortable, relaxed, and scenic camping experience.",
-  //   },
-
-  //   {
-  //     id: 2,
-  //     name: "Triangle Tent",
-  //     category: "cabin",
-  //     images: [
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-1.webp",
-  //         imageClassName: "object-[68%_78%]",
-  //       },
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-2.webp",
-  //         imageClassName: "object-[68%_78%]",
-  //       },
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-3.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-4.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/new_images/image-37.webp",
-  //         imageClassName: "object-cover object-[55%_65%]",
-  //       },
-  //       {
-  //         url: "/images/new_images/image-40.webp",
-  //         imageClassName: "object-cover object-center",
-  //       },
-  //     ],
-  //     price: 1200,
-  //     beforePrice: 1500,
-  //     guests: 2,
-  //     amenities: ["Full Kitchen", "Fireplace", "Hot Tub", "WiFi", "BBQ Grill"],
-  //     description:
-  //       "Stylish triangle tents with a serene lake view, designed for couples who want added comfort and a cozy, romantic escape.",
-  //   },
-
-  //   {
-  //     id: 3,
-  //     name: "Deluxe Cottages",
-  //     category: "tent",
-  //     images: [
-  //       {
-  //         url: "/images/accommodations/delux/delux-1.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-bday.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-bed.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-2.webp",
-  //         imageClassName: "object-center object-contain",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-window.webp",
-  //         imageClassName: "object-center object-cover",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-3.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-outside.webp",
-  //         imageClassName: "object-[60%_70%]",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-4.webp",
-  //         imageClassName: "object-center object-contain",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-washroom.webp",
-  //         imageClassName: "object-center object-contain",
-  //       },
-  //     ],
-  //     price: 2999,
-  //     beforePrice: 3200,
-  //     guests: 4,
-  //     amenities: ["Private Bathroom", "River View", "Firepit", "WiFi"],
-  //     description:
-  //       "Luxurious lake-touch cottages designed for couples and families, offering a private getaway with elegant interiors and modern amenities.",
-  //   },
-  // ];
-
-  // const accommodations = [
-  //   {
-  //     id: 1,
-  //     name: "Regular Tent",
-  //     category: "dome",
-  //     images: [
-  //       {
-  //         url: "/images/accommodations/tent/tent-1.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/tent/tent-2.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/tent/tent-3.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/tent/tent-4.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //     ],
-  //     price: 999,
-  //     beforePrice: 1200,
-  //     guests: 1,
-
-  //     // ✅ REPLACED from campTypes[0].amenities
-  //     amenities: [
-  //       { icon: Utensils, label: "Meals Included" },
-  //       { icon: Flame, label: "Bonfire & Barbecue" },
-  //       { icon: Music2, label: "DJ Music" },
-  //       { icon: Gamepad2, label: "Outdoor & Indoor Games" },
-  //       { icon: Car, label: "Free Parking" },
-  //       { icon: ShowerHead, label: "Washrooms" },
-  //       { icon: Droplets, label: "Drinking Water" },
-  //     ],
-
-  //     description:
-  //       "Cozy dome-style tents offering an immersive stay with panoramic lake and nature views. Perfect for couples and groups seeking a comfortable, relaxed, and scenic camping experience.",
-  //   },
-
-  //   {
-  //     id: 2,
-  //     name: "Triangle Tent",
-  //     category: "cabin",
-  //     images: [
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-1.webp",
-  //         imageClassName: "object-[68%_78%]",
-  //       },
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-2.webp",
-  //         imageClassName: "object-[68%_78%]",
-  //       },
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-3.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/triangle/triangle-4.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/new_images/image-37.webp",
-  //         imageClassName: "object-cover object-[55%_65%]",
-  //       },
-  //       {
-  //         url: "/images/new_images/image-40.webp",
-  //         imageClassName: "object-cover object-center",
-  //       },
-  //     ],
-  //     price: 1200,
-  //     beforePrice: 1500,
-  //     guests: 2,
-
-  //     // ✅ REPLACED from campTypes[1].amenities
-  //     amenities: [
-  //       { icon: Waves, label: "Lake View" },
-  //       { icon: Utensils, label: "Meals Included" },
-  //       { icon: Flame, label: "Bonfire & Barbecue" },
-  //       { icon: Music2, label: "DJ Music" },
-  //       { icon: Gamepad2, label: "Outdoor & Indoor Games" },
-  //       { icon: Car, label: "Free Parking" },
-  //       { icon: ShowerHead, label: "Washrooms" },
-  //       { icon: Droplets, label: "Drinking Water" },
-  //     ],
-
-  //     description:
-  //       "Stylish triangle tents with a serene lake view, designed for couples who want added comfort and a cozy, romantic escape.",
-  //   },
-
-  //   {
-  //     id: 3,
-  //     name: "Deluxe Cottages",
-  //     category: "tent",
-  //     images: [
-  //       {
-  //         url: "/images/accommodations/delux/delux-1.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-bday.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-bed.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-2.webp",
-  //         imageClassName: "object-center object-contain",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-window.webp",
-  //         imageClassName: "object-center object-cover",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-3.webp",
-  //         imageClassName: "object-center",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-outside.webp",
-  //         imageClassName: "object-[60%_70%]",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-4.webp",
-  //         imageClassName: "object-center object-contain",
-  //       },
-  //       {
-  //         url: "/images/accommodations/delux/delux-washroom.webp",
-  //         imageClassName: "object-center object-contain",
-  //       },
-  //     ],
-  //     price: 2999,
-  //     beforePrice: 3200,
-  //     guests: 4,
-
-  //     // ✅ REPLACED from campTypes[2].amenities
-  //     amenities: [
-  //       { icon: Mountain, label: "Tree View" },
-  //       { icon: Zap, label: "Electricity" },
-  //       { icon: Utensils, label: "Meals Included" },
-  //       { icon: Flame, label: "Bonfire & Barbecue" },
-  //       { icon: Music2, label: "DJ Music" },
-  //       { icon: Gamepad2, label: "Outdoor & Indoor Games" },
-  //       { icon: Car, label: "Free Parking" },
-  //       { icon: ShowerHead, label: "Private Washroom" },
-  //       { icon: Droplets, label: "Drinking Water" },
-  //     ],
-
-  //     description:
-  //       "Luxurious lake-touch cottages designed for couples and families, offering a private getaway with elegant interiors and modern amenities.",
-  //   },
-  // ];
   const [timeLeft, setTimeLeft] = useState(0);
   const [regularTimeLeft, setRegularTimeLeft] = useState(0);
   useEffect(() => {
@@ -648,12 +367,18 @@ const Accommodations = () => {
 
                 {/* Price Badge */}
                 <div className="absolute top-4 right-4 z-10">
-                  <Badge className="bg-moss text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
-                    ₹{accommodation.price}/person{" "}
-                    <span className="text-xs text-gray-200 line-through">
-                      ₹{accommodation.beforePrice}/per
-                    </span>
-                  </Badge>
+                  {index !== 2 ? (
+                    <Badge className="bg-moss text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
+                      <>
+                        ₹{accommodation.price}/person{" "}
+                        <span className="text-xs text-gray-200 line-through">
+                          ₹{accommodation.beforePrice}/per
+                        </span>
+                      </>
+                    </Badge>
+                  ) : (
+                    <Badge>Booked</Badge>
+                  )}
                 </div>
 
                 {/* Guests Badge */}
@@ -673,8 +398,8 @@ const Accommodations = () => {
                       "absolute bottom-4 right-4 z-10 bg-green-50 text-green-700 border-green-300 backdrop-blur-sm px-3 py-1 text-xs font-medium rounded-lg"
                     )}
                   >
-                    🎉 Start at {accommodation.newYear}/per for 31 — book early for
-                    discount
+                    🎉 Start at {accommodation.newYear}/per for 31 — book early
+                    for discount
                   </Badge>
                 )}
                 {accommodation.newYear && (

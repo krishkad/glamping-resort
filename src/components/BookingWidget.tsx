@@ -11,14 +11,15 @@ import { format } from "date-fns";
 import { Gift, Users } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CheckCircle2, Mail, Phone, User, CalendarDays } from "lucide-react";
+import { Badge } from "./ui/badge";
 
 const packages = [
   {
     name: "Regular Tent Stay",
-    price: "₹999",
-    amount: 999,
-    originalPrice: "₹1200",
-    savings: "₹201",
+    price: "₹1299",
+    amount: 1299,
+    originalPrice: "₹1400",
+    savings: "₹101",
     includes: [
       "Cozy dome-style tent stay",
       "Panoramic lake & nature views",
@@ -30,10 +31,10 @@ const packages = [
   },
   {
     name: "Triangle Tent Stay",
-    price: "₹1299",
-    amount: 1299,
-    originalPrice: "₹1600",
-    savings: "₹301",
+    price: "₹1599",
+    amount: 1599,
+    originalPrice: "₹1800",
+    savings: "₹201",
     includes: [
       "Stylish triangle tent stay",
       "Warm lighting & romantic interiors",
@@ -189,21 +190,27 @@ const BookingWidget = () => {
                       <h4 className="text-xl font-playfair font-bold text-stone">
                         {pkg.name}
                       </h4>
-                      <div className="flex items-center space-x-2 mt-2">
-                        <Gift className="w-4 h-4 text-coral" />
-                        <span className="text-coral font-semibold">
-                          Save {pkg.savings}/per
-                        </span>
-                      </div>
+                      {index !== 2 && (
+                        <div className="flex items-center space-x-2 mt-2">
+                          <Gift className="w-4 h-4 text-coral" />
+                          <span className="text-coral font-semibold">
+                            Save {pkg.savings}/per
+                          </span>
+                        </div>
+                      )}
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-moss">
-                        {pkg.price}/per
+                    {index !== 2 ? (
+                      <div className="text-right">
+                        <div className="text-2xl font-bold text-moss">
+                          {pkg.price}/per
+                        </div>
+                        <div className="text-sm text-stone/60 line-through">
+                          {pkg.originalPrice}/per
+                        </div>
                       </div>
-                      <div className="text-sm text-stone/60 line-through">
-                        {pkg.originalPrice}/per
-                      </div>
-                    </div>
+                    ) : (
+                      <Badge>Booked</Badge>
+                    )}
                   </div>
                   <div className="grid grid-cols-1 gap-2">
                     {pkg.includes.map((item, idx) => (
@@ -220,13 +227,16 @@ const BookingWidget = () => {
             ))}
           </div>
 
-          <Card className="rounded-3xl shadow-2xl border-0 bg-white">
+          <Card className="rounded-3xl shadow-2xl border-0 bg-white gap-0">
             <CardHeader className="text-center pb-4">
               <CardTitle className="text-2xl font-playfair text-stone">
                 Reserve Your Escape
               </CardTitle>
             </CardHeader>
             <CardContent className="w-full p-8 pt-0">
+              <div className="w-max mx-auto bg-green-100 text-green-700 text-sm p-2 rounded-md font-poppins text-center font-semibold mb-4">
+                🎉 Call Directly for 31st Bookings
+              </div>
               <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-4 mb-6">
                 {/* Name */}
                 <div className="w-full">
@@ -509,7 +519,7 @@ const BookingWidget = () => {
               <Button
                 className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold cursor-pointer"
                 onClick={send_whatsapp}
-                disabled={sending}
+                disabled={sending || selectedPackage.name === "Deluxe Cottage Experience"}
               >
                 {sending
                   ? "Sending..."
@@ -519,8 +529,8 @@ const BookingWidget = () => {
                 We&apos;ll contact you within 15 mint
               </p>
               <p className="text-sm text-center text-stone/60 mt-1 font-poppins">
-               <span className="font-bold">Note</span> The advance amount paid is strictly non-refundable in case of
-                cancellation.
+                <span className="font-bold">Note</span> The advance amount paid
+                is strictly non-refundable in case of cancellation.
               </p>
 
               {/* <p className="text-sm text-center text-stone/60 mt-0.5 font-poppins">
