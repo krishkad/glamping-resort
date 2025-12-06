@@ -519,10 +519,16 @@ const BookingWidget = () => {
               <Button
                 className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold cursor-pointer"
                 onClick={send_whatsapp}
-                disabled={sending || selectedPackage.name === "Deluxe Cottage Experience"}
+                disabled={
+                  sending ||
+                  selectedPackage.name === "Deluxe Cottage Experience" ||
+                  checkIn?.getDate() === 31
+                }
               >
                 {sending
                   ? "Sending..."
+                  : checkIn?.getDate() === 31
+                  ? "Call Directly for 31st booking"
                   : `Book Your Memories - ₹${calculatedAmount}`}
               </Button>
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">

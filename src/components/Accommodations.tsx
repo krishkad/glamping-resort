@@ -412,24 +412,6 @@ const Accommodations = () => {
                     Price more than Double ⬆️ for 31 - all-over pawna
                   </Badge>
                 )}
-
-                {(index === 1 || index === 0) && (
-                  <div className="absolute top-4 right-4 z-10 flex flex-col items-end space-y-1">
-                    <Badge className="bg-yellow-600 text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
-                      ₹{accommodation.price}/person{" "}
-                      <span className="text-sm text-gray-200 line-through ml-1">
-                        ₹{accommodation.beforePrice}/per
-                      </span>
-                    </Badge>
-
-                    <div className="bg-red-600 text-white text-[11px] px-2 py-0.5 rounded-md font-semibold animate-pulse shadow">
-                      ⏳ Limited Time Discount —{" "}
-                      {index === 0
-                        ? formatTime(regularTimeLeft)
-                        : formatTime(timeLeft)}
-                    </div>
-                  </div>
-                )}
               </div>
 
               {/* Content */}
