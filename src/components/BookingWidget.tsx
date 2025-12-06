@@ -518,6 +518,10 @@ const BookingWidget = () => {
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">
                 We&apos;ll contact you within 15 mint
               </p>
+              <p className="text-sm text-center text-stone/60 mt-1 font-poppins">
+               <span className="font-bold">Note</span> The advance amount paid is strictly non-refundable in case of
+                cancellation.
+              </p>
 
               {/* <p className="text-sm text-center text-stone/60 mt-0.5 font-poppins">
                 Free cancellation up to 48 hours before check-in

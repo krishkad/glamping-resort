@@ -8,6 +8,7 @@ import {
   ShieldIcon,
   UserIcon,
 } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const CALL_PHONE_NO = `${process.env.NEXT_PUBLIC_CALL_PHONE_NO}`;
@@ -124,6 +125,30 @@ const Footer = () => {
                   Gallery
                 </a>
               </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="hover:text-coral transition-colors font-poppins hover:underline"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms-of-service"
+                  className="hover:text-coral transition-colors font-poppins hover:underline"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/safety-guidelines"
+                  className="hover:text-coral transition-colors font-poppins hover:underline"
+                >
+                  Safety Guidelines
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -174,26 +199,7 @@ const Footer = () => {
               © 2025 Pawna Camps Glamping Resort. All rights reserved. | Crafted
               by Krrish
             </p>
-            {/* <div className="flex space-x-6 text-sm text-white/60">
-              <a
-                href="#"
-                className="hover:text-coral transition-colors font-poppins"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="hover:text-coral transition-colors font-poppins"
-              >
-                Terms of Service
-              </a>
-              <a
-                href="#"
-                className="hover:text-coral transition-colors font-poppins"
-              >
-                Safety Guidelines
-              </a>
-            </div> */}
+            <div className="flex space-x-6 text-sm text-white/60"></div>
           </div>
         </div>
       </div>

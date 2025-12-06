@@ -117,10 +117,10 @@ const accommodations = [
         imageClassName: "object-cover object-center",
       },
     ],
-    price: 1299,
-    beforePrice: 1600,
+    price: 1599,
+    beforePrice: 1899,
     guests: 2,
-    newYear: 2899,
+    newYear: 4099,
     amenitiesHtml: (
       <div className="mb-6 space-y-3">
         <div className="bg-emerald-50/60 p-3 rounded-xl">
@@ -673,7 +673,7 @@ const Accommodations = () => {
                       "absolute bottom-4 right-4 z-10 bg-green-50 text-green-700 border-green-300 backdrop-blur-sm px-3 py-1 text-xs font-medium rounded-lg"
                     )}
                   >
-                    🎉 {accommodation.newYear}/per for 31 — book early for
+                    🎉 Start at {accommodation.newYear}/per for 31 — book early for
                     discount
                   </Badge>
                 )}
@@ -684,7 +684,7 @@ const Accommodations = () => {
                       "absolute bottom-12 right-4 z-10 bg-transparent text-white border-green-300 backdrop-blur-sm px-3 py-1 text-xs font-medium rounded-lg"
                     )}
                   >
-                    Price Double ⬆️ for 31 - all-over pawna
+                    Price more than Double ⬆️ for 31 - all-over pawna
                   </Badge>
                 )}
 
