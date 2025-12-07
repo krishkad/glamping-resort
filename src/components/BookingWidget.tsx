@@ -359,7 +359,7 @@ const BookingWidget = () => {
               {/* Guests */}
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
-                  Guests
+                  Adults
                 </label>
                 <div className="flex items-center space-x-3">
                   <Button
@@ -387,7 +387,7 @@ const BookingWidget = () => {
 
               <div className="mb-6">
                 <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
-                  Kids
+                  Kids (Bellow 10 years)
                 </label>
                 <div className="flex items-center space-x-3">
                   <Button
@@ -515,6 +515,11 @@ const BookingWidget = () => {
                 </div>
               </div>
 
+              <p className="text-sm text-start text-stone/60 my-1.5 font-poppins">
+                Please review all terms and guidelines before booking;
+                confirmation indicates your agreement.
+              </p>
+
               {/* Book Button */}
               <Button
                 className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold cursor-pointer"
@@ -528,15 +533,17 @@ const BookingWidget = () => {
                 {sending
                   ? "Sending..."
                   : checkIn?.getDate() === 31
-                  ? "Call Directly for 31st booking"
-                  : `Book Your Memories - ₹${calculatedAmount}`}
+                  ? "Call Directly for 31st Booking"
+                  : `Book Your Memories – ₹${calculatedAmount}`}
               </Button>
+
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">
-                We&apos;ll contact you within 15 mint
+                We’ll get in touch within 15 minutes.
               </p>
+
               <p className="text-sm text-center text-stone/60 mt-1 font-poppins">
-                <span className="font-bold">Note</span> The advance amount paid
-                is strictly non-refundable in case of cancellation.
+                <span className="font-bold">Note:</span> The advance payment is
+                strictly non-refundable.
               </p>
 
               {/* <p className="text-sm text-center text-stone/60 mt-0.5 font-poppins">
