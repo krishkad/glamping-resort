@@ -40,6 +40,7 @@ const Navbar = () => {
     { href: "/#timeline", label: "Your Day" },
     { href: "/#experiences", label: "Adventures" },
     { href: "/#contact", label: "Contact" },
+    { href: "/#footer", label: "More" },
   ];
   return (
     <>

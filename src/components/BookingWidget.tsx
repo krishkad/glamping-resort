@@ -201,7 +201,7 @@ const BookingWidget = () => {
                     </div>
                     {index !== 2 ? (
                       <div className="text-right">
-                        <div className="text-2xl font-bold text-moss">
+                        <div className="text-xl sm:text-2xl font-bold text-moss">
                           {pkg.price}/per
                         </div>
                         <div className="text-sm text-stone/60 line-through">
