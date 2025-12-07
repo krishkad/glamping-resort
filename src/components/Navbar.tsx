@@ -22,7 +22,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
-  // const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {

@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Coffee,
   Drum,
@@ -15,7 +16,7 @@ const timelineEvents = [
     time: "4:00 PM",
     title: "Check-in",
     description:
-      "Arrive at the campsite and begin your getaway with a smooth and effortless check-in. Settle into your accommodation and soak in the natural surroundings.",
+      "Arrive at the campsite and begin your getaway with a smooth and effortless check-in.",
     icon: Sun,
     image: "/images/new_images/image-5.webp",
     color: "bg-gradient-to-r from-green-400 to-green-600",
@@ -24,17 +25,17 @@ const timelineEvents = [
     time: "5:00 PM",
     title: "Tea & Pakora",
     description:
-      "Enjoy freshly prepared tea and crispy pakoras as you unwind into the evening. A perfect warm-up for a relaxing lakeside experience.",
+      "Enjoy freshly prepared tea and crispy pakoras as you unwind into the evening.",
     icon: Coffee,
     image:
-      "https://images.unsplash.com/photo-1604945516204-526aa4fd6425?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1604945516204-526aa4fd6425?q=80&w=1200",
     color: "bg-gradient-to-r from-yellow-400 to-amber-500",
   },
   {
     time: "5:30 PM",
     title: "Outdoor Games & Activities",
     description:
-      "Have fun with a variety of engaging activities like badminton, cricket, carrom, and more—perfect for families, friends, and adventure lovers.",
+      "Have fun with engaging games like badminton, cricket, carrom, and more.",
     icon: Drum,
     image: "/images/new_images/image-18.webp",
     color: "bg-gradient-to-r from-orange-400 to-orange-600",
@@ -43,7 +44,7 @@ const timelineEvents = [
     time: "7:30 PM",
     title: "Barbeque & DJ Music",
     description:
-      "Relish freshly grilled barbecue snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
+      "Relish freshly grilled barbecue snacks with lively DJ music until 9:30 PM.",
     icon: Flame,
     image: "/images/new_images/image-16.webp",
     color: "bg-gradient-to-r from-red-500 to-red-700",
@@ -51,123 +52,111 @@ const timelineEvents = [
   {
     time: "9:30 PM",
     title: "Dinner",
-    description:
-      "Savor a wholesome dinner featuring local dishes prepared with authentic flavors. A comforting meal to end your adventure-filled evening.",
+    description: "Savor a wholesome dinner with authentic local flavors.",
     icon: UtensilsCrossed,
-    image: "https://images.unsplash.com/photo-1742281257707-0c7f7e5ca9c6?q=80",
+    image:
+      "https://images.unsplash.com/photo-1742281257707-0c7f7e5ca9c6?q=80&w=1200",
     color: "bg-gradient-to-r from-blue-400 to-blue-600",
   },
   {
     time: "10:00 PM",
     title: "Campfire",
-    description:
-      "Relax around the warm campfire, listen to nature’s sounds, and enjoy meaningful conversations under the night sky.",
+    description: "Relax around a warm campfire under the night sky.",
     icon: Flame,
     image:
-      "https://images.unsplash.com/photo-1533243367503-0b7337004671?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1533243367503-0b7337004671?q=80&w=1200",
     color: "bg-gradient-to-r from-orange-300 to-orange-600",
   },
   {
     time: "8:30 AM",
     title: "Breakfast",
-    description:
-      "Start your morning with a hearty breakfast featuring fresh and local flavors—fueling you for the day’s adventures.",
+    description: "Start your morning with a hearty breakfast.",
     icon: Sunrise,
-    image: "https://images.unsplash.com/photo-1673530598977-ee0eda88f0a2?q=80",
+    image:
+      "https://images.unsplash.com/photo-1673530598977-ee0eda88f0a2?q=80&w=1200",
     color: "bg-gradient-to-r from-yellow-300 to-amber-500",
   },
   {
     time: "11:00 AM",
     title: "Check-out",
-    description:
-      "Wrap up your stay with an easy check-out process and leave with unforgettable lakeside memories.",
+    description: "Easy check-out with lasting memories.",
     icon: Sun,
-    image: "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80",
+    image:
+      "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80&w=1200",
     color: "bg-gradient-to-r from-green-400 to-green-700",
   },
 ];
 
-const DayTimeline = () => {
-  const [activeEvent, setActiveEvent] = useState(0);
+export default function DayTimeline() {
+  const [activeEvent, setActiveEvent] = useState<number | null>(null);
 
   return (
     <section id="timeline" className="py-20 px-6 lg:px-12 bg-secondary">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 animate-slide-up">
+        {/* Header */}
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-playfair font-bold text-stone mb-6">
             Your Adventure Timeline
           </h2>
-          <p className="text-xl text-stone/80 max-w-3xl mx-auto font-poppins">
-            Experience the perfect balance of adventure and relaxation. Every
-            moment crafted for unforgettable memories.
+          <p className="text-xl text-stone/80 max-w-3xl mx-auto">
+            Every moment crafted for unforgettable memories.
           </p>
         </div>
 
         {/* Desktop Timeline */}
-        <div className="hidden lg:block relative mb-16">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#4caf50] to-[#ff6b6b] rounded-full"></div>
+        <div className="hidden lg:block relative">
+          <div className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-green-500 to-red-500 rounded-full" />
 
           <div className="space-y-20">
             {timelineEvents.map((event, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-12 animate-fade-in ${
+                className={`flex items-center gap-12 ${
                   index % 2 === 0 ? "flex-row" : "flex-row-reverse"
                 }`}
-                style={{ animationDelay: `${index * 200}ms` }}
                 onMouseEnter={() => setActiveEvent(index)}
+                onMouseLeave={() => setActiveEvent(null)}
               >
                 {/* Content */}
                 <div className="lg:w-5/12">
                   <div
-                    className={`p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 hover-lift ${
-                      activeEvent === index
-                        ? "bg-white scale-105"
-                        : "bg-white/90"
+                    className={`p-8 rounded-3xl bg-white transition-shadow duration-300 ${
+                      activeEvent === index ? "shadow-2xl" : "shadow-lg"
                     }`}
                   >
                     <div
-                      className={`inline-flex items-center space-x-3 px-4 py-2 rounded-full text-white font-semibold mb-4 ${event.color}`}
+                      className={`inline-flex items-center gap-3 px-4 py-2 rounded-full text-white font-semibold mb-4 ${event.color}`}
                     >
                       <event.icon className="w-5 h-5" />
                       <span>{event.time}</span>
                     </div>
-                    <h3 className="text-2xl font-playfair font-bold text-stone mb-4">
+                    <h3 className="text-2xl font-playfair font-bold mb-3 text-stone">
                       {event.title}
                     </h3>
-                    <p className="text-stone/80 font-poppins leading-relaxed">
+                    <p className="text-stone/80 leading-relaxed">
                       {event.description}
                     </p>
                   </div>
                 </div>
 
-                {/* Timeline Dot */}
+                {/* Dot */}
                 <div
-                  className={`w-8 h-8 rounded-full border-4 border-white shadow-lg z-10 transition-all duration-300 ${
-                    activeEvent === index
-                      ? event.color.replace(
-                          "bg-gradient-to-r",
-                          "bg-gradient-to-br"
-                        ) + " scale-125"
-                      : "bg-moss"
+                  className={`w-8 h-8 rounded-full border-4 border-white shadow-lg z-10 transition-colors duration-300 ${
+                    activeEvent === index ? event.color : "bg-moss"
                   }`}
-                ></div>
+                />
 
                 {/* Image */}
                 <div className="lg:w-5/12">
-                  <div className="relative overflow-hidden rounded-3xl shadow-xl">
+                  <div className="relative h-80 overflow-hidden rounded-3xl shadow-xl will-change-contents">
                     <Image
                       src={event.image}
-                      width={0}
-                      height={0}
-                      unoptimized
-                      loading="lazy"
                       alt={event.title}
-                      className={`w-full h-80 object-cover transition-all duration-500 ${
-                        activeEvent === index ? "scale-110" : "scale-100"
-                      }`}
+                      fill
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      className="object-cover transition-[filter] duration-500 hover:brightness-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
                   </div>
                 </div>
               </div>
@@ -177,32 +166,26 @@ const DayTimeline = () => {
 
         {/* Mobile Timeline */}
         <div className="lg:hidden space-y-8">
-          {timelineEvents.map((event, index) => (
-            <div
-              key={index}
-              className="relative pl-16 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
+          {timelineEvents.map((event, i) => (
+            <div key={i} className="relative pl-16">
               <div
                 className={`absolute left-0 top-0 w-12 h-12 rounded-full flex items-center justify-center text-white ${event.color}`}
               >
                 <event.icon className="w-6 h-6" />
               </div>
-              <div className="bg-white rounded-3xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="text-moss font-bold text-lg mb-2">
-                  {event.time}
-                </div>
-                <h3 className="text-xl font-playfair font-bold text-stone mb-3">
+              <div className="bg-white rounded-3xl p-6 shadow-lg">
+                <div className="font-bold text-moss mb-2">{event.time}</div>
+                <h3 className="text-xl font-playfair font-bold mb-2">
                   {event.title}
                 </h3>
-                <p className="text-stone/80 font-poppins mb-4">
-                  {event.description}
-                </p>
-                <div className="overflow-hidden rounded-2xl">
-                  <img
+                <p className="text-stone/80 mb-4">{event.description}</p>
+                <div className="relative h-48 overflow-hidden rounded-2xl">
+                  <Image
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
                   />
                 </div>
               </div>
@@ -212,6 +195,4 @@ const DayTimeline = () => {
       </div>
     </section>
   );
-};
-
-export default DayTimeline;
+}

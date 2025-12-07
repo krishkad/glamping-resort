@@ -5,16 +5,7 @@ import { cn } from "@/lib/utils";
 
 const phoneNumber = process.env.NEXT_PUBLIC_CALL_PHONE_NO;
 const FloatingActions = () => {
-  // const [isVisible, setIsVisible] = useState(false);
 
-  // useEffect(() => {
-  //   const toggleVisibility = () => {
-  //     setIsVisible(window.pageYOffset > 300);
-  //   };
-
-  //   window.addEventListener("scroll", toggleVisibility);
-  //   return () => window.removeEventListener("scroll", toggleVisibility);
-  // }, []);
 
   const handleCall = () => {
     window.open(`tel:+${phoneNumber}`, "_self");
