@@ -16,7 +16,7 @@ const timelineEvents = [
     time: "4:00 PM",
     title: "Check-in",
     description:
-      "Arrive at the campsite and begin your getaway with a smooth and effortless check-in.",
+      "Arrive at the campsite and begin your getaway with a smooth and effortless check-in. Settle into your accommodation and soak in the natural surroundings.",
     icon: Sun,
     image: "/images/new_images/image-5.webp",
     color: "bg-gradient-to-r from-green-400 to-green-600",
@@ -25,17 +25,17 @@ const timelineEvents = [
     time: "5:00 PM",
     title: "Tea & Pakora",
     description:
-      "Enjoy freshly prepared tea and crispy pakoras as you unwind into the evening.",
+      "Enjoy freshly prepared tea and crispy pakoras as you unwind into the evening. A perfect warm-up for a relaxing lakeside experience.",
     icon: Coffee,
     image:
-      "https://images.unsplash.com/photo-1604945516204-526aa4fd6425?q=80&w=1200",
+      "https://images.unsplash.com/photo-1604945516204-526aa4fd6425?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     color: "bg-gradient-to-r from-yellow-400 to-amber-500",
   },
   {
     time: "5:30 PM",
     title: "Outdoor Games & Activities",
     description:
-      "Have fun with engaging games like badminton, cricket, carrom, and more.",
+      "Have fun with a variety of engaging activities like badminton, cricket, carrom, and more—perfect for families, friends, and adventure lovers.",
     icon: Drum,
     image: "/images/new_images/image-18.webp",
     color: "bg-gradient-to-r from-orange-400 to-orange-600",
@@ -44,7 +44,7 @@ const timelineEvents = [
     time: "7:30 PM",
     title: "Barbeque & DJ Music",
     description:
-      "Relish freshly grilled barbecue snacks with lively DJ music until 9:30 PM.",
+      "Relish freshly grilled barbecue snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
     icon: Flame,
     image: "/images/new_images/image-16.webp",
     color: "bg-gradient-to-r from-red-500 to-red-700",
@@ -52,37 +52,38 @@ const timelineEvents = [
   {
     time: "9:30 PM",
     title: "Dinner",
-    description: "Savor a wholesome dinner with authentic local flavors.",
+    description:
+      "Savor a wholesome dinner featuring local dishes prepared with authentic flavors. A comforting meal to end your adventure-filled evening.",
     icon: UtensilsCrossed,
-    image:
-      "https://images.unsplash.com/photo-1742281257707-0c7f7e5ca9c6?q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1742281257707-0c7f7e5ca9c6?q=80",
     color: "bg-gradient-to-r from-blue-400 to-blue-600",
   },
   {
     time: "10:00 PM",
     title: "Campfire",
-    description: "Relax around a warm campfire under the night sky.",
+    description:
+      "Relax around the warm campfire, listen to nature’s sounds, and enjoy meaningful conversations under the night sky.",
     icon: Flame,
     image:
-      "https://images.unsplash.com/photo-1533243367503-0b7337004671?q=80&w=1200",
+      "https://images.unsplash.com/photo-1533243367503-0b7337004671?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     color: "bg-gradient-to-r from-orange-300 to-orange-600",
   },
   {
     time: "8:30 AM",
     title: "Breakfast",
-    description: "Start your morning with a hearty breakfast.",
+    description:
+      "Start your morning with a hearty breakfast featuring fresh and local flavors—fueling you for the day’s adventures.",
     icon: Sunrise,
-    image:
-      "https://images.unsplash.com/photo-1673530598977-ee0eda88f0a2?q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1673530598977-ee0eda88f0a2?q=80",
     color: "bg-gradient-to-r from-yellow-300 to-amber-500",
   },
   {
     time: "11:00 AM",
     title: "Check-out",
-    description: "Easy check-out with lasting memories.",
+    description:
+      "Wrap up your stay with an easy check-out process and leave with unforgettable lakeside memories.",
     icon: Sun,
-    image:
-      "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1473625247510-8ceb1760943f?q=80",
     color: "bg-gradient-to-r from-green-400 to-green-700",
   },
 ];
