@@ -96,6 +96,10 @@ const accommodations = [
         imageClassName: "object-[68%_78%]",
       },
       {
+        url: "/images/accommodations/triangle/triangle-5.webp",
+        imageClassName: "object-cover object-[38%_48%]",
+      },
+      {
         url: "/images/accommodations/triangle/triangle-2.webp",
         imageClassName: "object-[68%_78%]",
       },
