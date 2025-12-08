@@ -4,7 +4,10 @@ import { ShieldIcon, Star, UserIcon } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative min-h-svh flex items-center justify-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-svh flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-[65%_75%]"
@@ -19,7 +22,7 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto animate-fade-in">
         {/* Trust Indicators */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-6 sm:mb-8">
-          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white"> 
+          <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white">
             <Star className="w-4 sm:w-5 h-4 sm:h-5 fill-yellow-500 text-yellow-600" />
             <span className="font-medium text-xs sm:text-sm">4.8 Review</span>
           </div>
@@ -45,8 +48,10 @@ const Hero = () => {
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] mb-8 sm:mb-10 max-w-3xl mx-auto font-poppins">
-          Experience nature&apos;s luxury at our boutique glamping resort.
-          Adventure awaits, comfort embraces, memories unfold.
+          {/* Experience nature&apos;s luxury at our boutique glamping resort.
+          Adventure awaits, comfort embraces, memories unfold. */}
+          Discover premium glamping at Pawna Lake—luxury tents, calm waters,
+          starry nights & unmatched privacy for couples.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
@@ -65,7 +70,7 @@ const Hero = () => {
             size="lg"
             variant="outline"
             className="border-2 h-max border-white text-white hoverbg-white hover:text-stone-800  bg-white/10 backdrop-blur-sm px-8 sm:px-10 py-3 sm:py-4 text-base sm:text-lg rounded-full font-semibold w-full sm:w-auto cursor-pointer"
-             onClick={() =>
+            onClick={() =>
               document
                 .getElementById("accommodations")
                 ?.scrollIntoView({ behavior: "smooth" })
