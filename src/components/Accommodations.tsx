@@ -42,7 +42,7 @@ const accommodations = [
         imageClassName: "object-center",
       },
     ],
-    price: 1299,
+    price: 1200,
     beforePrice: 1400,
     guests: 1,
     newYear: 2499,
@@ -120,7 +120,7 @@ const accommodations = [
         imageClassName: "object-cover object-center",
       },
     ],
-    price: 1599,
+    price: 1500,
     beforePrice: 1899,
     guests: 2,
     newYear: 4099,
@@ -345,6 +345,20 @@ const Accommodations = () => {
                     {accommodation.guests} guests
                   </Badge>
                 </div>
+
+                {index === 1 && (
+                  <Badge
+                    variant="outline"
+                    className={cn(
+                      "absolute top-13 right-4 z-10",
+                      "bg-red-700 text-red-50 border-none",
+                      "backdrop-blur-md px-3 py-1 text-xs font-semibold rounded-xl",
+                      "shadow-[0_2px_6px_rgba(255,0,0,0.15)]"
+                    )}
+                  >
+                    ⏳ Limited-time offer
+                  </Badge>
+                )}
 
                 {accommodation.newYear && (
                   <Badge

@@ -16,10 +16,10 @@ import { Badge } from "./ui/badge";
 const packages = [
   {
     name: "Regular Tent Stay",
-    price: "₹1299",
-    amount: 1299,
+    price: "₹1200",
+    amount: 1200,
     originalPrice: "₹1400",
-    savings: "₹101",
+    savings: "₹200",
     includes: [
       "Cozy dome-style tent stay",
       "Panoramic lake & nature views",
@@ -31,10 +31,10 @@ const packages = [
   },
   {
     name: "Triangle Tent Stay",
-    price: "₹1599",
-    amount: 1599,
+    price: "₹1500",
+    amount: 1500,
     originalPrice: "₹1800",
-    savings: "₹201",
+    savings: "₹300",
     includes: [
       "Stylish triangle tent stay",
       "Warm lighting & romantic interiors",
