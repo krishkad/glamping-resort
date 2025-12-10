@@ -24,7 +24,7 @@ const Footer = () => {
   if (!render) return;
 
   return (
-    <footer id="footer" className="bg-gradient-to-br from-stone-800 to-stone-800/90 text-white relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-stone-800 to-stone-800/90 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-10 left-10 text-6xl">🌲</div>
@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div id="footer">
             <h5 className="font-bold mb-6 text-xl font-playfair">
               Quick Links
             </h5>
