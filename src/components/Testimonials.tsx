@@ -149,7 +149,7 @@ const Testimonials = () => {
                       ? "bg-gradient-to-r from-[#ff6b6b] to-pink-500"
                       : testimonial.category === "Family"
                       ? "bg-gradient-to-r from-[#4caf50] to-green-600"
-                      : "bg-gradient-to-r from-[#8ecdf6] to-blue-500"
+                      : "bg-gradient-to-r from-blue-400 to-blue-500"
                   }`}
                 >
                   {testimonial.category === "Couple" && (
