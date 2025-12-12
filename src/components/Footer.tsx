@@ -196,7 +196,7 @@ const Footer = () => {
         <div className="text-center mt-16 pt-8 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm font-poppins">
-              © 2025 Pawna Camps Glamping Resort. All rights reserved. | Crafted
+              © 2025 Pawna Lake Camping. All rights reserved. | Crafted
               by Krrish
             </p>
             <div className="flex space-x-6 text-sm text-white/60"></div>
