@@ -61,12 +61,12 @@ const Navbar = () => {
               isScrolled ? "text-navy" : "text-white"
             )}
           >
-            <div className="w-[130px] h-[60px] overflow-hidden">
+            <div className="w-[110px] h-[60px] overflow-hidden">
               <Link href={"#hero"}>
                 <img
-                  src="/images/pawna-logo.png"
+                  src={isScrolled ? "/images/pawna-lake-campings.png" : "/images/pawna-lake-campingw-bg.png"}
                   alt="pawna-logo"
-                  className="w-full h-full object-cover scale-[1.20] invert-100"
+                  className="w-full h-full object-cover "
                 />
               </Link>
             </div>
@@ -132,15 +132,15 @@ const Navbar = () => {
                 {/* Mobile Menu Content */}
                 <div className="flex flex-col h-full justify-center items-center space-y-8 px-8">
                   <div className="text-stone font-playfair text-3xl font-bold mb-4">
-                    <div className="w-[200px] h-[100px] overflow-hidden">
+                    <div className="w-[160px] h-[90px] overflow-hidden">
                       <img
-                        src="/images/pawna-logo.png"
+                        src="/images/pawna-lake-campings.png"
                         alt="pawna-logo"
                         onClick={() => {
                           router.push("#hero");
                           setIsOpen(false);
                         }}
-                        className="w-full h-full object-cover scale-[1.20] invert-100"
+                        className="w-full h-full object-cover "
                       />
                     </div>
                   </div>

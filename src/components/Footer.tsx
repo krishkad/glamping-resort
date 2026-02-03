@@ -39,11 +39,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             {/* <h4 className="text-3xl font-playfair font-bold mb-4">Pawna Camps</h4> */}
-            <div className="w-[160px] h-[80px] overflow-hidden">
+            <div className="w-[140px] h-[80px] overflow-hidden">
               <img
-                src="/images/pawna-logo.png"
+                src="/images/pawna-lake-campingw-bg.png"
                 alt="pawna-logo"
-                className="w-full h-full object-cover scale-[1.20] invert-100"
+                className="w-full h-full object-cover"
               />
             </div>
             <p className="text-white/80 mb-6 font-poppins leading-relaxed text-lg">
