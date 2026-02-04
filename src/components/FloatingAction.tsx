@@ -35,7 +35,7 @@ const FloatingActions = () => {
           onClick={handleWhatsApp}
           className="h-10 px-4 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-md text-sm font-medium flex items-center gap-1.5"
         >
-          <WhatsAppIcon /> <span className="inline">Chat</span>
+          <WhatsAppIcon /> <span className="inline max-sm:text-xs">Chat</span>
         </Button>
 
         {/* Call */}
@@ -43,7 +43,7 @@ const FloatingActions = () => {
           onClick={handleCall}
           className="h-10 px-4 rounded-full bg-blue-500 hover:bg-blue-600 text-white shadow-md text-sm font-medium flex items-center gap-1.5"
         >
-          <PhoneIcon /> <span className="inline">Call</span>
+          <PhoneIcon /> <span className="inline max-sm:text-xs">Call</span>
         </Button>
       </div>
     </div>

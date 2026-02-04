@@ -80,7 +80,7 @@ const Navbar = () => {
             )}
           >
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
@@ -89,7 +89,7 @@ const Navbar = () => {
                 )}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -146,14 +146,14 @@ const Navbar = () => {
                   </div>
 
                   {navItems.map((item) => (
-                    <a
+                    <Link
                       key={item.href}
                       href={item.href}
                       className="text-2xl font-medium text-stone hover:text-coral transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
 
                   <Button
