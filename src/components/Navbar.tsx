@@ -64,7 +64,7 @@ const Navbar = () => {
             <div className="w-[110px] h-[60px] overflow-hidden">
               <Link href={"#hero"}>
                 <img
-                  src={isScrolled ? "/images/pawna-lake-campings.png" : "/images/pawna-lake-campingw-bg.png"}
+                  src={isScrolled ? "/images/pawna-lake-campings.webp" : "/images/pawna-lake-campingw-bg.webp"}
                   alt="pawna-logo"
                   className="w-full h-full object-cover "
                 />
@@ -134,7 +134,7 @@ const Navbar = () => {
                   <div className="text-stone font-playfair text-3xl font-bold mb-4">
                     <div className="w-[160px] h-[90px] overflow-hidden">
                       <img
-                        src="/images/pawna-lake-campings.png"
+                        src="/images/pawna-lake-campings.webp"
                         alt="pawna-logo"
                         onClick={() => {
                           router.push("#hero");
