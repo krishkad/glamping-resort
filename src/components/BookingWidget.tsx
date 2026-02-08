@@ -419,7 +419,7 @@ const BookingWidget = () => {
                   <input
                     type="text"
                     value={""}
-                    onChange={(e) => {}}
+                    onChange={() => {}}
                     placeholder="Enter code"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
                   />
