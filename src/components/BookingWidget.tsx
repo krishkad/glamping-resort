@@ -234,9 +234,6 @@ const BookingWidget = () => {
               </CardTitle>
             </CardHeader>
             <CardContent className="w-full p-8 pt-0">
-              <div className="w-max mx-auto bg-green-100 text-green-700 text-sm p-2 rounded-md font-poppins text-center font-semibold mb-4">
-                🎉 Call Directly for 31st Bookings
-              </div>
               <div className="grid max-sm:grid-cols-1 grid-cols-2 gap-4 mb-6">
                 {/* Name */}
                 <div className="w-full">
@@ -414,15 +411,15 @@ const BookingWidget = () => {
               </div>
 
               {/* Promo Code */}
-              {/* <div className="mb-6">
+              <div className="mb-6">
                 <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
-                  Promo Code
+                  Discount Code (if available)
                 </label>
                 <div className="flex space-x-2">
                   <input
                     type="text"
-                    value={promoCode}
-                    onChange={(e) => setPromoCode(e.target.value)}
+                    value={""}
+                    onChange={(e) => {}}
                     placeholder="Enter code"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
                   />
@@ -430,42 +427,8 @@ const BookingWidget = () => {
                     Apply
                   </Button>
                 </div>
-              </div> */}
+              </div>
 
-              {/* Pricing Summary */}
-              {/* <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl py-6 mb-6">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="font-poppins font-semibold">
-                    {selectedPackage.name}
-                  </span>
-                  <span className="font-bold">
-                    {selectedPackage.price}/person
-                  </span>
-                </div>
-                <div className="flex justify-between items-center mb-3">
-                  <span className="font-poppins">Saving</span>
-                  <span>{selectedPackage.savings}/person</span>
-                </div>
-                <div className="border-t border-gray-300 pt-3 flex justify-between items-center">
-                  <span className="font-bold text-sm font-poppins">
-                    Total Savings
-                  </span>
-                  <span className="text-lg font-bold text-moss">
-                    ₹{parseInt(selectedPackage.savings.split("₹")[1]) * guests}
-                  </span>
-                </div>
-                <div className=" pt-3 flex justify-between items-center">
-                  <span className="font-bold text-lg font-poppins">Total</span>
-                  <span className="text-2xl font-bold text-moss">
-                    ₹{calculatedAmount}
-                  </span>
-                </div>
-                <div className="text-coral text-sm mt-2 font-poppins">
-                  You saved ₹
-                  {parseInt(selectedPackage.savings.split("₹")[1]) * guests}{" "}
-                  with this package!
-                </div>
-              </div> */}
               <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl py-6 space-y-4">
                 {/* Package Name + Price */}
                 <div className="flex justify-between items-center">
@@ -515,10 +478,10 @@ const BookingWidget = () => {
                 </div>
               </div>
 
-              <p className="text-sm text-start text-stone/60 my-1.5 font-poppins">
+              {/* <p className="text-sm text-start text-stone/60 my-1.5 font-poppins">
                 Please review all terms and guidelines before booking;
                 confirmation indicates your agreement.
-              </p>
+              </p> */}
 
               {/* Book Button */}
               <Button
@@ -533,22 +496,13 @@ const BookingWidget = () => {
                 {sending
                   ? "Sending..."
                   : checkIn?.getDate() === 31
-                  ? "Call Directly for 31st Booking"
-                  : `Book Your Memories – ₹${calculatedAmount}`}
+                    ? "Call Directly for 31st Booking"
+                    : `Book Your Memories – ₹${calculatedAmount}`}
               </Button>
 
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">
-                We’ll get in touch within 15 minutes.
+                We&apos;ll get in touch within 15 minutes.
               </p>
-
-              <p className="text-sm text-center text-stone/60 mt-1 font-poppins">
-                <span className="font-bold">Note:</span> The advance payment is
-                strictly non-refundable.
-              </p>
-
-              {/* <p className="text-sm text-center text-stone/60 mt-0.5 font-poppins">
-                Free cancellation up to 48 hours before check-in
-              </p> */}
             </CardContent>
           </Card>
         </div>

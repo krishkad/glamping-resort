@@ -32,7 +32,7 @@ const testimonials = [
   },
   {
     name: "Maya, Solo Traveler",
-    location: "Bangalore",
+    location: "Pune",
     text: "As a solo female traveler, I felt completely safe and welcomed. The guided waterfall trek was incredible, and I made lifelong friends around the campfire!",
     rating: 5,
     image:

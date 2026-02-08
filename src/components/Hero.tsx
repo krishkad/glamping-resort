@@ -44,12 +44,9 @@ const Hero = () => {
           A Peaceful Escape for <br className="hidden" />
           <span className="text-yellow-300">Couples</span>
           <br />
-          {/* <span className="">Wake Up to Wilderness.</span> */}
         </h1>
 
         <p className="text-lg sm:text-xl md:text-2xl text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.9)] mb-8 sm:mb-10 max-w-3xl mx-auto font-poppins">
-          {/* Experience nature&apos;s luxury at our boutique glamping resort.
-          Adventure awaits, comfort embraces, memories unfold. */}
           Discover premium glamping at Pawna Lake—luxury tents, calm waters,
           starry nights & unmatched privacy for couples.
         </p>
