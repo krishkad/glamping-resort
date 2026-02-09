@@ -55,7 +55,7 @@ const Footer = () => {
               <MapPin className="w-5 h-5 text-coral self-start" />
               <span className="font-poppins">
                 Thakursai Pavananagar Road Near Vaishnavi Hotel,
-                <br /> Swami Samarth Road Pawna Lake Camping, <br /> Maharashtra
+                <br /> Swami Samarth Road Pawna Lake Camping, <br /> Maharashtra,
                 Pune- 410 406
               </span>
             </div>
