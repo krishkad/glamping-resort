@@ -39,9 +39,11 @@ const Navbar = () => {
     { href: "/#timeline", label: "Your Day" },
     { href: "/#experiences", label: "Adventures" },
     { href: "/#contact", label: "Contact" },
-    // { href: "/#blogs", label: "Blogs" },
+    { href: "/#blogs", label: "Blogs" },
     { href: "/#footer", label: "Terms" },
   ];
+
+  const isScroll = isScrolled || pathname !== "/";
   return (
     <>
       {/* Navigation */}
@@ -51,20 +53,26 @@ const Navbar = () => {
           "fixed top-0 w-full z-50 transition-all duration-300 px-4",
           isScrolled
             ? "bg-white/95 shadow-md backdrop-blur-sm py-2"
-            : "bg-transparent py-2"
+            : isScroll
+              ? "bg-white/95 shadow-sm backdrop-blur-sm py-2"
+              : "bg-transparent py-2",
         )}
       >
         <div className="flex items-center justify-between">
           <div
             className={cn(
               "font-playfair text-2xl sm:text-3xl font-bold",
-              isScrolled ? "text-navy" : "text-white"
+              isScroll ? "text-navy" : "text-white",
             )}
           >
-            <div className="w-[110px] h-[60px] overflow-hidden">
+            <div className="w-[60px] h-[60px] overflow-hidden">
               <Link href={"#hero"}>
                 <img
-                  src={isScrolled ? "/images/pawna-lake-campings.webp" : "/images/pawna-lake-campingw-bg.webp"}
+                  src={
+                    isScroll
+                      ? "/images/pawna-lake-campings-croped.webp"
+                      : "/images/pawna-lake-campingw-bg-croped.webp"
+                  }
                   alt="pawna-logo"
                   className="w-full h-full object-cover "
                 />
@@ -76,7 +84,7 @@ const Navbar = () => {
           <div
             className={cn(
               "hidden md:flex items-center space-x-6 lg:space-x-8 font-medium",
-              isScrolled ? "text-gray-800" : "text-white"
+              isScroll ? "text-gray-800" : "text-white",
             )}
           >
             {navItems.map((item) => (
@@ -85,7 +93,7 @@ const Navbar = () => {
                 href={item.href}
                 className={cn(
                   "hover:text-coral transition-colors text-sm lg:text-base",
-                  isScrolled ? "text-gray-800" : "text-white"
+                  isScroll ? "text-gray-800" : "text-white",
                 )}
               >
                 {item.label}
@@ -102,7 +110,7 @@ const Navbar = () => {
                   size="icon"
                   className={cn(
                     " hover:bg-white/10",
-                    isScrolled ? "text-navy" : "text-white"
+                    isScroll ? "text-navy" : "text-white",
                   )}
                 >
                   <Menu className="h-6 w-6" />
@@ -174,7 +182,7 @@ const Navbar = () => {
           <Button
             className="hidden md:flex bg-moss hover:bg-moss/90 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-2xl font-semibold shadow-lg text-sm sm:text-base cursor-pointer"
             onClick={() => {
-              router.push("#bookings");
+              router.push("/#bookings");
             }}
           >
             Book Your Escape
