@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
-import ArticleCard from "./ArticleCard";
 import { getFeaturedArticles } from "@/constant/data";
-import { Button, buttonVariants } from "./ui/button";
-import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
+import ArticleCard from "./ArticleCard";
+import { buttonVariants } from "./ui/button";
 
 const Article = () => {
   const featured = getFeaturedArticles();
