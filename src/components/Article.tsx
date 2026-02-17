@@ -14,8 +14,8 @@ const Article = () => {
           Featured Articles
         </h2>
         <p className="text-lg sm:text-xl text-stone/80 font-poppins">
-          We&apos;ve got answers to all your questions for a seamless glamping
-          adventure
+          Camping tips, outdoor inspiration, and guides for your next adventure.
+          🏕️
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -66,7 +66,7 @@ const Navbar = () => {
             )}
           >
             <div className="w-[60px] h-[60px] overflow-hidden">
-              <Link href={"#hero"}>
+              <Link href={"/#hero"}>
                 <img
                   src={
                     isScroll
