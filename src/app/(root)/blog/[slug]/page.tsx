@@ -51,12 +51,9 @@ const BlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
             </li>
             <li>/</li>
             <li>
-              <Link
-                href={`/category/${article.category}`}
-                className="hover:text-foreground transition-colors capitalize"
-              >
+              <p className="hover:text-foreground transition-colors capitalize">
                 {article.category.replace("-", " ")}
-              </Link>
+              </p>
             </li>
             <li>/</li>
             <li className="text-foreground truncate max-w-[200px]">
@@ -73,7 +70,7 @@ const BlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
           >
             {article.category.replace("-", " ")}
           </Link>
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-foreground mt-3 leading-tight">
+          <h1 className="text-3xl md:text-5xl font-bold text-foreground mt-3 leading-tight">
             {article.title}
           </h1>
           <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground flex-wrap">
@@ -144,36 +141,13 @@ const BlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
               className="prose-blog"
               dangerouslySetInnerHTML={{ __html: article.content }}
             />
-
-            {/* Author Box */}
-            <div className="mt-14 p-6 rounded-xl bg-secondary border border-border flex gap-4 items-start">
-              <img
-                src={article.author.avatar}
-                alt={article.author.name}
-                className="w-14 h-14 rounded-full object-cover flex-shrink-0"
-              />
-              <div>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">
-                  Written by
-                </p>
-                <h3 className="font-serif text-lg font-bold text-foreground mt-0.5">
-                  {article.author.name}
-                </h3>
-                <p className="text-xs text-accent font-medium">
-                  {article.author.role}
-                </p>
-                <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                  {article.author.bio}
-                </p>
-              </div>
-            </div>
           </article>
         </div>
 
         {/* Related Articles Full Width */}
         {related.length > 0 && (
           <section className="max-w-6xl mx-auto py-12 border-t border-border">
-            <h2 className="font-serif text-2xl font-bold text-foreground mb-8">
+            <h2 className="text-2xl font-bold text-foreground mb-8">
               You might also like
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
