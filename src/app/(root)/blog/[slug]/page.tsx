@@ -1,9 +1,9 @@
 "use client";
-import React, { use } from "react";
 import ArticleCard from "@/components/ArticleCard";
 import { articles, formatDate, getRelatedArticles } from "@/constant/data";
 import { Calendar, Clock, Facebook, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { use } from "react";
 
 const BlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = use(params);

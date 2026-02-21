@@ -1,4 +1,4 @@
-import { Article, formatDate } from "@/constant/data";
+import { Article } from "@/constant/data";
 import Link from "next/link";
 
 interface ArticleCardProps {
