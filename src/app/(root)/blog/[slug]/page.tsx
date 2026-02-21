@@ -74,16 +74,6 @@ const BlogPage = ({ params }: { params: Promise<{ slug: string }> }) => {
             {article.title}
           </h1>
           <div className="flex items-center justify-center gap-4 mt-6 text-sm text-muted-foreground flex-wrap">
-            <div className="flex items-center gap-2">
-              <img
-                src={article.author.avatar}
-                alt={article.author.name}
-                className="w-8 h-8 rounded-full object-cover"
-              />
-              <span className="font-medium text-foreground">
-                {article.author.name}
-              </span>
-            </div>
             <div className="flex items-center gap-1">
               <Calendar size={14} /> {formatDate(article.publishDate)}
             </div>

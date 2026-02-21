@@ -18,7 +18,7 @@ const testimonials = [
     text: "Pawna Camps exceeded every expectation! The sunrise yoga, luxury tent comfort, and stargazing experience created the most romantic weekend of our lives. Can't wait to return!",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1618245472177-2a74ad3b994a?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/images/testimonials/pawna-lake-camping-testimonials-1.webp",
     category: "Couple",
   },
   {
@@ -27,7 +27,7 @@ const testimonials = [
     text: "Our kids are still talking about the night forest walk and campfire stories. The perfect blend of adventure and comfort for families. Every detail was thoughtfully planned!",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1534235187448-833893dfe3e0?q=80&w=898&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/images/testimonials/pawna-lake-camping-testimonials-2.webp",
     category: "Family",
   },
   {
@@ -36,7 +36,7 @@ const testimonials = [
     text: "As a solo female traveler, I felt completely safe and welcomed. The guided waterfall trek was incredible, and I made lifelong friends around the campfire!",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1607275614100-0f55ff89e715?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+       "/images/testimonials/pawna-lake-camping-testimonials-3.webp",
     category: "Solo",
   },
 ];

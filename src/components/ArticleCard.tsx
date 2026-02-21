@@ -46,21 +46,6 @@ export default function ArticleCard({
           <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">
             {article.excerpt}
           </p>
-
-          <div className="mt-3 flex items-center gap-2">
-            <img
-              src={article.author.avatar}
-              alt={article.author.name}
-              loading="lazy"
-              className="w-6 h-6 rounded-full object-cover"
-            />
-            <span className="text-xs font-medium text-foreground">
-              {article.author.name}
-            </span>
-            <span className="text-xs text-muted-foreground">
-              · {formatDate(article.publishDate)}
-            </span>
-          </div>
         </div>
       </Link>
     </article>
