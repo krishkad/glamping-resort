@@ -17,6 +17,7 @@ const EMAIL = process.env.NEXT_PUBLIC_EMAIL;
 const Footer = () => {
   const [render, setRender] = useState(false);
 
+  const currentYear = new Date().getFullYear();
   useEffect(() => {
     if (!render) setRender(true);
   }, [render]);
@@ -55,8 +56,8 @@ const Footer = () => {
               <MapPin className="w-5 h-5 text-coral self-start" />
               <span className="font-poppins">
                 Thakursai Pavananagar Road Near Vaishnavi Hotel,
-                <br /> Swami Samarth Road Pawna Lake Camping, <br /> Maharashtra,
-                Pune- 410 406
+                <br /> Swami Samarth Road Pawna Lake Camping, <br />{" "}
+                Maharashtra, Pune- 410 406
               </span>
             </div>
 
@@ -196,7 +197,7 @@ const Footer = () => {
         <div className="text-center mt-16 pt-8 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm font-poppins">
-              © 2025 Pawna Lake Camping. All rights reserved. | Crafted
+              © {currentYear} Pawna Lake Camping. All rights reserved. | Crafted
               by Krrish
             </p>
             <div className="flex space-x-6 text-sm text-white/60"></div>
