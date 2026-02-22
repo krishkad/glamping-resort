@@ -156,38 +156,40 @@ const Footer = () => {
           {/* Contact & Support */}
           <div>
             <h5 className="font-bold mb-6 text-xl font-playfair">
-              Get in Touch
+              Connect With Us
             </h5>
-            <div className="space-y-4 text-white/80">
-              <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-moss" />
-                <div>
-                  <p className="font-semibold font-poppins">Phone</p>
-                  <p className="font-poppins">{CALL_PHONE_NO} </p>
-                </div>
-              </div>
+
+            <div className="space-y-6 text-white/80">
+              {/* Email */}
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-moss" />
                 <div>
-                  <p className="font-semibold font-poppins">Email</p>
-                  <p className="font-poppins">{EMAIL}</p>
+                  <p className="font-semibold font-poppins">Email Us</p>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="font-poppins hover:text-coral transition-colors duration-300"
+                  >
+                    {EMAIL}
+                  </a>
                 </div>
               </div>
 
-              {/* Social Links */}
-              <div className="flex space-x-4 mt-6">
-                <a
-                  href="#"
-                  className="bg-white/10 hover:bg-coral p-3 rounded-full transition-colors duration-300"
-                >
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-white/10 hover:bg-green-600 p-3 rounded-full transition-colors duration-300"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                </a>
+              {/* Instagram */}
+              <div className="flex items-center space-x-3">
+                <Instagram className="w-5 h-5 text-moss" />
+                <div>
+                  <p className="font-semibold font-poppins">
+                    Follow on Instagram
+                  </p>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-poppins hover:text-coral transition-colors duration-300"
+                  >
+                    @yourhandle
+                  </a>
+                </div>
               </div>
             </div>
           </div>

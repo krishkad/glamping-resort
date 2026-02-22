@@ -126,7 +126,8 @@ const FAQ = () => {
         <div id="contact" className="text-center pt-24">
           <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl">
             <h3 className="text-xl sm:text-2xl font-playfair font-bold text-stone mb-3 sm:mb-4">
-              Still have questions? We&apos;re here to help!
+              {/* Still have questions? We&apos;re here to help! */}
+              Have questions? Let&apos;s make your trip stress-free.
             </h3>
             <p className="text-stone/80 mb-4 sm:mb-6 font-poppins text-sm sm:text-base">
               Our friendly team is available 24/7 to assist with your booking
@@ -141,8 +142,15 @@ const FAQ = () => {
                 <WhatsAppIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                 WhatsApp Support
               </a>
-              <a
+              {/* <a
                 className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-moss text-white rounded-2xl hover:bg-moss/90 transition-colors font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base cursor-pointer"
+                onClick={handleCall}
+              >
+                <Phone className="mr-2 sm:mr-3 h-4 sm:h-5 w-4 sm:w-5" />
+                Call Now
+              </a> */}
+              <a
+                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-500 hover:bg-blue-600 text-white rounded-2xl  transition-colors font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base cursor-pointer"
                 onClick={handleCall}
               >
                 <Phone className="mr-2 sm:mr-3 h-4 sm:h-5 w-4 sm:w-5" />
