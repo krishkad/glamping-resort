@@ -29,31 +29,66 @@ export interface Category {
 const authors: Record<string, Author> = {
   sarah: {
     name: "Sarah Mitchell",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
     bio: "Sarah is a growth marketing strategist with 10+ years of experience scaling SaaS companies. She writes about SEO, content strategy, and data-driven growth.",
     role: "Head of Growth",
   },
   james: {
     name: "James Chen",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
     bio: "James is a technical SEO specialist and full-stack developer. He focuses on performance optimization and technical content strategies.",
     role: "Technical SEO Lead",
   },
   emma: {
     name: "Emma Rodriguez",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    avatar:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
     bio: "Emma specializes in content marketing and brand storytelling. She helps B2B companies build authority through strategic content.",
     role: "Content Director",
   },
 };
 
 export const categories: Category[] = [
-  { slug: "seo", name: "SEO", description: "Search engine optimization strategies, technical SEO guides, and ranking tips", articleCount: 24 },
-  { slug: "content-marketing", name: "Content Marketing", description: "Content strategy, copywriting, and content distribution tactics", articleCount: 18 },
-  { slug: "growth", name: "Growth", description: "Growth hacking, user acquisition, and scaling strategies", articleCount: 15 },
-  { slug: "analytics", name: "Analytics", description: "Data analytics, tracking, and performance measurement", articleCount: 12 },
-  { slug: "email-marketing", name: "Email Marketing", description: "Email campaigns, automation, and list building strategies", articleCount: 9 },
-  { slug: "social-media", name: "Social Media", description: "Social media strategy, paid social, and community building", articleCount: 11 },
+  {
+    slug: "seo",
+    name: "SEO",
+    description:
+      "Search engine optimization strategies, technical SEO guides, and ranking tips",
+    articleCount: 24,
+  },
+  {
+    slug: "content-marketing",
+    name: "Content Marketing",
+    description:
+      "Content strategy, copywriting, and content distribution tactics",
+    articleCount: 18,
+  },
+  {
+    slug: "growth",
+    name: "Growth",
+    description: "Growth hacking, user acquisition, and scaling strategies",
+    articleCount: 15,
+  },
+  {
+    slug: "analytics",
+    name: "Analytics",
+    description: "Data analytics, tracking, and performance measurement",
+    articleCount: 12,
+  },
+  {
+    slug: "email-marketing",
+    name: "Email Marketing",
+    description: "Email campaigns, automation, and list building strategies",
+    articleCount: 9,
+  },
+  {
+    slug: "social-media",
+    name: "Social Media",
+    description: "Social media strategy, paid social, and community building",
+    articleCount: 11,
+  },
 ];
 
 const articleContent = `
@@ -135,9 +170,10 @@ export const articles: Article[] = [
   {
     slug: "complete-seo-guide-2025",
     title: "The Complete SEO Guide for 2025: Strategies That Actually Work",
-    excerpt: "Master the latest SEO techniques with our comprehensive guide. From technical optimization to content strategy, learn what's driving results in 2025.",
+    excerpt:
+      "Master the latest SEO techniques with our comprehensive guide. From technical optimization to content strategy, learn what's driving results in 2025.",
     content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=450&fit=crop",
+    featuredImage: "/images/thumbnails/complete-seo-guide-2025.webp",
     category: "seo",
     author: authors.sarah,
     publishDate: "2025-02-10",
@@ -148,9 +184,10 @@ export const articles: Article[] = [
   {
     slug: "content-marketing-roi",
     title: "How to 10x Your Content Marketing ROI This Year",
-    excerpt: "Discover proven frameworks for maximizing your content marketing investment. Real case studies, actionable templates, and data-backed strategies inside.",
+    excerpt:
+      "Discover proven frameworks for maximizing your content marketing investment. Real case studies, actionable templates, and data-backed strategies inside.",
     content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=450&fit=crop",
+    featuredImage: "/images/thumbnails/content-marketing-roi.webp",
     category: "content-marketing",
     author: authors.emma,
     publishDate: "2025-02-05",
@@ -161,9 +198,10 @@ export const articles: Article[] = [
   {
     slug: "technical-seo-checklist",
     title: "Technical SEO Checklist: 50 Points for Maximum Performance",
-    excerpt: "A comprehensive technical SEO checklist covering site speed, crawlability, indexation, and Core Web Vitals optimization for peak search performance.",
+    excerpt:
+      "A comprehensive technical SEO checklist covering site speed, crawlability, indexation, and Core Web Vitals optimization for peak search performance.",
     content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=450&fit=crop",
+    featuredImage: "/images/thumbnails/technical-seo-checklist.webp",
     category: "seo",
     author: authors.james,
     publishDate: "2025-01-28",
@@ -174,80 +212,16 @@ export const articles: Article[] = [
   {
     slug: "growth-hacking-saas",
     title: "Growth Hacking for SaaS: From 0 to 10K Users",
-    excerpt: "Learn the exact growth playbook that took our SaaS from zero to 10,000 users in 6 months. Step-by-step breakdown with real metrics.",
+    excerpt:
+      "Learn the exact growth playbook that took our SaaS from zero to 10,000 users in 6 months. Step-by-step breakdown with real metrics.",
     content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
+    featuredImage: "/images/thumbnails/growth-hacking-saas.webp",
     category: "growth",
     author: authors.sarah,
     publishDate: "2025-01-20",
     readTime: 11,
     featured: false,
     tags: ["Growth", "SaaS", "User Acquisition"],
-  },
-  {
-    slug: "google-analytics-4-guide",
-    title: "Google Analytics 4: The Definitive Setup Guide",
-    excerpt: "Everything you need to know about GA4 setup, configuration, and reporting. Make data-driven decisions with confidence using our complete walkthrough.",
-    content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop",
-    category: "analytics",
-    author: authors.james,
-    publishDate: "2025-01-15",
-    readTime: 14,
-    featured: false,
-    tags: ["Analytics", "GA4", "Data"],
-  },
-  {
-    slug: "email-list-building-strategies",
-    title: "17 Email List Building Strategies That Convert in 2025",
-    excerpt: "Build a high-converting email list with these proven strategies. From lead magnets to opt-in forms, discover what's working right now.",
-    content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&h=450&fit=crop",
-    category: "email-marketing",
-    author: authors.emma,
-    publishDate: "2025-01-10",
-    readTime: 10,
-    featured: false,
-    tags: ["Email Marketing", "Lead Generation", "Conversion"],
-  },
-  {
-    slug: "social-media-strategy-b2b",
-    title: "B2B Social Media Strategy: LinkedIn to Revenue Pipeline",
-    excerpt: "Transform your LinkedIn presence into a predictable revenue pipeline. Advanced strategies for B2B social selling and thought leadership.",
-    content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop",
-    category: "social-media",
-    author: authors.sarah,
-    publishDate: "2025-01-05",
-    readTime: 8,
-    featured: false,
-    tags: ["Social Media", "B2B", "LinkedIn"],
-  },
-  {
-    slug: "keyword-research-masterclass",
-    title: "Keyword Research Masterclass: Find Keywords That Drive Revenue",
-    excerpt: "Go beyond search volume. Learn how to identify high-intent keywords that attract qualified traffic and drive real business outcomes.",
-    content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=450&fit=crop",
-    category: "seo",
-    author: authors.james,
-    publishDate: "2024-12-28",
-    readTime: 13,
-    featured: true,
-    tags: ["SEO", "Keywords", "Research"],
-  },
-  {
-    slug: "conversion-rate-optimization",
-    title: "CRO: The Science of Converting More Visitors into Customers",
-    excerpt: "Increase your conversion rates with data-driven optimization techniques. A/B testing frameworks, UX principles, and psychology-backed strategies.",
-    content: articleContent,
-    featuredImage: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=450&fit=crop",
-    category: "growth",
-    author: authors.emma,
-    publishDate: "2024-12-20",
-    readTime: 11,
-    featured: false,
-    tags: ["CRO", "Conversion", "Optimization"],
   },
 ];
 

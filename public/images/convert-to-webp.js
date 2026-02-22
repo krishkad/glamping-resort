@@ -3,7 +3,7 @@ const path = require("path");
 const sharp = require("sharp");
 
 // Allowed image extensions
-const IMAGE_EXTENSIONS = [".jpg", ".webp", ".png", ".gif", ".avif"];
+const IMAGE_EXTENSIONS = [".jpg", ".jpeg", ".webp", ".png", ".gif", ".avif"];
 
 async function convertImageToWebp(filePath) {
   const ext = path.extname(filePath).toLowerCase();
@@ -44,6 +44,6 @@ async function walkDirectory(dir) {
 
 (async () => {
   console.log("🔍 Scanning directories and converting images to WebP...");
-  await walkDirectory("./testimonials");
+  await walkDirectory("./thumbnails");
   console.log("✅ Conversion complete!");
 })();
