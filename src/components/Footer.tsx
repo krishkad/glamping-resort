@@ -1,17 +1,8 @@
 "use client";
-import {
-  Instagram,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-  ShieldIcon,
-  UserIcon,
-} from "lucide-react";
+import { Instagram, Mail, MapPin, ShieldIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const CALL_PHONE_NO = `${process.env.NEXT_PUBLIC_CALL_PHONE_NO}`;
 const EMAIL = process.env.NEXT_PUBLIC_EMAIL;
 
 const Footer = () => {
