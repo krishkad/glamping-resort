@@ -12,6 +12,8 @@ import { CalendarDays, Gift, Users } from "lucide-react";
 import { useState } from "react";
 import { Badge } from "./ui/badge";
 
+const phoneNumber = process.env.NEXT_PUBLIC_CALL_PHONE_NO;
+
 const packages = [
   {
     name: "Regular Tent Stay",
@@ -71,81 +73,80 @@ const BookingWidget = () => {
   const [kids, setKids] = useState(0);
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [sending, setSending] = useState(false);
 
   const calculatedAmount = selectedPackage.amount
     ? selectedPackage.amount * guests
     : 6000;
 
   const send_whatsapp = async () => {
-    setSending(true);
     try {
-      console.log({
-        data: {
-          email,
-          name,
-          lname,
-          phone,
-          checkIn,
-          checkOut,
-          guests,
-          kids,
-          selectedPackage,
-          calculatedAmount,
-        },
-      });
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        body: JSON.stringify({
-          email,
-          name,
-          lname,
-          phone,
-          checkIn,
-          checkOut,
-          guests,
-          kids,
-          selectedPackage,
-          calculatedAmount,
-        }),
-      });
+      // const priceBreakdown = [
+      //   `Base Price: ₹${total_guest_price}`,
+      //   kids5To12 && `Kids (5-12): ₹${kids5To12 * 1000}`,
+      //   kidsAbove12 && `Kids (above 12): ₹${kidsAbove12 * 1750}`,
+      // ]
+      //   .filter(Boolean)
+      //   .join("\n");
 
-      const res = await response.json();
+      const message_text = `
+🌿 Availability Request - Pawna Lake Camping
 
-      if (!res.success) {
-        setSending(false);
-        return;
-      }
+👤 Guest Details
+Name: ${name} ${lname}
+Phone: ${phone}
+Email: ${email}
 
-      localStorage.setItem("bookings", JSON.stringify(res.user_info));
+📅 Stay Dates
+Check-in: ${checkIn ? format(checkIn, "dd MMM yyyy") : "-"}
+Check-out: ${checkOut ? format(checkOut, "dd MMM yyyy") : "-"}
 
-      console.log({ res });
-      setSending(false);
+👨‍👩‍👧 Guests
+Adults: ${guests}
+Kids (below 10): ${kids}
+
+
+
+
+🏕️ Selected Package
+Accommodations: ${selectedPackage.name}
+
+💸 Price Breakdown
+${calculatedAmount}
+
+
+
+💰 Total Amount: ₹${calculatedAmount}
+
+✨ Looking forward to hosting you!
+`;
+
+      window.open(
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message_text)}`,
+        "_blank",
+      );
+
+      // reset
       setName("");
       setLname("");
       setEmail("");
       setPhone("");
-      setCheckIn(new Date());
-      setCheckOut(undefined);
       setGuests(2);
       setKids(0);
       setSelectedPackage(packages[0]);
-    } catch (error) {
-      console.log("error while sending inquiry: ", `${error}`);
-    } finally {
-      setSending(false);
-      setName("");
-      setLname("");
-      setEmail("");
-      setPhone("");
-      setCheckIn(new Date());
-      setCheckOut(undefined);
-      setGuests(2);
-      setKids(0);
-      setSelectedPackage(packages[0]);
+    } catch (err) {
+      console.log(err);
     }
   };
 
+  const isDisabled =
+    !name ||
+    !lname ||
+    !email ||
+    !phone ||
+    !guests ||
+    !checkIn ||
+    !checkOut ||
+    !selectedPackage.name;
   return (
     <section id="bookings" className="py-20 px-6 lg:px-12 bg-secondary">
       <div className="max-w-6xl mx-auto">
@@ -232,6 +233,7 @@ const BookingWidget = () => {
                   <input
                     placeholder="Name"
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
+                    value={name}
                     onChange={(e) => setName(e.target.value)}
                   />
                 </div>
@@ -242,6 +244,7 @@ const BookingWidget = () => {
                   </label>
                   <input
                     placeholder="Last Name"
+                    value={lname}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
                     onChange={(e) => setLname(e.target.value)}
                   />
@@ -254,6 +257,7 @@ const BookingWidget = () => {
                   <input
                     placeholder="example@gmail.com"
                     type="email"
+                    value={email}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -265,6 +269,7 @@ const BookingWidget = () => {
                   <input
                     type="tel"
                     placeholder="+91 1122334455"
+                    value={phone}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:border-moss transition-colors"
                     onChange={(e) => setPhone(e.target.value)}
                   />
@@ -477,16 +482,12 @@ const BookingWidget = () => {
                 className="w-full h-max bg-moss hover:bg-[var(--color-moss)]/90 text-white text-base md:text-lg py-4 rounded-2xl shadow-xl font-bold cursor-pointer"
                 onClick={send_whatsapp}
                 disabled={
-                  sending ||
                   selectedPackage.name === "Deluxe Cottage Experience" ||
-                  checkIn?.getDate() === 31
+                  checkIn?.getDate() === 31 ||
+                  isDisabled
                 }
               >
-                {sending
-                  ? "Sending..."
-                  : checkIn?.getDate() === 31
-                    ? "Call Directly for 31st Booking"
-                    : `Book Your Memories – ₹${calculatedAmount}`}
+                {`Send Inquiry – ₹${calculatedAmount}`}
               </Button>
 
               <p className="text-sm text-center text-stone/60 mt-4 font-poppins">
