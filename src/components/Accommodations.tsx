@@ -42,8 +42,8 @@ const accommodations = [
         imageClassName: "object-center",
       },
     ],
-    price: 1200,
-    beforePrice: 1400,
+    price: 999,
+    beforePrice: 1200,
     guests: 1,
 
     amenitiesHtml: (
@@ -119,8 +119,8 @@ const accommodations = [
         imageClassName: "object-cover object-center",
       },
     ],
-    price: 1599,
-    beforePrice: 1899,
+    price: 1200,
+    beforePrice: 1599,
     guests: 2,
     amenitiesHtml: (
       <div className="mb-6 space-y-3">
@@ -259,7 +259,7 @@ const Accommodations = () => {
             <span className="text-moss">Pawna</span>
           </h2>
           <p className="text-lg sm:text-xl text-stone/80 max-w-3xl mx-auto font-poppins">
-            Choose from our handpicked collection of luxury accommodations, each
+            Choose from our handpicked collection of Comfy accommodations, each
             designed to blend comfort with nature&apos;s beauty.
           </p>
         </div>

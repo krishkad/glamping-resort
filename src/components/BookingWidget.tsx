@@ -8,18 +8,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { format } from "date-fns";
-import { Gift, Users } from "lucide-react";
-import { useEffect, useState } from "react";
-import { CheckCircle2, Mail, Phone, User, CalendarDays } from "lucide-react";
+import { CalendarDays, Gift, Users } from "lucide-react";
+import { useState } from "react";
 import { Badge } from "./ui/badge";
 
 const packages = [
   {
     name: "Regular Tent Stay",
-    price: "₹1200",
-    amount: 1200,
-    originalPrice: "₹1400",
-    savings: "₹200",
+    price: "₹999",
+    amount: 999,
+    originalPrice: "₹1200",
+    savings: "₹201",
     includes: [
       "Cozy dome-style tent stay",
       "Panoramic lake & nature views",
@@ -31,10 +30,10 @@ const packages = [
   },
   {
     name: "Triangle Tent Stay",
-    price: "₹1599",
-    amount: 1599,
-    originalPrice: "₹1899",
-    savings: "₹301",
+    price: "₹1200",
+    amount: 1200,
+    originalPrice: "₹1599",
+    savings: "₹401",
     includes: [
       "Stylish triangle tent stay",
       "Warm lighting & romantic interiors",
@@ -72,7 +71,6 @@ const BookingWidget = () => {
   const [kids, setKids] = useState(0);
   const [selectedPackage, setSelectedPackage] = useState(packages[0]);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const [bookingExists, setBookingExists] = useState("" as any);
   const [sending, setSending] = useState(false);
 
   const calculatedAmount = selectedPackage.amount
@@ -120,7 +118,6 @@ const BookingWidget = () => {
       }
 
       localStorage.setItem("bookings", JSON.stringify(res.user_info));
-      setBookingExists(res.user_info);
 
       console.log({ res });
       setSending(false);
@@ -148,14 +145,6 @@ const BookingWidget = () => {
       setSelectedPackage(packages[0]);
     }
   };
-
-  useEffect(() => {
-    const boo = localStorage.getItem("bookings");
-    if (!boo) return;
-    console.log(JSON.parse(boo));
-
-    setBookingExists(JSON.parse(boo));
-  }, []);
 
   return (
     <section id="bookings" className="py-20 px-6 lg:px-12 bg-secondary">
@@ -411,7 +400,7 @@ const BookingWidget = () => {
               </div>
 
               {/* Promo Code */}
-              <div className="mb-6">
+              {/* <div className="mb-6">
                 <label className="block text-sm font-semibold text-stone mb-2 font-poppins">
                   Discount Code (if available)
                 </label>
@@ -427,7 +416,7 @@ const BookingWidget = () => {
                     Apply
                   </Button>
                 </div>
-              </div>
+              </div> */}
 
               <div className="bg-gradient-to-r from-skyblue/10 to-moss/10 rounded-2xl py-6 space-y-4">
                 {/* Package Name + Price */}
@@ -506,130 +495,9 @@ const BookingWidget = () => {
             </CardContent>
           </Card>
         </div>
-
-        {bookingExists?.name && (
-          <BookingSuccess
-            email={bookingExists.email}
-            name={bookingExists.name}
-            lname={bookingExists.lname}
-            phone={bookingExists.phone}
-            checkIn={bookingExists.checkIn}
-            checkOut={bookingExists.checkOut}
-            guests={bookingExists.guests}
-            kids={bookingExists.kids}
-            selectedPackage={bookingExists.selectedPackage?.name} // <-- FIX
-            calculatedAmount={bookingExists.calculatedAmount}
-          />
-        )}
       </div>
     </section>
   );
 };
 
 export default BookingWidget;
-
-function BookingSuccess({
-  email,
-  name,
-  lname,
-  phone,
-  checkIn,
-  checkOut,
-  guests,
-  kids,
-  selectedPackage,
-  calculatedAmount,
-}: {
-  email: string;
-  name: string;
-  lname: string;
-  phone: string;
-  checkIn: string | Date;
-  checkOut: string | Date;
-  guests: number;
-  kids: number;
-  selectedPackage: string;
-  calculatedAmount: number;
-}) {
-  return (
-    <div className="flex justify-center p-1 mt-6">
-      <Card className="max-w-lg w-full border border-gray-200 shadow-xl rounded-2xl backdrop-blur bg-white/80">
-        <CardHeader className="text-center pb-0">
-          <div className="flex flex-col items-center">
-            <div className="w-16 h-16 flex items-center justify-center rounded-full bg-green-100">
-              <CheckCircle2 className="w-10 h-10 text-green-600" />
-            </div>
-
-            <CardTitle className="text-3xl font-bold mt-4">
-              Booking Sent!
-            </CardTitle>
-
-            <p className="text-gray-600 mt-1">
-              We&apos;ve received your booking details. We&apos;ll contact you
-              shortly.
-            </p>
-          </div>
-        </CardHeader>
-
-        <CardContent className="mt-6 space-y-5 text-gray-800 text-[15px]">
-          {/* Personal Info */}
-          <div>
-            <h3 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
-              <User className="w-4 h-4" /> Guest Information
-            </h3>
-            <div className="space-y-1 pl-1">
-              <p>
-                <strong>Name:</strong> {name} {lname}
-              </p>
-              <p className="flex items-center gap-1">
-                <Mail className="w-4 h-4 text-gray-500" /> {email}
-              </p>
-              <p className="flex items-center gap-1">
-                <Phone className="w-4 h-4 text-gray-500" /> {phone}
-              </p>
-            </div>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          {/* Dates */}
-          <div>
-            <h3 className="font-semibold text-gray-700 mb-2 flex items-center gap-2">
-              <CalendarDays className="w-4 h-4" /> Stay Details
-            </h3>
-            <div className="space-y-1 pl-1">
-              <p>
-                <strong>Check-In:</strong>{" "}
-                {format(new Date(checkIn), "MMM dd yyyy - EEEE")}
-              </p>
-              <p>
-                <strong>Check-Out:</strong>{" "}
-                {format(new Date(checkOut), "MMM dd yyyy - EEEE")}
-              </p>
-
-              <p>
-                <strong>Adults:</strong> {guests}
-              </p>
-              <p>
-                <strong>Kids:</strong> {kids}
-              </p>
-              <p>
-                <strong>Package:</strong> {selectedPackage}
-              </p>
-            </div>
-          </div>
-
-          <hr className="border-gray-200" />
-
-          {/* Amount */}
-          <div className="text-center">
-            <p className="text-gray-600 text-sm mb-1">Total Amount</p>
-            <p className="text-3xl font-bold text-green-700">
-              ₹{calculatedAmount}
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  );
-}

@@ -42,9 +42,9 @@ const timelineEvents = [
   },
   {
     time: "7:30 PM",
-    title: "Barbeque & DJ Music",
+    title: "BBQ & DJ Music",
     description:
-      "Relish freshly grilled barbecue snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
+      "Relish freshly grilled BBQ snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
     icon: Flame,
     image: "/images/new_images/image-16.webp",
     color: "bg-gradient-to-r from-red-500 to-red-700",

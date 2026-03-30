@@ -28,12 +28,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(base),
 
   title: {
-    default: "Pawna Lake Camping | Luxury Tents & Lakeside Experience",
+    default: "Pawna Lake Camping | Comfy Tents & Lakeside Experience",
     template: "%s | Pawna Lake Camping",
   },
 
   description:
-    "Book premium Pawna Lake camping with luxury tents, BBQ, live music, boating and stunning lakeside views. Perfect for couples, families, and groups.",
+    "Book premium Pawna Lake camping with Comfy tents, BBQ, live music, boating and stunning lakeside views. Perfect for couples, families, and groups.",
 
   keywords: [
     "Pawna Lake Camping",
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     siteName: "Pawna Camps",
     title: "Pawna Lake Camping",
     description:
-      "Premium Pawna Lake camping with BBQ, boating and luxury tents.",
+      "Premium Pawna Lake camping with BBQ, boating and Comfy tents.",
     images: [
       {
         url: `${base}/images/accommodations/delux/delux-1.webp`,
         width: 1600,
         height: 900,
-        alt: "Pawna Lake Luxury Camping",
+        alt: "Pawna Lake Comfy Camping",
       },
       {
         url: `${base}/images/accommodations/delux/delux-2.webp`,

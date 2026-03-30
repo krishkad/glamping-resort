@@ -54,16 +54,6 @@ const Footer = () => {
 
             {/* Certifications */}
             <div className="flex flex-wrap gap-3 mt-6">
-              {/* <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <Award className="w-4 h-4 text-moss" />
-                <span className="text-sm font-semibold">Eco-Certified</span>
-              </div>
-              <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2">
-                <Award className="w-4 h-4 text-coral" />
-                <span className="text-sm font-semibold">
-                  Travel Awards 2024
-                </span>
-              </div>*/}
               <div className="flex items-center space-x-2 bg-white/10 backdrop-blur-sm rounded-full px-3 sm:px-4 py-2 text-white">
                 <UserIcon className="w-4 sm:w-5 h-4 sm:h-5 text-blue-300 fill-blue-400" />
                 <span className="font-medium text-xs sm:text-sm">

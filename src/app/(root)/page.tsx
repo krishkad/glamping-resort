@@ -1,5 +1,4 @@
 import Accommodations from "@/components/Accommodations";
-import Article from "@/components/Article";
 import BookingWidget from "@/components/BookingWidget";
 import DayTimeline from "@/components/DayTimeline";
 import Experiences from "@/components/Experiences";
@@ -18,7 +17,7 @@ const Home = () => {
       <BookingWidget />
       <Testimonials />
       <FAQ />
-      <Article />
+      {/* <Article /> */}
       <FloatingActions />
     </div>
   );

@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
-
 const experiences = [
   {
     title: "Bonfire Nights",
@@ -34,9 +33,9 @@ const experiences = [
     color: "from-indigo-500 to-purple-600",
   },
   {
-    title: "Barbeque & DJ Music",
+    title: "BBQ & DJ Music",
     description:
-      "Savor delicious barbeque while enjoying the sound system and lake views",
+      "Savor delicious BBQ while enjoying the sound system and lake views",
     icon: "🍖",
     duration: "Until 9:30 PM",
     category: "Entertainment",
@@ -65,14 +64,7 @@ const experiences = [
   },
 ];
 
-const categories = [
-  "All",
-  "Relaxation",
-  "Adventure",
-  "Entertainment",
-  "Fun",
-  "Leisure",
-];
+const categories = ["All", "Relaxation", "Adventure", "Entertainment", "Fun"];
 
 const Experiences = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -223,9 +215,6 @@ const Experiences = () => {
 
 export default Experiences;
 
-
-
-
 // const timelineEvents = [
 //   {
 //     time: "4:00 PM",
@@ -257,9 +246,9 @@ export default Experiences;
 //   },
 //   {
 //     time: "7:30 PM",
-//     title: "Barbeque & DJ Music",
+//     title: "BBQ & DJ Music",
 //     description:
-//       "Relish freshly grilled barbecue snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
+//       "Relish freshly grilled BBQ snacks while enjoying lively DJ music. The perfect mix of great food and great vibes until 9:30 PM.",
 //     icon: Flame,
 //     image: "/images/new_images/image-16.webp",
 //     color: "bg-gradient-to-r from-red-500 to-red-700",

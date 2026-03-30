@@ -14,7 +14,7 @@ const faqs = [
   {
     question: "What's included in my camping stay?",
     answer:
-      "Your stay includes comfortable tent accommodation, evening tea with pakoras upon arrival, dinner with local delicacies, breakfast, and access to activities like badminton, carrom, cricket, bonfire nights, and lake kayaking. Barbeque with sound system is available until 9:30 PM.",
+      "Your stay includes comfortable tent accommodation, evening tea with pakoras upon arrival, dinner with local delicacies, breakfast, and access to activities like badminton, carrom, cricket, bonfire nights, and lake kayaking. BBQ with sound system is available until 9:30 PM.",
     category: "Stay Details",
   },
   {
@@ -56,7 +56,7 @@ const faqs = [
   {
     question: "What dining and meal options are available?",
     answer:
-      "We provide delicious meals including evening tea with pakoras, barbeque dinner, traditional dinner with local delicacies (served until 10:00 PM), and hearty breakfast (served until 9:30 AM). Vegetarian and special dietary requirements can be accommodated with advance notice.",
+      "We provide delicious meals including evening tea with pakoras, BBQ dinner, traditional dinner with local delicacies (served until 10:00 PM), and hearty breakfast (served until 9:30 AM). Vegetarian and special dietary requirements can be accommodated with advance notice.",
     category: "Dining",
   },
   {

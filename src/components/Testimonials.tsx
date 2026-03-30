@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Arjun & Priya",
     location: "Mumbai",
-    text: "Pawna Camps exceeded every expectation! The sunrise yoga, luxury tent comfort, and stargazing experience created the most romantic weekend of our lives. Can't wait to return!",
+    text: "Pawna Camps exceeded every expectation! The sunrise yoga, Comfy tent comfort, and stargazing experience created the most romantic weekend of our lives. Can't wait to return!",
     rating: 5,
     image:
       "/images/testimonials/pawna-lake-camping-testimonials-1.webp",
