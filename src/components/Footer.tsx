@@ -1,5 +1,12 @@
 "use client";
-import { Instagram, Mail, MapPin, ShieldIcon, UserIcon } from "lucide-react";
+import {
+  Instagram,
+  Mail,
+  MapPin,
+  PhoneIcon,
+  ShieldIcon,
+  UserIcon,
+} from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -157,19 +164,14 @@ const Footer = () => {
 
               {/* Instagram */}
               <div className="flex items-center space-x-3">
-                <Instagram className="w-5 h-5 text-moss" />
+                <PhoneIcon className="w-5 h-5 text-moss" />
                 <div>
-                  <p className="font-semibold font-poppins">
-                    Follow on Instagram
-                  </p>
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-poppins hover:text-coral transition-colors duration-300"
-                  >
-                    @yourhandle
-                  </a>
+                  <p className="font-semibold font-poppins">Call us</p>
+                  <Link href="tel:+919373526309">
+                    <p className="font-poppins hover:text-coral transition-colors duration-300">
+                      +91 93735 26309
+                    </p>
+                  </Link>
                 </div>
               </div>
             </div>
