@@ -1,11 +1,10 @@
 "use client";
 import {
-  Instagram,
   Mail,
   MapPin,
   PhoneIcon,
   ShieldIcon,
-  UserIcon,
+  UserIcon
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
