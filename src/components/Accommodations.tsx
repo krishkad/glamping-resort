@@ -119,8 +119,8 @@ const accommodations = [
         imageClassName: "object-cover object-center",
       },
     ],
-    price: 1200,
-    beforePrice: 1599,
+    price: 1500,
+    beforePrice: 2000,
     guests: 2,
     amenitiesHtml: (
       <div className="mb-6 space-y-3">
@@ -276,7 +276,6 @@ const Accommodations = () => {
                 <Carousel
                   className="w-full h-full"
                   opts={{ align: "start", loop: true }}
-
                 >
                   <CarouselContent className="h-full">
                     {accommodation.images.map((image, imageIndex) => (
@@ -328,6 +327,21 @@ const Accommodations = () => {
                         <span className="text-xs text-white line-through">
                           ₹{accommodation.beforePrice}/per
                         </span>
+                      </>
+                    </Badge>
+                  ) : (
+                    <Badge>Booked</Badge>
+                  )}
+                </div>
+                <div className="absolute top-12 right-4 z-10">
+                  {index !== 2 ? (
+                    <Badge className="bg-transparent text-white px-3 py-1 text-sm font-semibold backdrop-blur-sm">
+                      <>
+                        ₹1200/person{" "}
+                        <span className="text-xs text-white line-through">
+                          ₹1500/per
+                        </span>
+                        <span className="text-xs">Without electricity</span>
                       </>
                     </Badge>
                   ) : (

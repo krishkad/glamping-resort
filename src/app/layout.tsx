@@ -97,7 +97,7 @@ export default function RootLayout({
         <meta
           name="image"
           content={cn(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/images/accommodations/delux/delux-1.webp`
+            `${process.env.NEXT_PUBLIC_BASE_URL}/images/accommodations/delux/delux-1.webp`,
           )}
         />
       </head>
@@ -131,6 +131,19 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-17776658067');
+          `}
+        </Script>
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16673264298"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16673264298');
           `}
         </Script>
       </body>
