@@ -32,10 +32,10 @@ const packages = [
   },
   {
     name: "Triangle Tent Stay",
-    price: "₹1200",
-    amount: 1200,
-    originalPrice: "₹1599",
-    savings: "₹401",
+    price: "₹1500",
+    amount: 1500,
+    originalPrice: "₹2000",
+    savings: "₹500",
     includes: [
       "Stylish triangle tent stay",
       "Warm lighting & romantic interiors",
