@@ -40,7 +40,67 @@ export const metadata: Metadata = {
     "Lonavala Camping",
     "Couple Camping",
     "Couple Camping Pawna",
-    "Couple Camping Lonavla",
+    "Couple Camping Lonavala",
+
+    // Location-based
+    "Pawna Camping",
+    "Pawna Lake Camps",
+    "Camping Near Pune",
+    "Camping Near Mumbai",
+    "Lakeside Camping Lonavala",
+    "Pawna Lake Stay",
+    "Weekend Camping Lonavala",
+    "Pawna Lake Resort Camping",
+    "Best Camping in Lonavala",
+    "Best Camping Near Pune",
+
+    // Couple-focused
+    "Romantic Camping Near Pune",
+    "Romantic Camping Near Mumbai",
+    "Private Couple Camping",
+    "Couple Tent Camping",
+    "Couple Camping with Dinner",
+    "Couple Camping with Music",
+    "Lakeside Couple Camping",
+    "Romantic Getaway Pawna Lake",
+    "Couple Weekend Getaway Lonavala",
+    "Private Camping for Couples",
+
+    // Experience-based
+    "Overnight Camping Pawna Lake",
+    "Camping with BBQ Pawna",
+    "Camping with Bonfire",
+    "Camping with Live Music",
+    "Adventure Camping Lonavala",
+    "Family Camping Pawna Lake",
+    "Luxury Camping Pawna Lake",
+    "Tent Stay Pawna Lake",
+    "Glamping Near Pune",
+    "Camping Under the Stars",
+
+    // Search intent keywords
+    "Pawna Lake Camping Booking",
+    "Book Pawna Lake Camping",
+    "Pawna Lake Camping Packages",
+    "Pawna Camping Price",
+    "Pawna Lake Camping Deals",
+    "Affordable Camping Lonavala",
+    "Budget Camping Near Pune",
+    "Weekend Camping Packages",
+    "One Day Camping Lonavala",
+    "Best Pawna Lake Camping Packages",
+
+    // Long-tail keywords
+    "Best Couple Camping Near Pune",
+    "Best Couple Camping Near Mumbai",
+    "Pawna Lake Camping for Couples",
+    "Lonavala Camping for Couples",
+    "Camping with Lake View in Lonavala",
+    "Weekend Getaway Near Pune for Couples",
+    "Weekend Getaway Near Mumbai for Couples",
+    "Lakeside Tent Camping Near Pune",
+    "Camping and Bonfire Near Pune",
+    "Pawna Lake Night Camping"
   ],
 
   openGraph: {
